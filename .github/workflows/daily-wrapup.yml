@@ -38,6 +38,10 @@ jobs:
           GMAIL_USER: ${{ secrets.GMAIL_USER }}
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
           EMAIL_TO: ${{ secrets.EMAIL_TO }}
+          LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
+          LLM_MODEL: ${{ secrets.LLM_MODEL }}
+          WA_PHONE: ${{ secrets.WA_PHONE }}
+          WA_API_KEY: ${{ secrets.WA_API_KEY }}
         run: python scripts/fetch_digest.py
 
       - name: Commit edition (if produced)
