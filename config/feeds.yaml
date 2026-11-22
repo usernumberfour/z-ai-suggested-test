@@ -1,0 +1,257 @@
+# Sam's daily wrap up - Path C V1 source configuration
+# This file is the editorial source of truth: what gets watched, in priority order.
+# Add/remove/reorder feeds freely - no code changes needed. Dead feeds are
+# skipped automatically and disclosed in the edition footer.
+
+window_hours: 24          # freshness window (hours)
+tolerance_minutes: 30     # small grace added to the window
+items_per_region: 5
+
+regions:
+  - id: melbourne
+    title: "Melbourne & Victoria"
+    feeds:
+      - name: "ABC News Melbourne"
+        url: "https://www.abc.net.au/news/feed/51120/rss.xml"
+      - name: "The Age"
+        url: "https://www.theage.com.au/rss/feed.xml"
+
+  - id: australia
+    title: "Australia (national)"
+    feeds:
+      - name: "Guardian Australia"
+        url: "https://www.theguardian.com/australia-news/rss"
+
+  - id: pacific
+    title: "Pacific"
+    feeds:
+      - name: "RNZ Pacific"
+        url: "https://www.rnz.co.nz/rss/pacific"
+      - name: "RNZ National"
+        url: "https://www.rnz.co.nz/rss/national"
+
+  - id: sea
+    title: "Southeast Asia"
+    feeds:
+      - name: "CNA"
+        url: "https://www.channelnewsasia.com/api/v1/rss-outbound-feed?_format=xml"
+      - name: "SCMP Asia"
+        url: "https://www.scmp.com/rss/91/feed"
+        require_any: ["Singapore", "Malaysia", "Indonesia", "Thailand", "Vietnam",
+                      "Philippines", "Cambodia", "Myanmar", "Laos", "ASEAN", "APEC",
+                      "Jakarta", "Bangkok", "Manila", "Hanoi", "Kuala Lumpur", "Timor"]
+      - name: "Rappler"
+        url: "https://www.rappler.com/feed/"
+      - name: "VnExpress International"
+        url: "https://e.vnexpress.net/rss/news.rss"
+
+  - id: india
+    title: "India"
+    feeds:
+      - name: "The Hindu (National)"
+        url: "https://www.thehindu.com/news/national/feeder/default.rss"
+      - name: "NDTV"
+        url: "https://feeds.feedburner.com/ndtvnews-india-news"
+      - name: "Business Standard"
+        url: "https://www.business-standard.com/rss/latest.rss"
+
+  - id: mideast
+    title: "Middle East"
+    feeds:
+      - name: "Al Jazeera"
+        url: "https://www.aljazeera.com/xml/rss/all.xml"
+        # AJ's all.xml is global - keep only Middle East items:
+        require_any: ["Israel", "Gaza", "Iran", "Lebanon", "Syria", "Iraq", "Saudi",
+                      "Qatar", "UAE", "Turkey", "Egypt", "Jordan", "Yemen", "Houthi",
+                      "West Bank", "Gulf", "Tehran", "Riyadh", "Dubai", "Palestin",
+                      "Hezbollah", "Hamas", "Red Sea"]
+      - name: "Middle East Monitor"
+        url: "https://www.middleeastmonitor.com/feed/"
+
+  - id: europe
+    title: "Europe"
+    feeds:
+      - name: "Euronews"
+        url: "https://www.euronews.com/rss"
+      - name: "BBC Europe"
+        url: "http://feeds.bbci.co.uk/news/world/europe/rss.xml"
+      - name: "Politico Europe"
+        url: "https://www.politico.eu/feed/"
+
+  - id: africa
+    title: "Africa"
+    feeds:
+      - name: "BBC Africa"
+        url: "http://feeds.bbci.co.uk/news/world/africa/rss.xml"
+      - name: "Africanews"
+        url: "https://www.africanews.com/feed/"
+      - name: "Daily Maverick"
+        url: "https://www.dailymaverick.co.za/dmrss/"
+      - name: "Premium Times Nigeria"
+        url: "https://www.premiumtimesng.com/feed"
+
+  - id: sam
+    title: "South America"
+    feeds:
+      - name: "Buenos Aires Times"
+        url: "https://www.batimes.com.ar/feed"
+      - name: "BBC Latin America"
+        url: "http://feeds.bbci.co.uk/news/world/latin_america/rss.xml"
+      - name: "Mercopress"
+        url: "https://en.mercopress.com/rss"
+
+  - id: nam
+    title: "North America"
+    feeds:
+      - name: "Guardian US"
+        url: "https://www.theguardian.com/us-news/rss"
+      - name: "NPR Top Stories"
+        url: "https://feeds.npr.org/1001/rss.xml"
+      - name: "NPR World"
+        url: "https://feeds.npr.org/1004/rss.xml"
+      - name: "The Hill"
+        url: "https://thehill.com/feed/"
+      - name: "BBC US & Canada"
+        url: "http://feeds.bbci.co.uk/news/world/us_and_canada/rss.xml"
+
+# Market indices. "days" uses Python weekday(): Mon=0 ... Sun=6.
+# Tadawul and EGX trade Sunday-Thursday: days: [6,0,1,2,3]
+markets:
+  - name: "S&P/ASX 200"
+    group: "East Asia & Australia"
+    yahoo: "^AXJO"
+    stooq: "^axjo"
+    tz: "Australia/Sydney"
+    days: [0, 1, 2, 3, 4]
+    open: "10:00"
+    close: "16:00"
+
+  - name: "S&P/NZX 50"
+    group: "East Asia & Australia"
+    yahoo: "^NZ50"
+    tz: "Pacific/Auckland"
+    days: [0, 1, 2, 3, 4]
+    open: "10:00"
+    close: "16:45"
+
+  - name: "SET"
+    group: "Southeast Asia"
+    yahoo: "^SET.BK"
+    tz: "Asia/Bangkok"
+    days: [0, 1, 2, 3, 4]
+    open: "09:45"
+    close: "16:35"
+
+  - name: "STI"
+    group: "Southeast Asia"
+    yahoo: "^STI"
+    tz: "Asia/Singapore"
+    days: [0, 1, 2, 3, 4]
+    open: "09:00"
+    close: "17:00"
+
+  - name: "JCI"
+    group: "Southeast Asia"
+    yahoo: "^JKSE"
+    tz: "Asia/Jakarta"
+    days: [0, 1, 2, 3, 4]
+    open: "09:00"
+    close: "16:00"
+
+  - name: "Nifty 50"
+    group: "India"
+    yahoo: "^NSEI"
+    tz: "Asia/Kolkata"
+    days: [0, 1, 2, 3, 4]
+    open: "09:15"
+    close: "15:30"
+
+  - name: "Sensex"
+    group: "India"
+    yahoo: "^BSESN"
+    tz: "Asia/Kolkata"
+    days: [0, 1, 2, 3, 4]
+    open: "09:15"
+    close: "15:30"
+
+  - name: "Tadawul TASI"
+    group: "Middle East"
+    yahoo: "^TASI.SR"
+    tz: "Asia/Riyadh"
+    days: [6, 0, 1, 2, 3]
+    open: "10:00"
+    close: "15:00"
+
+  - name: "FTSE 100"
+    group: "Europe"
+    yahoo: "^FTSE"
+    stooq: "^ftm"
+    tz: "Europe/London"
+    days: [0, 1, 2, 3, 4]
+    open: "08:00"
+    close: "16:30"
+
+  - name: "DAX"
+    group: "Europe"
+    yahoo: "^GDAXI"
+    stooq: "^dax"
+    tz: "Europe/Berlin"
+    days: [0, 1, 2, 3, 4]
+    open: "09:00"
+    close: "17:30"
+
+  - name: "EURO STOXX 50"
+    group: "Europe"
+    yahoo: "^STOXX50E"
+    tz: "Europe/Berlin"
+    days: [0, 1, 2, 3, 4]
+    open: "09:00"
+    close: "18:20"
+
+  - name: "JSE Top 40 (Satrix 40 proxy)"
+    group: "Africa"
+    yahoo: "STX40.JO"
+    tz: "Africa/Johannesburg"
+    days: [0, 1, 2, 3, 4]
+    open: "10:00"
+    close: "17:00"
+
+  - name: "EGX 30"
+    group: "Africa"
+    unavailable: "no free reliable endpoint"
+
+  - name: "Ibovespa"
+    group: "South America"
+    yahoo: "^BVSP"
+    stooq: "^bvsp"
+    tz: "America/Sao_Paulo"
+    days: [0, 1, 2, 3, 4]
+    open: "10:00"
+    close: "17:55"
+
+  - name: "S&P 500"
+    group: "North America"
+    yahoo: "^GSPC"
+    stooq: "^spx"
+    tz: "America/New_York"
+    days: [0, 1, 2, 3, 4]
+    open: "09:30"
+    close: "16:00"
+
+  - name: "Dow"
+    group: "North America"
+    yahoo: "^DJI"
+    stooq: "^dji"
+    tz: "America/New_York"
+    days: [0, 1, 2, 3, 4]
+    open: "09:30"
+    close: "16:00"
+
+  - name: "Nasdaq"
+    group: "North America"
+    yahoo: "^IXIC"
+    stooq: "^ndq"
+    tz: "America/New_York"
+    days: [0, 1, 2, 3, 4]
+    open: "09:30"
+    close: "16:00"
