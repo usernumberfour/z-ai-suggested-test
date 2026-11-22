@@ -1,0 +1,53 @@
+name: daily-wrapup
+
+on:
+  schedule:
+    # 21:00 Melbourne year-round: 10:00 UTC in AEDT (UTC+11), 11:00 UTC in AEST (UTC+10).
+    # The script's DST guard produces only in the correct hour; the other run self-skips.
+    - cron: "0 10 * * *"
+    - cron: "0 11 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-wrapup
+  cancel-in-progress: false
+
+jobs:
+  produce:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install deps
+        run: pip install --quiet feedparser pyyaml requests
+
+      - name: Produce edition
+        env:
+          FORCE_RUN: ${{ github.event_name == 'workflow_dispatch' }}
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          GMAIL_USER: ${{ secrets.GMAIL_USER }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          EMAIL_TO: ${{ secrets.EMAIL_TO }}
+        run: python scripts/fetch_digest.py
+
+      - name: Commit edition (if produced)
+        run: |
+          git config user.name "daily-wrapup-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add editions/ 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo "Nothing to commit (DST guard or duplicate guard skipped)."
+          else
+            git commit -m "daily wrap up edition $(TZ=Australia/Melbourne date +%Y-%m-%d)"
+            git push
+          fi
