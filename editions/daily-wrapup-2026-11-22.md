@@ -1,16 +1,16 @@
 # Sam's daily wrap up - Sun 22 Nov 2026 (Melbourne)
 
-V1 deterministic pipeline (GitHub Actions) - RSS feeds + market endpoints. No AI editorial layer (V2 pending).
+V1.1 deterministic pipeline (GitHub Actions) - RSS feeds + market endpoints. No AI editorial layer (V2 pending).
 
-Generated: 18:12 Melbourne - Coverage window: Sat 21 Nov 17:42 -> Sun 22 Nov 18:12 Melbourne
+Generated: 19:08 Melbourne - Coverage window: Sat 21 Nov 18:38 -> Sun 22 Nov 19:08 Melbourne
 
 ## Melbourne & Victoria
 
-- [‘Everyone is devastated’: Locals clash with council over loss of library in 140-year-old homestead](https://www.theage.com.au/national/victoria/everyone-is-devastated-locals-clash-with-council-over-library-in-140-year-old-homestead-20261122-p61g1j.html?ref=rss&utm_medium=rss&utm_source=rss_feed) - The Age - 17:56, Sun 22 Nov Melbourne
-- [Friends not foes: WA Police issue warning to 8000 teens heading south for Leavers](https://www.theage.com.au/national/western-australia/friends-not-foes-wa-police-issue-warning-to-8000-teens-heading-south-for-leavers-20261122-p61gap.html?ref=rss&utm_medium=rss&utm_source=rss_feed) - The Age - 17:45, Sun 22 Nov Melbourne
-- [Horne-Francis planning to recruit Nasiah during AFL Origin camp](https://www.abc.net.au/news/2026-11-22/afl-origin-teams-horne-francis-nasiah-recruitment-plan/107414456) - ABC News Melbourne - 17:12, Sun 22 Nov Melbourne
-- [India breaks New Zealand Test record with monster innings in Wellington](https://www.abc.net.au/news/2026-11-22/cricket-india-highest-test-score-against-new-zealand/107414256) - ABC News Melbourne - 17:12, Sun 22 Nov Melbourne
-- [Piastri lands on podium in Las Vegas](https://www.theage.com.au/sport/motorsport/piastri-lands-on-podium-in-las-vegas-20261122-p61gam.html?ref=rss&utm_medium=rss&utm_source=rss_feed) - The Age - 17:06, Sun 22 Nov Melbourne
+- ['Unacceptable' crash between Ferrari teammates](https://www.theage.com.au/sport/motorsport/unacceptable-crash-between-ferrari-teammates-20261122-p61gb7.html?ref=rss&utm_medium=rss&utm_source=rss_feed) - The Age - 19:02, Sun 22 Nov Melbourne
+- [Once confined to princely courts, chamber music chases rock-star cred](https://www.theage.com.au/culture/music/once-confined-to-princely-courts-chamber-music-chases-rock-star-cred-20261122-p617f0.html?ref=rss&utm_medium=rss&utm_source=rss_feed) - The Age - 19:00, Sun 22 Nov Melbourne
+- [A developer, data centres and Daniel Andrews: Chinese businessman’s connections raise concern](https://www.theage.com.au/national/a-developer-data-centres-and-daniel-andrews-chinese-businessman-s-connections-raise-concern-20261122-p61fl1.html?ref=rss&utm_medium=rss&utm_source=rss_feed) - The Age - 19:00, Sun 22 Nov Melbourne
+- [Grand Theft Auto is actually a manual, and it might just crash the patriarchy](https://www.theage.com.au/technology/video-games/grand-theft-auto-is-actually-a-manual-and-it-might-just-crash-the-patriarchy-20261122-p61g9t.html?ref=rss&utm_medium=rss&utm_source=rss_feed) - The Age - 19:00, Sun 22 Nov Melbourne
+- [Live: Join us as Australia's Recipe of the Year is revealed](https://www.abc.net.au/news/2026-11-22/recipe-of-the-year-finale-live-blog/107314156) - ABC News Melbourne - 18:56, Sun 22 Nov Melbourne
 
 ## Australia (national)
 
@@ -30,43 +30,43 @@ Generated: 18:12 Melbourne - Coverage window: Sat 21 Nov 17:42 -> Sun 22 Nov 18:
 
 ## Southeast Asia
 
+- [Are economic ties with Beijing reshaping Indonesia’s South China Sea playbook?](https://www.scmp.com/week-asia/politics/article/3375366/are-economic-ties-beijing-reshaping-indonesias-south-china-sea-playbook) - SCMP Asia - 19:00, Sun 22 Nov Melbourne
+- [Verstappen revels in Russell's misfortune in Las Vegas](https://www.channelnewsasia.com/sport/verstappen-revels-in-russells-misfortune-in-las-vegas-6572741) - CNA - 18:56, Sun 22 Nov Melbourne
+- [Washington governor, union denounce ICE arrests of travellers at Seattle airport](https://www.channelnewsasia.com/world/washington-protest-ice-arrests-travellers-seattle-airport-6572721) - CNA - 18:11, Sun 22 Nov Melbourne
 - [As seas rise, Singapore is reshaping its coastline to protect its future](https://www.channelnewsasia.com/sustainability/cna-correspondent-singapore-protect-coastline-defence-rising-sea-level-6571926) - CNA - 18:10, Sun 22 Nov Melbourne
 - [North Korea delays international marathon until October: Tour agency](https://www.channelnewsasia.com/sport/north-korea-delays-international-marathon-october-2027-6572716) - CNA - 18:06, Sun 22 Nov Melbourne
-- [Gilas Hiraya out to chase Philippine women’s basketball dreams](https://www.rappler.com/people/athletes/gilas-hiraya-philippine-women-basketball-dreams/) - Rappler - 18:00, Sun 22 Nov Melbourne
-- [COP31 climate talks close to final deal, says summit president](https://www.rappler.com/world/global-affairs/cop31-climate-talks-close-final-deal-november-22-2026/) - Rappler - 17:56, Sun 22 Nov Melbourne
-- [Paolo Bulgari, the Italian jeweller who turned a family business into global luxury brand, dies at 89](https://www.channelnewsasia.com/style-beauty/paolo-bulgari-death-6572276) - CNA - 17:13, Sun 22 Nov Melbourne
 
 ## India
 
-- [At least nine killed, several injured as vehicle carrying pilgrims rams into truck in Rajasthan’s Kota](https://www.thehindu.com/news/national/rajasthan/many-killed-several-injured-as-vehicle-carrying-pilgrims-rams-into-truck-in-rajasthans-kota/article71730542.ece) - The Hindu (National) - 18:02, Sun 22 Nov Melbourne
-- [Teenager killed in bus-bike collision as alleged over-speeding claims another life in Kochi](https://www.thehindu.com/news/national/kerala/teenager-killed-in-bus-bike-collision-as-alleged-over-speeding-claims-another-life-in-kochi/article71730696.ece) - The Hindu (National) - 18:01, Sun 22 Nov Melbourne
-- [Govt tightens terms for extending contracts of 7 pre-NELP oil, gas blocks](https://www.business-standard.com/industry/news/govt-tightens-terms-for-extending-contracts-of-7-pre-nelp-oil-gas-blocks-126112200201_1.html) - Business Standard - 17:57, Sun 22 Nov Melbourne
-- [InvIT IPO rush gathers pace, 4-5 trusts likely to go public by Mar 2027](https://www.business-standard.com/markets/ipo/invit-ipo-rush-gathers-pace-4-5-trusts-likely-to-go-public-by-mar-2027-126112200225_1.html) - Business Standard - 17:56, Sun 22 Nov Melbourne
-- [Beyond the Jan Dhan Passbook](https://www.business-standard.com/opinion/columns/beyond-the-jan-dhan-passbook-126112200234_1.html) - Business Standard - 17:47, Sun 22 Nov Melbourne
+- [Adani tests new vehicle mounted anti-tank missile system at Pokhran range](https://www.business-standard.com/external-affairs-defence-security/news/industry-news-adani-tests-bagheera-at1-vehicle-mounted-anti-tank-missile-pokhran-126112200290_1.html) - Business Standard - 18:50, Sun 22 Nov Melbourne
+- [Hemant Soren writes to CJI to urgently appoint Jharkhand HC Chief Justice successor](https://www.thehindu.com/news/national/jharkhand/hemant-soren-writes-to-cji-to-urgently-appoint-jharkhand-hc-chief-justice-successor/article71730713.ece) - The Hindu (National) - 18:37, Sun 22 Nov Melbourne
+- [Indian Army buying Chinese-made drone components, says DFI president](https://www.business-standard.com/external-affairs-defence-security/news/india-news-indian-army-buying-chinese-drone-components-dfi-chief-smit-shah-126112200276_1.html) - Business Standard - 18:37, Sun 22 Nov Melbourne
+- [Man sentenced to 10 year rigorous imprisonment for raping home-alone woman](https://www.thehindu.com/news/cities/Mangalore/man-sentenced-to-10-year-rigorous-imprisonment-for-raping-home-alone-woman/article71730701.ece) - The Hindu (National) - 18:36, Sun 22 Nov Melbourne
+- [Indian-origin man detained in Texas after serving sentence for visual recording conviction](https://www.thehindu.com/news/international/indian-origin-man-detained-in-texas-after-serving-sentence-for-visual-recording-conviction/article71730866.ece) - The Hindu (National) - 18:32, Sun 22 Nov Melbourne
 
 ## Middle East
 
+- [Why Somalia’s president turned against his former ally, the UAE](https://www.aljazeera.com/news/2026/11/22/why-somalias-president-turned-against-his-former-ally-the-uae?traffic_source=rss) - Al Jazeera - 17:59, Sun 22 Nov Melbourne
 - [Displaced Palestinians protest as Israeli air strikes continue in Gaza](https://www.aljazeera.com/news/2026/11/22/displaced-palestinians-protest-as-israeli-air-strikes-continue-in-gaza?traffic_source=rss) - Al Jazeera - 13:14, Sun 22 Nov Melbourne
 - [Bessent confirms he’s living on US military base over Iran fears](https://www.aljazeera.com/video/newsfeed/2026/11/22/bessent-confirms-hes-living-on-us-military-base-over-iran-fears?traffic_source=rss) - Al Jazeera - 13:05, Sun 22 Nov Melbourne
 - [Iran war live: Iran targets US bases in Bahrain; Houthi strikes continue](https://www.aljazeera.com/news/liveblog/2026/11/21/iran-war-live-iran-targets-us-military-in-bahrain-houthi-strikes-continue?traffic_source=rss) - Al Jazeera - 10:59, Sun 22 Nov Melbourne
 - [Lebanese president demands Israel withdrawal, decries Iran’s interference](https://www.aljazeera.com/news/2026/11/21/lebanese-president-demands-israel-withdrawal-decries-irans-interference?traffic_source=rss) - Al Jazeera - 10:44, Sun 22 Nov Melbourne
-- [Iran faces a ‘silent economic war’, says Iranian president](https://www.aljazeera.com/video/newsfeed/2026/11/21/iran-faces-a-silent-economic-war-says-iranian-president?traffic_source=rss) - Al Jazeera - 10:18, Sun 22 Nov Melbourne
 
 ## Europe
 
+- [Hot freezers, lost GPS and fake bombs: Europe's month of cyberattacks](https://www.euronews.com/2026/11/22/hot-freezers-lost-gps-and-fake-bombs-europes-month-of-cyberattacks) - Euronews - 19:00, Sun 22 Nov Melbourne
+- [New COP31 draft deal tabled as countries scramble to salvage climate talks](https://www.euronews.com/2026/11/22/new-cop31-draft-deal-tabled-as-countries-scramble-to-salvage-climate-talks) - Euronews - 18:50, Sun 22 Nov Melbourne
+- [Europeans dare to believe Trump could deliver security for Ukraine](https://www.politico.eu/article/europeans-dare-to-believe-trump-could-deliver-security-for-ukraine/?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication) - Politico Europe - 18:44, Sun 22 Nov Melbourne
 - [Gadi Eisenkot invites Netanyahu's Likud party for 'marathon' coalition talks](https://www.euronews.com/2026/11/22/gadi-eisenkot-invites-netanyahus-likud-party-for-marathon-coalition-talks) - Euronews - 17:58, Sun 22 Nov Melbourne
 - [Security Sunday: Der Kampf um die Arktis – mit Robert Habeck](https://www.politico.eu/podcast/berlin-playbook-podcast/security-sunday-der-kampf-um-die-arktis-mit-robert-habeck/?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication) - Politico Europe - 17:30, Sun 22 Nov Melbourne
-- [Madeira's ocean survey finds evidence protection works – and some worrying signs](https://www.euronews.com/2026/11/22/madeiras-ocean-survey-finds-evidence-protection-works-and-some-worrying-signs) - Euronews - 17:02, Sun 22 Nov Melbourne
-- [Is Europe ready to judge workers by skills, not just diplomas? Who leads skills-first hiring?](https://www.euronews.com/2026/11/22/is-europe-ready-to-judge-workers-by-skills-not-just-diplomas-who-leads-skills-first-hiring) - Euronews - 17:00, Sun 22 Nov Melbourne
-- [Suffolk village votes to ‘leave UK’ in protest over asylum seeker plans](https://www.euronews.com/2026/11/22/suffolk-village-votes-to-leave-uk-in-protest-over-asylum-seeker-plans) - Euronews - 17:00, Sun 22 Nov Melbourne
 
 ## Africa
 
+- [Jim Iyke unveils wife after nearly five years of marriage](https://www.premiumtimesng.com/entertainment/naija-fashion/927073-jim-iyke-unveils-wife-after-nearly-five-years-of-marriage.html) - Premium Times Nigeria - 19:00, Sun 22 Nov Melbourne
+- [EPL: Iwobi makes Fulham history as Awoniyi scores before injury in Coventry win](https://www.premiumtimesng.com/sports/football/927047-epl-iwobi-makes-fulham-history-as-awoniyi-scores-before-injury-in-coventry-win.html) - Premium Times Nigeria - 18:43, Sun 22 Nov Melbourne
+- [CAF records $31.2 million profit as Motsepe’s reforms drive financial turnaround](https://www.premiumtimesng.com/sports/football/927068-caf-records-31-2-million-profit-as-motsepes-reforms-drive-financial-turnaround.html) - Premium Times Nigeria - 18:37, Sun 22 Nov Melbourne
+- [How my wife was taken away from Government House – Kano governor](https://www.premiumtimesng.com/news/top-news/927059-how-my-wife-was-taken-away-from-government-house-kano-governor.html) - Premium Times Nigeria - 18:24, Sun 22 Nov Melbourne
 - [Troops storm kidnappers’ hideout in Kogi, recover rifles](https://www.premiumtimesng.com/news/more-news/927056-troops-storm-kidnappers-hideout-in-kogi-recover-rifles.html) - Premium Times Nigeria - 18:00, Sun 22 Nov Melbourne
-- [Niger government confirms Borgu attack, says five died](https://www.premiumtimesng.com/news/top-news/927054-niger-government-confirms-borgu-attack-says-five-died.html) - Premium Times Nigeria - 17:48, Sun 22 Nov Melbourne
-- [Amid divisions, COP31 president says climate talks near deal](https://www.premiumtimesng.com/news/headlines/927052-amid-divisions-cop31-president-says-climate-talks-near-deal.html) - Premium Times Nigeria - 16:12, Sun 22 Nov Melbourne
-- [Jonathan urges leaders to prioritise nation-building over personal wealth](https://www.premiumtimesng.com/news/top-news/927048-jonathan-urges-leaders-to-prioritise-nation-building-over-personal-wealth.html) - Premium Times Nigeria - 14:47, Sun 22 Nov Melbourne
-- [Nigerian youth have shown their power in the past - why aren't they shaping this election?](https://www.bbc.co.uk/news/articles/ck4g174n020eo?at_medium=RSS&at_campaign=rss) - BBC Africa - 11:10, Sun 22 Nov Melbourne
 
 ## South America
 
@@ -83,40 +83,40 @@ Generated: 18:12 Melbourne - Coverage window: Sat 21 Nov 17:42 -> Sun 22 Nov 18:
 - [Lionel Messi at center of red-card controversy as Inter Miami face early MLS playoff exit](https://www.theguardian.com/football/2026/nov/21/lionel-messi-red-card-controversy-inter-miami-columbus-crew-mls-playoffs) - Guardian US - 14:01, Sun 22 Nov Melbourne
 
 **East Asia & Australia**
-- S&P/ASX 200: unavailable (feed failure)
-- S&P/NZX 50: unavailable (rate limited - endpoint cooldown)
+- S&P/ASX 200: 8,592.60 (-1.58%) - closed
+- S&P/NZX 50: 14,107.41 (-0.98%) - closed
 
 **Southeast Asia**
-- SET: unavailable (rate limited - endpoint cooldown)
-- STI: unavailable (rate limited - endpoint cooldown)
-- JCI: unavailable (rate limited - endpoint cooldown)
+- SET: 1,453.28 (-1.31%) - closed
+- STI: 4,975.18 (-2.05%) - closed
+- JCI: 5,146.33 (-0.92%) - closed
 
 **India**
-- Nifty 50: unavailable (rate limited - endpoint cooldown)
-- Sensex: unavailable (rate limited - endpoint cooldown)
+- Nifty 50: 25,800.60 (+1.12%) - closed
+- Sensex: 83,919.71 (+1.08%) - closed
 
 **Middle East**
-- Tadawul TASI: unavailable (rate limited - endpoint cooldown)
+- Tadawul TASI: 10,008.74 (-1.48%) - still trading
 
 **Europe**
-- FTSE 100: unavailable (rate limited - endpoint cooldown)
-- DAX: unavailable (rate limited - endpoint cooldown)
-- EURO STOXX 50: unavailable (rate limited - endpoint cooldown)
+- FTSE 100: 10,346.33 (-1.02%) - closed
+- DAX: 24,802.78 (-2.60%) - closed
+- EURO STOXX 50: 5,941.95 (-2.81%) - closed
 
 **Africa**
-- JSE Top 40 (Satrix 40 proxy): unavailable (rate limited - endpoint cooldown)
-- EGX 30: unavailable (no free reliable endpoint)
+- JSE Top 40 (Satrix 40 proxy): 9,753.00 (-1.76%) - closed
+- EGX 30: 51,458.00 (-0.17%) - still trading
 
 **South America**
-- Ibovespa: unavailable (rate limited - endpoint cooldown)
+- Ibovespa: 166,376.43 (-0.69%) - closed
 
 **North America**
-- S&P 500: unavailable (rate limited - endpoint cooldown)
-- Dow: unavailable (rate limited - endpoint cooldown)
-- Nasdaq: unavailable (rate limited - endpoint cooldown)
+- S&P 500: 6,910.39 (-3.70%) - closed
+- Dow: 48,147.33 (-1.93%) - closed
+- Nasdaq: 22,617.73 (-5.28%) - closed
 
 ---
 Feeds: 29/29 fetched OK
-Markets: 0 sources OK, 17 unavailable
-Pipeline: Path C V1 - deterministic RSS + market endpoints, no AI at runtime. Sources: config/feeds.yaml (edit to tune).
+Markets: 17 sources OK
+Pipeline: Path C V1.1 - deterministic RSS + market endpoints, no AI at runtime. Sources: config/feeds.yaml (edit to tune).
 Saved to: editions/daily-wrapup-2026-11-22.md
