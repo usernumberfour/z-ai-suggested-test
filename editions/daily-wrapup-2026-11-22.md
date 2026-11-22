@@ -1,16 +1,16 @@
 # Sam's daily wrap up - Sun 22 Nov 2026 (Melbourne)
 
-V1.1 deterministic pipeline (GitHub Actions) - RSS feeds + market endpoints. No AI editorial layer (V2 pending).
+V2 pipeline (GitHub Actions) - RSS feeds + market endpoints + AI editorial layer (GLM, when configured).
 
-Generated: 19:08 Melbourne - Coverage window: Sat 21 Nov 18:38 -> Sun 22 Nov 19:08 Melbourne
+Generated: 22:32 Melbourne - Coverage window: Sat 21 Nov 22:02 -> Sun 22 Nov 22:32 Melbourne
 
 ## Melbourne & Victoria
 
-- ['Unacceptable' crash between Ferrari teammates](https://www.theage.com.au/sport/motorsport/unacceptable-crash-between-ferrari-teammates-20261122-p61gb7.html?ref=rss&utm_medium=rss&utm_source=rss_feed) - The Age - 19:02, Sun 22 Nov Melbourne
-- [Once confined to princely courts, chamber music chases rock-star cred](https://www.theage.com.au/culture/music/once-confined-to-princely-courts-chamber-music-chases-rock-star-cred-20261122-p617f0.html?ref=rss&utm_medium=rss&utm_source=rss_feed) - The Age - 19:00, Sun 22 Nov Melbourne
-- [A developer, data centres and Daniel Andrews: Chinese businessman’s connections raise concern](https://www.theage.com.au/national/a-developer-data-centres-and-daniel-andrews-chinese-businessman-s-connections-raise-concern-20261122-p61fl1.html?ref=rss&utm_medium=rss&utm_source=rss_feed) - The Age - 19:00, Sun 22 Nov Melbourne
-- [Grand Theft Auto is actually a manual, and it might just crash the patriarchy](https://www.theage.com.au/technology/video-games/grand-theft-auto-is-actually-a-manual-and-it-might-just-crash-the-patriarchy-20261122-p61g9t.html?ref=rss&utm_medium=rss&utm_source=rss_feed) - The Age - 19:00, Sun 22 Nov Melbourne
-- [Live: Join us as Australia's Recipe of the Year is revealed](https://www.abc.net.au/news/2026-11-22/recipe-of-the-year-finale-live-blog/107314156) - ABC News Melbourne - 18:56, Sun 22 Nov Melbourne
+- [Australia’s power prices would be 50 per cent worse without renewables, says top economist](https://www.theage.com.au/politics/federal/australia-s-power-prices-would-be-50-per-cent-worse-without-renewables-says-top-economist-20261122-p61fmt.html?ref=rss&utm_medium=rss&utm_source=rss_feed) - The Age - 22:30, Sun 22 Nov Melbourne
+- [Cut and cut now: Economists urge next Victorian government to swing the axe](https://www.theage.com.au/politics/federal/cut-and-cut-now-economists-urge-next-victorian-government-to-swing-the-axe-20261122-p61g7d.html?ref=rss&utm_medium=rss&utm_source=rss_feed) - The Age - 22:30, Sun 22 Nov Melbourne
+- [China on verge of eclipsing US power in Asia after Trump stumbles](https://www.theage.com.au/politics/federal/china-on-verge-of-eclipsing-us-power-in-asia-after-trump-stumbles-20261122-p61g7s.html?ref=rss&utm_medium=rss&utm_source=rss_feed) - The Age - 22:30, Sun 22 Nov Melbourne
+- [‘Terrible to witness’: Man killed in second CBD stabbing attack](https://www.theage.com.au/national/victoria/man-killed-in-second-cbd-stabbing-attack-20261122-p61g7c.html?ref=rss&utm_medium=rss&utm_source=rss_feed) - The Age - 22:07, Sun 22 Nov Melbourne
+- [Three teens attacked by strangers](https://www.theage.com.au/national/three-teens-attacked-by-strangers-20261122-p61gbi.html?ref=rss&utm_medium=rss&utm_source=rss_feed) - The Age - 21:42, Sun 22 Nov Melbourne
 
 ## Australia (national)
 
@@ -30,57 +30,56 @@ Generated: 19:08 Melbourne - Coverage window: Sat 21 Nov 18:38 -> Sun 22 Nov 19:
 
 ## Southeast Asia
 
-- [Are economic ties with Beijing reshaping Indonesia’s South China Sea playbook?](https://www.scmp.com/week-asia/politics/article/3375366/are-economic-ties-beijing-reshaping-indonesias-south-china-sea-playbook) - SCMP Asia - 19:00, Sun 22 Nov Melbourne
-- [Verstappen revels in Russell's misfortune in Las Vegas](https://www.channelnewsasia.com/sport/verstappen-revels-in-russells-misfortune-in-las-vegas-6572741) - CNA - 18:56, Sun 22 Nov Melbourne
-- [Washington governor, union denounce ICE arrests of travellers at Seattle airport](https://www.channelnewsasia.com/world/washington-protest-ice-arrests-travellers-seattle-airport-6572721) - CNA - 18:11, Sun 22 Nov Melbourne
-- [As seas rise, Singapore is reshaping its coastline to protect its future](https://www.channelnewsasia.com/sustainability/cna-correspondent-singapore-protect-coastline-defence-rising-sea-level-6571926) - CNA - 18:10, Sun 22 Nov Melbourne
-- [North Korea delays international marathon until October: Tour agency](https://www.channelnewsasia.com/sport/north-korea-delays-international-marathon-october-2027-6572716) - CNA - 18:06, Sun 22 Nov Melbourne
+- [Exclusive-Like SpaceX, Anthropic ran an unusual IPO process, chafing some bankers](https://www.channelnewsasia.com/business/exclusive-spacex-anthropic-ran-unusual-ipo-process-chafing-some-bankers-6572821) - CNA - 22:02, Sun 22 Nov Melbourne
+- [‘Proud Bisdak’ KZ Tandingan wants Filipino music to transcend borders](https://www.rappler.com/people/artists/kz-tandingan-bisaya-filipino-music-scene/) - Rappler - 22:00, Sun 22 Nov Melbourne
+- [Fernandes says contract talks on hold as Man United battle poor start](https://www.channelnewsasia.com/sport/fernandes-says-contract-talks-hold-man-united-battle-poor-start-6572801) - CNA - 21:58, Sun 22 Nov Melbourne
+- [England's Jacks out of T20 Australia tour due to injury](https://www.channelnewsasia.com/sport/englands-jacks-out-t20-australia-tour-due-injury-6572806) - CNA - 21:56, Sun 22 Nov Melbourne
+- [PM Wong to visit Australia from Nov 23 for annual leaders' meeting](https://www.channelnewsasia.com/singapore/pm-lawrence-wong-visit-australia-6568481) - CNA - 21:00, Sun 22 Nov Melbourne
 
 ## India
 
-- [Adani tests new vehicle mounted anti-tank missile system at Pokhran range](https://www.business-standard.com/external-affairs-defence-security/news/industry-news-adani-tests-bagheera-at1-vehicle-mounted-anti-tank-missile-pokhran-126112200290_1.html) - Business Standard - 18:50, Sun 22 Nov Melbourne
-- [Hemant Soren writes to CJI to urgently appoint Jharkhand HC Chief Justice successor](https://www.thehindu.com/news/national/jharkhand/hemant-soren-writes-to-cji-to-urgently-appoint-jharkhand-hc-chief-justice-successor/article71730713.ece) - The Hindu (National) - 18:37, Sun 22 Nov Melbourne
-- [Indian Army buying Chinese-made drone components, says DFI president](https://www.business-standard.com/external-affairs-defence-security/news/india-news-indian-army-buying-chinese-drone-components-dfi-chief-smit-shah-126112200276_1.html) - Business Standard - 18:37, Sun 22 Nov Melbourne
-- [Man sentenced to 10 year rigorous imprisonment for raping home-alone woman](https://www.thehindu.com/news/cities/Mangalore/man-sentenced-to-10-year-rigorous-imprisonment-for-raping-home-alone-woman/article71730701.ece) - The Hindu (National) - 18:36, Sun 22 Nov Melbourne
-- [Indian-origin man detained in Texas after serving sentence for visual recording conviction](https://www.thehindu.com/news/international/indian-origin-man-detained-in-texas-after-serving-sentence-for-visual-recording-conviction/article71730866.ece) - The Hindu (National) - 18:32, Sun 22 Nov Melbourne
+- [Bengal BJP MLA's Aide Arrested While Having Coffee With Him At Mall, Faces Rs 1-Crore Bribe Charge](https://www.ndtv.com/india-news/bengal-bjp-mlas-aide-arrested-while-having-coffee-with-him-at-mall-faces-rs-1-crore-bribe-charge-12362048#publisher=newsstand) - NDTV - 22:17, Sun 22 Nov Melbourne
+- [Delhi Cop Gets Rs 9-Lakh Aura Instead Of Rs 13-Lakh Brezza. He Cancels Wedding](https://www.ndtv.com/india-news/delhi-cop-gets-rs-9-lakh-aura-instead-of-rs-13-lakh-brezza-he-cancels-wedding-12361414#publisher=newsstand) - NDTV - 22:11, Sun 22 Nov Melbourne
+- [India-EU free trade pact likely to be signed on Dec 16 in Brussels](https://www.business-standard.com/external-affairs-defence-security/news/india-eu-free-trade-pact-likely-to-be-signed-on-dec-16-in-brussels-126112200436_1.html) - Business Standard - 21:58, Sun 22 Nov Melbourne
+- [UGC NET December 2026: Check Exam Dates For History, Sociology, English And More](https://www.ndtv.com/education/ugc-net-december-2026-check-exam-dates-for-history-sociology-english-and-more-12361988#publisher=newsstand) - NDTV - 21:57, Sun 22 Nov Melbourne
+- [NCW seeks report on rape and murder of woman inside stationary train in Nagercoil](https://www.thehindu.com/news/national/tamil-nadu/ncw-seeks-report-on-rape-and-murder-of-woman-inside-stationary-train-in-nagercoil/article71731002.ece) - The Hindu (National) - 21:56, Sun 22 Nov Melbourne
 
 ## Middle East
 
-- [Why Somalia’s president turned against his former ally, the UAE](https://www.aljazeera.com/news/2026/11/22/why-somalias-president-turned-against-his-former-ally-the-uae?traffic_source=rss) - Al Jazeera - 17:59, Sun 22 Nov Melbourne
-- [Displaced Palestinians protest as Israeli air strikes continue in Gaza](https://www.aljazeera.com/news/2026/11/22/displaced-palestinians-protest-as-israeli-air-strikes-continue-in-gaza?traffic_source=rss) - Al Jazeera - 13:14, Sun 22 Nov Melbourne
-- [Bessent confirms he’s living on US military base over Iran fears](https://www.aljazeera.com/video/newsfeed/2026/11/22/bessent-confirms-hes-living-on-us-military-base-over-iran-fears?traffic_source=rss) - Al Jazeera - 13:05, Sun 22 Nov Melbourne
-- [Iran war live: Iran targets US bases in Bahrain; Houthi strikes continue](https://www.aljazeera.com/news/liveblog/2026/11/21/iran-war-live-iran-targets-us-military-in-bahrain-houthi-strikes-continue?traffic_source=rss) - Al Jazeera - 10:59, Sun 22 Nov Melbourne
-- [Lebanese president demands Israel withdrawal, decries Iran’s interference](https://www.aljazeera.com/news/2026/11/21/lebanese-president-demands-israel-withdrawal-decries-irans-interference?traffic_source=rss) - Al Jazeera - 10:44, Sun 22 Nov Melbourne
+- [149 Houthis killed, wounded in over 800 operations in last 24 hours: Yemeni army](https://www.middleeastmonitor.com/20261122-149-houthis-killed-wounded-in-over-800-operations-in-last-24-hours-yemeni-army/) - Middle East Monitor - 22:24, Sun 22 Nov Melbourne
+- [Hamas seeks emergency talks after Israeli strike killed 3 Gaza aid workers](https://www.middleeastmonitor.com/20261122-hamas-seeks-emergency-talks-after-israeli-strike-killed-3-gaza-aid-workers/) - Middle East Monitor - 22:03, Sun 22 Nov Melbourne
+- [Pro-Palestine demonstration draws hundreds in Berlin](https://www.middleeastmonitor.com/20261122-pro-palestine-demonstration-draws-hundreds-in-berlin/) - Middle East Monitor - 21:56, Sun 22 Nov Melbourne
+- [Qatari defense minister, CENTCOM chief hold talks in Doha amid regional tensions](https://www.middleeastmonitor.com/20261122-qatari-defense-minister-centcom-chief-hold-talks-in-doha-amid-regional-tensions/) - Middle East Monitor - 21:43, Sun 22 Nov Melbourne
+- [Bahrain demands UN action, compensation for Iranian attacks](https://www.middleeastmonitor.com/20261122-bahrain-demands-un-action-compensation-for-iranian-attacks/) - Middle East Monitor - 21:19, Sun 22 Nov Melbourne
 
 ## Europe
 
-- [Hot freezers, lost GPS and fake bombs: Europe's month of cyberattacks](https://www.euronews.com/2026/11/22/hot-freezers-lost-gps-and-fake-bombs-europes-month-of-cyberattacks) - Euronews - 19:00, Sun 22 Nov Melbourne
-- [New COP31 draft deal tabled as countries scramble to salvage climate talks](https://www.euronews.com/2026/11/22/new-cop31-draft-deal-tabled-as-countries-scramble-to-salvage-climate-talks) - Euronews - 18:50, Sun 22 Nov Melbourne
-- [Europeans dare to believe Trump could deliver security for Ukraine](https://www.politico.eu/article/europeans-dare-to-believe-trump-could-deliver-security-for-ukraine/?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication) - Politico Europe - 18:44, Sun 22 Nov Melbourne
-- [Gadi Eisenkot invites Netanyahu's Likud party for 'marathon' coalition talks](https://www.euronews.com/2026/11/22/gadi-eisenkot-invites-netanyahus-likud-party-for-marathon-coalition-talks) - Euronews - 17:58, Sun 22 Nov Melbourne
-- [Security Sunday: Der Kampf um die Arktis – mit Robert Habeck](https://www.politico.eu/podcast/berlin-playbook-podcast/security-sunday-der-kampf-um-die-arktis-mit-robert-habeck/?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication) - Politico Europe - 17:30, Sun 22 Nov Melbourne
+- [Russia-bound ship still on fire after attack in Gulf of Finland](https://www.bbc.co.uk/news/articles/cj752ddve27ko?at_medium=RSS&at_campaign=rss) - BBC Europe - 22:25, Sun 22 Nov Melbourne
+- [14 people missing after Russian drone strike on Kyiv region](https://www.euronews.com/2026/11/22/14-people-missing-after-russian-drone-strike-on-kyiv-region) - Euronews - 22:20, Sun 22 Nov Melbourne
+- [Latest news bulletin | November 22nd, 2026 – Midday](https://www.euronews.com/video/2026/11/22/latest-news-bulletin-november-22nd-2026-midday) - Euronews - 22:00, Sun 22 Nov Melbourne
+- [Mongolia faces snap presidential vote as outgoing leader calls for constitutional reform](https://www.euronews.com/2026/11/22/mongolia-faces-snap-presidential-vote-as-outgoing-leader-calls-for-constitutional-reform) - Euronews - 22:00, Sun 22 Nov Melbourne
+- [Ukraine: Up to seven feared trapped beneath rubble near Kyiv after Russian attack](https://www.euronews.com/video/2026/11/22/ukraine-up-to-seven-feared-trapped-beneath-rubble-near-kyiv-after-russian-attack) - Euronews - 21:39, Sun 22 Nov Melbourne
 
 ## Africa
 
-- [Jim Iyke unveils wife after nearly five years of marriage](https://www.premiumtimesng.com/entertainment/naija-fashion/927073-jim-iyke-unveils-wife-after-nearly-five-years-of-marriage.html) - Premium Times Nigeria - 19:00, Sun 22 Nov Melbourne
-- [EPL: Iwobi makes Fulham history as Awoniyi scores before injury in Coventry win](https://www.premiumtimesng.com/sports/football/927047-epl-iwobi-makes-fulham-history-as-awoniyi-scores-before-injury-in-coventry-win.html) - Premium Times Nigeria - 18:43, Sun 22 Nov Melbourne
-- [CAF records $31.2 million profit as Motsepe’s reforms drive financial turnaround](https://www.premiumtimesng.com/sports/football/927068-caf-records-31-2-million-profit-as-motsepes-reforms-drive-financial-turnaround.html) - Premium Times Nigeria - 18:37, Sun 22 Nov Melbourne
-- [How my wife was taken away from Government House – Kano governor](https://www.premiumtimesng.com/news/top-news/927059-how-my-wife-was-taken-away-from-government-house-kano-governor.html) - Premium Times Nigeria - 18:24, Sun 22 Nov Melbourne
-- [Troops storm kidnappers’ hideout in Kogi, recover rifles](https://www.premiumtimesng.com/news/more-news/927056-troops-storm-kidnappers-hideout-in-kogi-recover-rifles.html) - Premium Times Nigeria - 18:00, Sun 22 Nov Melbourne
+- [Ahead 2027, Gov Namadi hails Senator Kazaure’s human development drive, outside lawmaking](https://www.premiumtimesng.com/promoted/927133-ahead-2027-gov-namadi-hails-senator-kazaures-human-development-drive-outside-lawmaking.html) - Premium Times Nigeria - 21:51, Sun 22 Nov Melbourne
+- [Ogun 2027: Egba Declaration, Yewa’s moment and the politics of continuity, By Kayode Akinmade](https://www.premiumtimesng.com/promoted/927130-ogun-2027-egba-declaration-yewas-moment-and-the-politics-of-continuity-by-kayode-akinmade.html) - Premium Times Nigeria - 21:46, Sun 22 Nov Melbourne
+- [African football reaffirms support for re-election of FIFA's Gianni Infantino](http://www.africanews.com/2026/11/22/african-football-reaffirms-support-for-re-election-of-fifas-gianni-infantino/) - Africanews - 21:41, Sun 22 Nov Melbourne
+- [Ukraine: Up to seven feared trapped beneath rubble near Kyiv after Russian attack](http://www.africanews.com/2026/11/22/ukraine-up-to-seven-feared-trapped-beneath-rubble-near-kyiv-after-russian-attack/) - Africanews - 21:39, Sun 22 Nov Melbourne
+- [2027 Politics Watch: From Tinubu’s Ibadan rally, Wike-aligned PDP’s coalition rejection, INEC’s register review deferral](https://www.premiumtimesng.com/news/top-news/927128-2027-politics-watch-from-tinubus-ibadan-rally-wike-aligned-pdps-coalition-rejection-inecs-register-review-deferral.html) - Premium Times Nigeria - 21:35, Sun 22 Nov Melbourne
 
 ## South America
 
 - [Economist Carlos Melconian on tackling inflation, Milei’s errors and if Bullrich should be his veep](https://www.batimes.com.ar/news/argentina/economist-carlos-melconian-on-tackling-inflation-mileis-errors-and-if-bullrich-should-be-his-veep.phtml) - Buenos Aires Times - 14:01, Sun 22 Nov Melbourne
 - [Mexican drug lord on FBI's 10 most wanted list arrested in shoot-out](https://www.bbc.co.uk/news/articles/ckz749ey0r75o?at_medium=RSS&at_campaign=rss) - BBC Latin America - 12:25, Sun 22 Nov Melbourne
-- [Milei government approves US$50-billion Argentina LNG export project](https://www.batimes.com.ar/news/economy/milei-government-approves-us50-billion-argentina-lng-export-project.phtml) - Buenos Aires Times - 22:01, Sat 21 Nov Melbourne
 
 ## North America
 
-- [Max Verstappen wins Las Vegas Grand Prix: Formula One 2026 – as it happened](https://www.theguardian.com/sport/live/2026/nov/22/las-vegas-grand-prix-formula-one-2026-race-updates-live) - Guardian US - 17:14, Sun 22 Nov Melbourne
-- [Max Verstappen touches perfection in dramatic Las Vegas Grand Prix win](https://www.theguardian.com/sport/2026/nov/22/max-verstappen-touches-perfection-in-dramatic-las-vegas-grand-prix-win) - Guardian US - 17:08, Sun 22 Nov Melbourne
-- [The Trump-Putin alliance threatens every European country – yet gushing populists still cheer them | Steve Bloomfield](https://www.theguardian.com/commentisfree/2026/nov/22/donald-trump-vladimir-putin-europe-ukraine-strongmen) - Guardian US - 16:00, Sun 22 Nov Melbourne
-- [Van Hollen says it’s still a “wide-open race” for majority leader](https://thehill.com/homenews/senate/6235600-van-hollen-schumer-senate-race/) - The Hill - 14:10, Sun 22 Nov Melbourne
-- [Lionel Messi at center of red-card controversy as Inter Miami face early MLS playoff exit](https://www.theguardian.com/football/2026/nov/21/lionel-messi-red-card-controversy-inter-miami-columbus-crew-mls-playoffs) - Guardian US - 14:01, Sun 22 Nov Melbourne
+- [Conservative media weighs its future as cracks emerge in Trump’s movement](https://www.theguardian.com/us-news/2026/nov/22/conservative-media-trump-midterm-elections-results) - Guardian US - 22:00, Sun 22 Nov Melbourne
+- [Howard Lutnick has been Trump’s ally for decades. His ties to Nvidia may spell his downfall](https://www.theguardian.com/us-news/2026/nov/22/howard-lutnick-nvidia-china) - Guardian US - 22:00, Sun 22 Nov Melbourne
+- [Why I won’t leave mathematics, despite AI solving centuries-old problems | Ken Ono](https://www.theguardian.com/commentisfree/2026/nov/22/why-i-wont-leave-mathematics-despite-ai-solving-centuries-old-problems) - Guardian US - 22:00, Sun 22 Nov Melbourne
+- [Arizona grandfather hailed as a hero after finding missing toddler in desert](https://www.theguardian.com/us-news/2026/nov/22/arizona-grandfather-toddler-missing-desert) - Guardian US - 22:00, Sun 22 Nov Melbourne
+- [Trump administration ready to deploy ‘secret weapon’ against higher education](https://thehill.com/homenews/education/6231125-trump-college-accreditation-intellectual-diversity/) - The Hill - 22:00, Sun 22 Nov Melbourne
 
 **East Asia & Australia**
 - S&P/ASX 200: 8,592.60 (-1.58%) - closed
@@ -96,7 +95,7 @@ Generated: 19:08 Melbourne - Coverage window: Sat 21 Nov 18:38 -> Sun 22 Nov 19:
 - Sensex: 83,919.71 (+1.08%) - closed
 
 **Middle East**
-- Tadawul TASI: 10,008.74 (-1.48%) - still trading
+- Tadawul TASI: 9,972.36 (-1.84%) - still trading
 
 **Europe**
 - FTSE 100: 10,346.33 (-1.02%) - closed
@@ -105,7 +104,7 @@ Generated: 19:08 Melbourne - Coverage window: Sat 21 Nov 18:38 -> Sun 22 Nov 19:
 
 **Africa**
 - JSE Top 40 (Satrix 40 proxy): 9,753.00 (-1.76%) - closed
-- EGX 30: 51,458.00 (-0.17%) - still trading
+- EGX 30: 50,149.30 (-2.54%) - still trading
 
 **South America**
 - Ibovespa: 166,376.43 (-0.69%) - closed
@@ -118,5 +117,6 @@ Generated: 19:08 Melbourne - Coverage window: Sat 21 Nov 18:38 -> Sun 22 Nov 19:
 ---
 Feeds: 29/29 fetched OK
 Markets: 17 sources OK
-Pipeline: Path C V1.1 - deterministic RSS + market endpoints, no AI at runtime. Sources: config/feeds.yaml (edit to tune).
+Pipeline: Path C V2 - deterministic fetch + market endpoints + AI editorial, AI sees only fetched items, markets stay deterministic. Sources: config/feeds.yaml.
+AI editorial: FAILED this run (HTTPError) - deterministic edition served, cadence unaffected
 Saved to: editions/daily-wrapup-2026-11-22.md
