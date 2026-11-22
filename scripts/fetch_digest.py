@@ -1,10 +1,17 @@
 #!/usr/bin/env python3
-"""Sam's daily wrap up - Path C V1.1 (deterministic pipeline, no AI at runtime).
+"""Sam's daily wrap up - Path C V2 (deterministic fetch + AI editorial + push).
 
 GitHub Actions runs this nightly at 21:00 Melbourne (double-cron + DST guard).
-Reads config/feeds.yaml, fetches RSS feeds + market endpoints, writes
-editions/daily-wrapup-YYYY-MM-DD.md, optionally delivers via Discord /
-Telegram / Email if the corresponding secrets are present in the environment.
+Reads config/feeds.yaml, fetches RSS feeds + market endpoints, optionally lets
+an LLM (Z.ai GLM) perform editorial selection/threading on the fetched pool,
+writes editions/daily-wrapup-YYYY-MM-DD.md, optionally delivers via Discord /
+Telegram / WhatsApp / Email if the corresponding secrets are present.
+
+AI editorial layer (V2):
+  - only selects from fetched items; never invents items, URLs, timestamps or numbers
+  - markets block is 100% deterministic and never passes through the LLM
+  - output is validated (region headers, every link must exist in the pool);
+    invalid or unreachable AI -> honest deterministic fallback, cadence never depends on it
 
 Market data tiers (per index):
   1. TradingView scanner  - one POST returns ~16 indices (primary)
@@ -372,45 +379,186 @@ def fetch_markets(cfg):
     return lines, ok, failed
 
 
+# ---------------------------------------------------------------- AI editorial
+
+AI_PROMPT = """You are the editor of "Sam's daily wrap up", a nightly 21:00 Melbourne digest.\nBelow is a JSON pool of today's freshly fetched news items, grouped by region,\nplus nothing else. Produce the edited edition body.\n\nRULES\n1. For each region, select 0 to 5 items (up to 5, fewer if only a few deserve it).\n   Prefer: developing stories, fresh angles, regional significance, recency.\n2. If two regions carry essentially the same story, keep the stronger one; in the\n   weaker region either drop it or keep it with an indented note\n   "  _↳ same story: see <other region>_".\n3. You may add at most ONE indented context note after a kept item:\n   "  _↳ <max 12 words of context>_" - use sparingly (at most 4 per region).\n4. HARD RULES: never invent or alter items, titles, URLs, sources, timestamps or\n   numbers. Every kept item must use the EXACT title, url, source and time given.\n   No item may appear that is not in the pool.\n5. Output format EXACTLY, nothing before or after:\n## <region title>\n\n- [<exact title>](<exact url>) - <exact source> - <exact time> Melbourne\n\n(one blank line after each region; when a region has nothing worth keeping,\nwrite "None." alone where the items would go; do not add any other headings,\nno markets, no footer, no commentary)\n\nPOOL JSON:\n"""
+
+
+def validate_ai_regions(ai_text, pool_urls, region_titles):
+    """Return cleaned body text if the AI output is structurally valid, else None.
+    Checks: exact region headers in order, no stray top-level headings,
+    every linked URL must exist in the fetched pool."""
+    if not ai_text or "<" in ai_text[:3]:
+        return None
+    headers = [l[3:].strip() for l in ai_text.splitlines() if l.startswith("## ")]
+    if headers != region_titles:
+        return None
+    if re.search(r"(?m)^#(?!#)", ai_text):  # any single-# heading is forbidden
+        return None
+    urls = re.findall(r"\]\((https?://[^)\s]+)\)", ai_text)
+    if any(u not in pool_urls for u in urls):
+        return None
+    for l in ai_text.splitlines():
+        if l.startswith("- [") and ("](" not in l or " - " not in l):
+            return None
+    return ai_text.strip() + "\n"
+
+
+def ai_edition(cfg, regions_out, now_melb):
+    """Call the configured GLM API to edit the edition body from the fetched pool.
+    Returns (body_lines, model_string). Raises on any failure - the caller falls
+    back to the deterministic edition. Markets never enter this function."""
+    import urllib.request
+    key = os.environ.get("LLM_API_KEY", "").strip()
+    if not key:
+        raise ValueError("no LLM_API_KEY")
+    model = os.environ.get("LLM_MODEL", "").strip() or "glm-4.6"
+    base = os.environ.get("LLM_BASE_URL", "").strip().rstrip("/") or "https://api.z.ai/api/paas/v4"
+    pool = {
+        "edition_date": now_melb.strftime("%a %d %b %Y"),
+        "regions": [],
+    }
+    pool_urls = set()
+    for r in cfg["regions"]:
+        items, _, _, _ = regions_out[r["id"]]
+        entry = {"title": r["title"], "items": []}
+        for it in items:
+            entry["items"].append({
+                "title": it["title"],
+                "source": it["source"],
+                "time": it["pub"].astimezone(MELB).strftime("%H:%M, %a %d %b"),
+                "url": it["url"],
+            })
+            pool_urls.add(it["url"])
+        pool["regions"].append(entry)
+    prompt = AI_PROMPT + json.dumps(pool, ensure_ascii=False)
+    payload = {
+        "model": model,
+        "messages": [{"role": "user", "content": prompt}],
+        "temperature": 0.4,
+        "max_tokens": 8000,
+    }
+    req = urllib.request.Request(
+        base + "/chat/completions",
+        data=json.dumps(payload).encode("utf-8"),
+        headers={**UA, "Content-Type": "application/json",
+                 "Authorization": "Bearer " + key})
+    with urllib.request.urlopen(req, timeout=150) as resp:
+        j = json.loads(resp.read().decode())
+    content = (j.get("choices") or [{}])[0].get("message", {}).get("content", "")
+    content = re.sub(r"(?s)<think>.*?</think>", "", content).strip()
+    region_titles = [r["title"] for r in cfg["regions"]]
+    body = validate_ai_regions(content, pool_urls, region_titles)
+    if body is None:
+        raise ValueError("AI output failed validation")
+    return body.splitlines(), model
+
+
+# ---------------------------------------------------------------- WhatsApp push
+
+_WA_REGION_SHORT = {
+    "Melbourne & Victoria": "VIC", "Australia (national)": "AU",
+    "Pacific": "Pacific", "Southeast Asia": "SEA", "India": "India",
+    "Middle East": "Mideast", "Europe": "Europe", "Africa": "Africa",
+    "South America": "S.America", "North America": "N.America",
+}
+_WA_MARKET_PREF = ["S&P/ASX 200", "S&P/NZX 50", "Nifty 50", "Tadawul TASI",
+                   "FTSE 100", "S&P 500"]
+
+
+def wa_parts(text, now_melb):
+    """Build the compact WhatsApp digest (1 headline per region + markets + link).
+    Pure function: returns a list of message strings (max ~800 chars each)."""
+    heads, cur = [], None
+    mk = {}
+    for l in text.splitlines():
+        if l.startswith("## "):
+            cur = l[3:].strip()
+        elif cur and l.startswith("- [") and "](" in l:
+            heads.append((cur, l[3:l.index("](")].strip()))
+            cur = None
+        else:
+            m = re.match(r"- (.+?): [\d,.]+ \(([+\-][\d.]+)%", l)
+            if m:
+                mk[m.group(1)] = m.group(2) + "%"
+    hdr = f"*Sam's daily wrap up* - {now_melb:%a %d %b, %H:%M} Melbourne"
+    def short(r):
+        return _WA_REGION_SHORT.get(r, r)
+    p1 = hdr + "\n" + "\n".join(f"{short(r)}: {t}" for r, t in heads[:5])
+    rest = "\n".join(f"{short(r)}: {t}" for r, t in heads[5:])
+    sel = [f"{n.replace(' (Satrix 40 proxy)', '')} {mk[n]}" for n in _WA_MARKET_PREF if n in mk]
+    repo = os.environ.get("GITHUB_REPOSITORY", "").strip()
+    link = f"\nFull edition: https://github.com/{repo}/blob/main/editions/{fname_of(now_melb)}" if repo else ""
+    p2 = rest + "\n\nMarkets: " + (", ".join(sel) if sel else "n/a") + link
+    return [p[:800] for p in (p1, p2) if p.strip()]
+
+
+def wa_push(text, now_melb):
+    """Send the digest via CallMeBot WhatsApp (free, personal use).
+    Secrets: WA_PHONE (with country code) + WA_API_KEY."""
+    import urllib.request
+    import urllib.parse
+    phone = os.environ.get("WA_PHONE", "").strip()
+    apikey = os.environ.get("WA_API_KEY", "").strip()
+    if not (phone and apikey):
+        return 0
+    sent = 0
+    for msg in wa_parts(text, now_melb):
+        q = urllib.parse.urlencode({"phone": phone, "text": msg, "apikey": apikey})
+        url = "https://api.callmebot.com/whatsapp.php?" + q
+        with urllib.request.urlopen(url, timeout=30) as r:
+            if r.status != 200:
+                raise RuntimeError(f"callmebot HTTP {r.status}")
+        sent += 1
+        time.sleep(2)
+    return sent
+
+
 # ---------------------------------------------------------------- render
 
-def render(cfg, regions_out, markets_lines, now_utc, now_melb, feeds_total, feeds_ok, feeds_fail_list, mkt_ok, mkt_failed):
+def render(cfg, regions_out, markets_lines, now_utc, now_melb, feeds_total, feeds_ok, feeds_fail_list, mkt_ok, mkt_failed,
+           regions_body=None, ai_note=None):
     start = now_utc - timedelta(hours=cfg.get("window_hours", 24),
                                 minutes=cfg.get("tolerance_minutes", 30))
     out = []
     out.append(f"# Sam's daily wrap up - {now_melb.strftime('%a %d %b %Y')} (Melbourne)")
     out.append("")
-    out.append("V1.1 deterministic pipeline (GitHub Actions) - RSS feeds + market endpoints. "
-               "No AI editorial layer (V2 pending).")
+    out.append("V2 pipeline (GitHub Actions) - RSS feeds + market endpoints "
+               "+ AI editorial layer (GLM, when configured).")
     out.append("")
     out.append(f"Generated: {now_melb.strftime('%H:%M')} Melbourne - "
                f"Coverage window: {start.astimezone(MELB).strftime('%a %d %b %H:%M')} -> "
                f"{now_melb.strftime('%a %d %b %H:%M')} Melbourne")
     out.append("")
-    for r in cfg["regions"]:
-        items, n_feeds, fed_ok, fed_fail = regions_out[r["id"]]
-        out.append(f"## {r['title']}")
-        out.append("")
-        if items:
-            for it in items:
-                out.append(fmt_item(it))
-        else:
-            out.append("None.")
-        notes = []
-        if fed_fail:
-            notes.append("feeds failed: " + ", ".join(fed_fail))
-        if notes:
+    if regions_body is not None:
+        out.extend(regions_body)
+    else:
+        for r in cfg["regions"]:
+            items, n_feeds, fed_ok, fed_fail = regions_out[r["id"]]
+            out.append(f"## {r['title']}")
             out.append("")
-            out.append("_(" + "; ".join(notes) + ")_")
-        out.append("")
+            if items:
+                for it in items:
+                    out.append(fmt_item(it))
+            else:
+                out.append("None.")
+            notes = []
+            if fed_fail:
+                notes.append("feeds failed: " + ", ".join(fed_fail))
+            if notes:
+                out.append("")
+                out.append("_(" + "; ".join(notes) + ")_")
+            out.append("")
     out += markets_lines
     out.append("---")
     out.append(f"Feeds: {feeds_ok}/{feeds_total} fetched OK"
                + (f" - failed: {', '.join(feeds_fail_list)}" if feeds_fail_list else ""))
     out.append(f"Markets: {mkt_ok} sources OK"
                + (f", {mkt_failed} unavailable" if mkt_failed else ""))
-    out.append("Pipeline: Path C V1.1 - deterministic RSS + market endpoints, no AI at runtime. "
-               "Sources: config/feeds.yaml (edit to tune).")
+    out.append("Pipeline: Path C V2 - deterministic fetch + market endpoints + AI editorial, "
+               "AI sees only fetched items, markets stay deterministic. Sources: config/feeds.yaml.")
+    if ai_note:
+        out.append(ai_note)
     out.append(f"Saved to: editions/{fname_of(now_melb)}")
     out.append("")
     return "\n".join(out)
@@ -450,6 +598,14 @@ def deliver(path, text, now_melb):
             sent.append(f"Telegram {r.status_code}")
         except Exception as ex:
             sent.append(f"Telegram FAILED {type(ex).__name__}")
+    wa = os.environ.get("WA_PHONE", "").strip()
+    wak = os.environ.get("WA_API_KEY", "").strip()
+    if wa and wak:
+        try:
+            n = wa_push(text, now_melb)
+            sent.append(f"WhatsApp {n} msgs" if n else "WhatsApp skipped (no secrets)")
+        except Exception as ex:
+            sent.append(f"WhatsApp FAILED {type(ex).__name__}: {str(ex)[:60]}")
     guser = os.environ.get("GMAIL_USER", "").strip()
     gpass = os.environ.get("GMAIL_APP_PASSWORD", "").strip()
     eto = os.environ.get("EMAIL_TO", "").strip()
@@ -527,8 +683,24 @@ def main():
     log("  markets:")
     mkt_lines, mkt_ok, mkt_failed = fetch_markets(cfg)
 
+    regions_body, ai_note = None, None
+    if os.environ.get("LLM_API_KEY", "").strip():
+        log("  AI editorial: calling GLM...")
+        try:
+            regions_body, model_used = ai_edition(cfg, regions_out, now_melb)
+            ai_note = f"AI editorial: on ({model_used}) - validated against fetched pool"
+            log(f"  AI editorial: OK ({model_used})")
+        except Exception as ex:
+            ai_note = (f"AI editorial: FAILED this run ({type(ex).__name__}) - "
+                       "deterministic edition served, cadence unaffected")
+            log(f"  AI editorial FAILED: {ex}")
+    else:
+        ai_note = "AI editorial: no LLM_API_KEY configured - deterministic edition"
+        log("  AI editorial: skipped (no LLM_API_KEY)")
+
     text = render(cfg, regions_out, mkt_lines, now_utc, now_melb,
-                  feeds_total, feeds_ok, feeds_fail_all, mkt_ok, mkt_failed)
+                  feeds_total, feeds_ok, feeds_fail_all, mkt_ok, mkt_failed,
+                  regions_body=regions_body, ai_note=ai_note)
     with open(path, "w", encoding="utf-8") as f:
         f.write(text)
     log(f"WROTE {path} ({len(text)} chars)")
