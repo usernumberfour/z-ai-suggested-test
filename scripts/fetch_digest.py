@@ -1,10 +1,17 @@
 #!/usr/bin/env python3
-"""Sam's daily wrap up - Path C V1 (deterministic pipeline, no AI at runtime).
+"""Sam's daily wrap up - Path C V1.1 (deterministic pipeline, no AI at runtime).
 
 GitHub Actions runs this nightly at 21:00 Melbourne (double-cron + DST guard).
 Reads config/feeds.yaml, fetches RSS feeds + market endpoints, writes
 editions/daily-wrapup-YYYY-MM-DD.md, optionally delivers via Discord /
 Telegram / Email if the corresponding secrets are present in the environment.
+
+Market data tiers (per index):
+  1. TradingView scanner  - one POST returns ~16 indices (primary)
+  2. TradingEconomics     - ASX 200 only (server-rendered page, date-checked)
+  3. Yahoo v8 chart       - kept as fallback (rate-limited on some cloud IPs)
+  4. Stooq CSV            - last resort
+  5. honest "unavailable (...)" - never faked
 
 Guards:
   DST guard       - only produces during the 21:00 Melbourne hour window
@@ -165,11 +172,119 @@ def stooq_quote(sym):
     return close, prev
 
 
+# TradingView tickers keyed by the market name in config/feeds.yaml.
+# A market may override via `tv_symbol:` in config (config stays the source of truth).
+TV_SYMBOLS = {
+    "S&P/NZX 50": "NZX:NZ50G",
+    "SET": "SET:SET",
+    "STI": "TVC:STI",
+    "JCI": "IDX:COMPOSITE",
+    "Nifty 50": "NSE:NIFTY",
+    "Sensex": "BSE:SENSEX",
+    "Tadawul TASI": "TADAWUL:TASI",
+    "FTSE 100": "TVC:UKX",
+    "DAX": "XETR:DAX",
+    "EURO STOXX 50": "TVC:SX5E",
+    "JSE Top 40 (Satrix 40 proxy)": "JSE:STX40",
+    "EGX 30": "EGX:EGX30",
+    "Ibovespa": "BMFBOVESPA:IBOV",
+    "S&P 500": "SP:SPX",
+    "Dow": "DJ:DJI",
+    "Nasdaq": "NASDAQ:IXIC",
+}
+
+
+def tv_scan(symbols):
+    """One POST to TradingView's public scanner for all index symbols.
+    Returns {ticker: (close, pct)}; absent/unpriced symbols omitted."""
+    import urllib.request
+    url = "https://scanner.tradingview.com/global/scan"
+    payload = {"symbols": {"tickers": sorted(set(symbols)), "query": {"types": []}},
+               "columns": ["close", "change"]}
+    last = None
+    for attempt in range(2):
+        if attempt:
+            time.sleep(3)
+        try:
+            req = urllib.request.Request(
+                url, data=json.dumps(payload).encode("utf-8"),
+                headers={**UA, "Content-Type": "application/json"})
+            with urllib.request.urlopen(req, timeout=25) as r:
+                j = json.loads(r.read().decode())
+            out = {}
+            for row in j.get("data", []):
+                sym, d = row.get("s"), row.get("d") or []
+                if sym and len(d) >= 2 and d[0] is not None and d[1] is not None:
+                    out[sym] = (float(d[0]), float(d[1]))
+            return out
+        except Exception as ex:
+            last = ex
+    raise last
+
+
+_MONTHS = {"January": 1, "February": 2, "March": 3, "April": 4, "May": 5, "June": 6,
+           "July": 7, "August": 8, "September": 9, "October": 10,
+           "November": 11, "December": 12}
+_TE_NEG = ("losing", "falling", "dropping", "slipping")
+_TE_NEG_VERBS = ("fell", "slid", "dropped", "tumbled", "lost", "declined")
+
+
+def te_asx_quote():
+    """ASX 200 from TradingEconomics (server-rendered page).
+    The meta description carries a rounded level + % change + the session date;
+    the page body carries the exact level. Returns (close, pct).
+    Raises if the page is stale (> 6 days), WAF-blocked, or unparseable -
+    a stale page must never enter an edition."""
+    t = http_get("https://tradingeconomics.com/australia/stock-market",
+                 timeout=25).decode("utf-8", "ignore")
+    m = re.search(r"the ASX\s?200,?\s+(\w+) to ([\d,]+) points on (\w+) (\d{1,2}), (\d{4})"
+                  r"(?:, (losing|gaining|falling|rising|dropping|climbing) ([\d.]+)%)?", t)
+    if not m:
+        raise ValueError("te meta description not found")
+    verb, level_s, mon, day, year, signword, pct_s = m.groups()
+    # date sanity: TE must be showing the last few sessions, not a stale page
+    try:
+        te_date = datetime(int(year), _MONTHS[mon], int(day), tzinfo=UTC)
+    except (KeyError, ValueError):
+        raise ValueError("te date unparseable")
+    if datetime.now(UTC) - te_date > timedelta(days=6):
+        raise ValueError(f"te page stale (session {mon} {day}, {year})")
+    target = float(level_s.replace(",", ""))
+    # exact level: pick the page candidate closest to the rounded meta level
+    close = target
+    best = None
+    for c in re.findall(r"(\d{1,2},\d{3}\.\d{2})", t):
+        v = float(c.replace(",", ""))
+        if best is None or abs(v - target) < abs(best - target):
+            best = v
+    if best is not None and abs(best - target) <= 0.6:
+        close = best
+    if signword:
+        pct = float(pct_s) * (-1.0 if signword in _TE_NEG else 1.0)
+    elif verb in _TE_NEG_VERBS:
+        pct = -float(pct_s)
+    else:
+        pct = float(pct_s)
+    return close, pct
+
+
+# Fallback market-state entries for indices that were once marked 'unavailable'
+# in config and therefore carry no tz/hours (config keys always win when present).
+_STATE_DEFAULTS = {
+    "EGX 30": {"tz": "Africa/Cairo", "open": "10:00", "close": "14:30",
+               "days": [6, 0, 1, 2, 3]},
+}
+
+
 def market_state(m):
-    now_local = datetime.now(ZoneInfo(m["tz"]))
-    days = m.get("days", [0, 1, 2, 3, 4])
-    o = datetime.strptime(m["open"], "%H:%M").time()
-    c = datetime.strptime(m["close"], "%H:%M").time()
+    st = dict(_STATE_DEFAULTS.get(m["name"], {}))
+    st.update({k: v for k, v in m.items() if k in ("tz", "open", "close", "days")})
+    if "tz" not in st:
+        return "closed"
+    now_local = datetime.now(ZoneInfo(st["tz"]))
+    days = st.get("days", [0, 1, 2, 3, 4])
+    o = datetime.strptime(st["open"], "%H:%M").time()
+    c = datetime.strptime(st["close"], "%H:%M").time()
     if now_local.weekday() in days and o <= now_local.time() <= c:
         return "still trading"
     return "closed"
@@ -183,22 +298,50 @@ def pct_str(price, prev):
 
 def fetch_markets(cfg):
     """Return (lines, markets_ok, markets_failed).
-    Circuit breaker: two consecutive 429s from Yahoo -> cooldown mode;
-    remaining Yahoo calls skipped (Stooq still tried), honest disclosure."""
+    Tiers per index: TradingView scan -> TradingEconomics (ASX 200) ->
+    Yahoo (circuit-breaked) -> Stooq -> honest unavailable."""
     lines, ok, failed = [], 0, 0
     consec_429, cooldown = 0, False
+    # Tier 1: one TradingView request covers most indices
+    tv = {}
+    wanted = []
+    for m in cfg["markets"]:
+        sym = m.get("tv_symbol") or TV_SYMBOLS.get(m["name"])
+        if sym:
+            wanted.append(sym)
+    if wanted:
+        try:
+            tv = tv_scan(wanted)
+            log(f"    TradingView scan: {len(tv)}/{len(wanted)} symbols OK")
+        except Exception as ex:
+            log(f"    TradingView scan FAILED {type(ex).__name__} - per-index fallbacks engaged")
     groups = {}
     for m in cfg["markets"]:
         groups.setdefault(m["group"], []).append(m)
     for gname, ms in groups.items():
         lines.append(f"**{gname}**")
         for m in ms:
-            if m.get("unavailable"):
+            price = prev = None
+            # Tier 1: TradingView (a live TV quote also overrides a stale
+            # 'unavailable' note in config, e.g. EGX 30 now carried by TV)
+            tvsym = m.get("tv_symbol") or TV_SYMBOLS.get(m["name"])
+            if tvsym and tvsym in tv:
+                price, pct = tv[tvsym]
+                prev = price / (1.0 + pct / 100.0)
+            if price is None and m.get("unavailable"):
                 lines.append(f"- {m['name']}: unavailable ({m['unavailable']})")
                 failed += 1
                 continue
-            price = prev = None
-            if not cooldown:
+            # Tier 2: TradingEconomics - ASX 200 only
+            if price is None and m["name"] == "S&P/ASX 200":
+                try:
+                    price, pct = te_asx_quote()
+                    prev = price / (1.0 + pct / 100.0)
+                    log(f"    market {m['name']}: TradingEconomics OK")
+                except Exception as ex:
+                    log(f"    market {m['name']}: TradingEconomics failed {type(ex).__name__}: {ex}")
+            # Tier 3: Yahoo (circuit-breaked; 429s are common from cloud IPs)
+            if price is None and not cooldown:
                 try:
                     time.sleep(1.2)  # spacing between Yahoo calls: avoid burst rate limits
                     price, prev = yahoo_quote(m["yahoo"])
@@ -212,6 +355,7 @@ def fetch_markets(cfg):
                             log("    MARKET COOLDOWN: Yahoo rate-limited (2 consecutive 429s) - "
                                 "remaining indices will fall back to Stooq or be disclosed unavailable")
                     log(f"    market {m['name']}: yahoo failed {type(ex).__name__}")
+            # Tier 4: Stooq
             if price is None and m.get("stooq"):
                 try:
                     price, prev = stooq_quote(m["stooq"])
@@ -236,7 +380,7 @@ def render(cfg, regions_out, markets_lines, now_utc, now_melb, feeds_total, feed
     out = []
     out.append(f"# Sam's daily wrap up - {now_melb.strftime('%a %d %b %Y')} (Melbourne)")
     out.append("")
-    out.append("V1 deterministic pipeline (GitHub Actions) - RSS feeds + market endpoints. "
+    out.append("V1.1 deterministic pipeline (GitHub Actions) - RSS feeds + market endpoints. "
                "No AI editorial layer (V2 pending).")
     out.append("")
     out.append(f"Generated: {now_melb.strftime('%H:%M')} Melbourne - "
@@ -265,7 +409,7 @@ def render(cfg, regions_out, markets_lines, now_utc, now_melb, feeds_total, feed
                + (f" - failed: {', '.join(feeds_fail_list)}" if feeds_fail_list else ""))
     out.append(f"Markets: {mkt_ok} sources OK"
                + (f", {mkt_failed} unavailable" if mkt_failed else ""))
-    out.append("Pipeline: Path C V1 - deterministic RSS + market endpoints, no AI at runtime. "
+    out.append("Pipeline: Path C V1.1 - deterministic RSS + market endpoints, no AI at runtime. "
                "Sources: config/feeds.yaml (edit to tune).")
     out.append(f"Saved to: editions/{fname_of(now_melb)}")
     out.append("")
@@ -354,13 +498,15 @@ def main():
     fname = fname_of(now_melb)
     path = os.path.join(EDITIONS_DIR, fname)
 
-    if os.path.exists(path):
+    if os.path.exists(path) and not force:
         with open(path) as f:
             old = f.read()
         lines = [l for l in old.splitlines() if l.strip()]
         if lines and FOOTER_MARK in lines[-1]:
             log(f"SKIP duplicate guard: {fname} already exists complete. Nothing done.")
             return 0
+    if force and os.path.exists(path):
+        log("FORCE_RUN: regenerating today's edition (manual dispatch overrides duplicate guard)")
 
     win_start = now_utc - timedelta(hours=cfg.get("window_hours", 24),
                                     minutes=cfg.get("tolerance_minutes", 30))
