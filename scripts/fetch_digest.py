@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
-"""Sam's daily wrap up - Path C V2 (deterministic fetch + AI editorial + push).
+"""Sam's daily wrap up - Path C V2.1 (deterministic fetch + AI editorial + push
++ delivery self-report: every run writes its delivery results into the edition
+footer and the Actions step summary, keeping 'Saved to:' as the last line).
 
 GitHub Actions runs this nightly at 21:00 Melbourne (double-cron + DST guard).
 Reads config/feeds.yaml, fetches RSS feeds + market endpoints, optionally lets
@@ -595,9 +597,10 @@ def deliver(path, text, now_melb):
                 data={"chat_id": chat, "caption": title},
                 files={"document": (os.path.basename(path), text.encode("utf-8"), "text/markdown")},
                 timeout=30)
-            sent.append(f"Telegram {r.status_code}")
+            sent.append(f"Telegram {r.status_code}"
+                        + ("" if r.status_code == 200 else " - " + r.text[:150]))
         except Exception as ex:
-            sent.append(f"Telegram FAILED {type(ex).__name__}")
+            sent.append(f"Telegram FAILED {type(ex).__name__}: {str(ex)[:100]}")
     wa = os.environ.get("WA_PHONE", "").strip()
     wak = os.environ.get("WA_API_KEY", "").strip()
     if wa and wak:
@@ -628,6 +631,25 @@ def deliver(path, text, now_melb):
         except Exception as ex:
             sent.append(f"Email FAILED {type(ex).__name__}: {str(ex)[:60]}")
     return sent
+
+
+def append_delivery(path, delivery):
+    """Self-report delivery results into the artifact. 'Saved to:' must remain
+    the last non-empty line (duplicate-guard contract: FOOTER_MARK lives there)."""
+    dl = "Delivery: " + ("; ".join(delivery) if delivery
+                         else "none - no delivery secrets set (artifact + commit only)")
+    with open(path, "r", encoding="utf-8") as f:
+        cur = f.read()
+    lines = cur.rstrip("\n").split("\n")
+    idx = len(lines) - 1
+    while idx >= 0 and not lines[idx].strip():
+        idx -= 1
+    if idx < 0:
+        return False
+    lines.insert(idx, dl)
+    with open(path, "w", encoding="utf-8") as f:
+        f.write("\n".join(lines) + "\n")
+    return True
 
 
 # ---------------------------------------------------------------- main
@@ -691,9 +713,17 @@ def main():
             ai_note = f"AI editorial: on ({model_used}) - validated against fetched pool"
             log(f"  AI editorial: OK ({model_used})")
         except Exception as ex:
-            ai_note = (f"AI editorial: FAILED this run ({type(ex).__name__}) - "
+            code = getattr(ex, "code", "")
+            body = ""
+            try:
+                body = ex.read().decode("utf-8", "replace")[:160]
+            except Exception:
+                pass
+            tag = type(ex).__name__ + (f" HTTP {code}" if code != "" else "")
+            ai_note = (f"AI editorial: FAILED this run ({tag}"
+                       + (f": {body}" if body else "") + ") - "
                        "deterministic edition served, cadence unaffected")
-            log(f"  AI editorial FAILED: {ex}")
+            log(f"  AI editorial FAILED: {ex} {body}")
     else:
         ai_note = "AI editorial: no LLM_API_KEY configured - deterministic edition"
         log("  AI editorial: skipped (no LLM_API_KEY)")
@@ -707,6 +737,19 @@ def main():
 
     delivery = deliver(path, text, now_melb)
     log("DELIVERY: " + ("; ".join(delivery) if delivery else "commit-only (no delivery secrets set)"))
+    try:
+        append_delivery(path, delivery)
+    except Exception as ex:
+        log(f"  delivery self-report append failed: {ex}")
+    gs = os.environ.get("GITHUB_STEP_SUMMARY", "").strip()
+    if gs:
+        try:
+            with open(gs, "a", encoding="utf-8") as f:
+                f.write("\n## Delivery\n\n"
+                        + ("; ".join(delivery) if delivery
+                           else "none - no delivery secrets set (artifact + commit only)") + "\n")
+        except Exception:
+            pass
     log("DONE")
     return 0
 
