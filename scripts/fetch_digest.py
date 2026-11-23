@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Sam's daily wrap up - Path C V2.5 (deterministic fetch + AI editorial + push
+"""Sam's daily wrap up - Path C V2.6 (deterministic fetch + AI editorial + push
 + delivery self-report: every run writes its delivery results into the edition
 footer and the Actions step summary, keeping 'Saved to:' as the last line).
 
@@ -384,6 +384,8 @@ def fetch_markets(cfg):
 
 # ---------------------------------------------------------------- AI editorial
 
+TRANSIENT_BACKOFF_S = 10   # wait before retrying after 429/5xx (high demand)
+
 AI_PROMPT = """You are the editor of "Sam's daily wrap up", a nightly 21:00 Melbourne digest.\nBelow is a JSON pool of today's freshly fetched news items, grouped by region,\nplus nothing else. Produce the edited edition body.\n\nRULES\n1. For each region, select 0 to 5 items (up to 5, fewer if only a few deserve it).\n   Prefer: developing stories, fresh angles, regional significance, recency.\n2. If two regions carry essentially the same story, keep the stronger one; in the\n   weaker region either drop it or keep it with an indented note\n   "  _↳ same story: see <other region>_".\n3. You may add at most ONE indented context note after a kept item:\n   "  _↳ <max 12 words of context>_" - use sparingly (at most 4 per region).\n4. HARD RULES: never invent or alter items, titles, URLs, sources, timestamps or\n   numbers. Every kept item must use the EXACT title, url, source and time given.\n   No item may appear that is not in the pool.\n5. Output format EXACTLY, nothing before or after:\n## <region title>\n\n- [<exact title>](<exact url>) - <exact source> - <exact time> Melbourne\n\n(one blank line after each region; when a region has nothing worth keeping,\nwrite "None." alone where the items would go; do not add any other headings,\nno markets, no footer, no commentary)\n\nPOOL JSON:\n"""
 
 
@@ -485,48 +487,95 @@ def ai_edition(cfg, regions_out, now_melb):
         pool["regions"].append(entry)
     prompt = AI_PROMPT + json.dumps(pool, ensure_ascii=False)
     base_cfg = {"temperature": 0.4, "maxOutputTokens": 8000}
-    payload = {"contents": [{"parts": [{"text": prompt}]}],
-               "generationConfig": base_cfg}
-    # Attempt 1 - also carries the 404 self-heal (ANY 404 on the model id:
-    # retired models, name drift, regional gating - discovery fixes them all).
-    try:
-        j = _gemini_call(model, payload, key)
-    except urllib.error.HTTPError as ex:
-        if ex.code != 404:
-            raise
-        reason = ""
+    TRANSIENT = {429, 500, 502, 503, 504}   # high-demand / server-hiccup codes
+
+    def _payload(extra_cfg):
+        return {"contents": [{"parts": [{"text": prompt}]}],
+                "generationConfig": dict(base_cfg, **extra_cfg)}
+
+    # Attempt queue - each failure class enqueues its own recovery attempt:
+    #   404                  -> discover a working model (failed model excluded)
+    #   429/5xx (high demand)-> wait, retry same model, then switch models
+    #   timeout              -> retry with thinking disabled, then plain retry
+    #   400 on no-thinking   -> plain retry (thinkingConfig schema drift)
+    # Capped at 4 attempts; the caller's deterministic fallback covers exhaustion.
+    queue = [(model, {}, "standard")]
+    queued = {(model, "standard")}
+    j, error_note = None, "unknown"
+    attempts = 0
+    while queue and attempts < 4:
+        m, extra, tag = queue.pop(0)
+        attempts += 1
         try:
-            reason = ex.read().decode("utf-8", "replace")
-        except Exception:
-            pass
-        log(f"  AI editorial: model {model} returned HTTP 404 "
-            f"({reason.strip()[:120] or 'no body'}) - discovering available models")
-        alt = _gemini_discover_model(key, exclude=model)
-        if not alt:
-            raise RuntimeError(
-                "Gemini model " + model + " unavailable for this key and "
-                "ListModels returned no usable alternative") from None
-        log(f"  AI editorial: switching to {alt}")
-        model = alt
-        j = _gemini_call(model, payload, key)
-    except (TimeoutError, urllib.error.URLError):
-        # Thinking-class models can exceed the time limit while reasoning.
-        # Attempt 2: thinking explicitly disabled; attempt 3: plain retry
-        # (covers APIs that reject the thinkingConfig field with a 400).
-        log("  AI editorial: attempt 1 timed out - retrying with thinking disabled")
-        payload_nt = {"contents": [{"parts": [{"text": prompt}]}],
-                      "generationConfig": dict(base_cfg,
-                                               thinkingConfig={"thinkingBudget": 0})}
-        try:
-            j = _gemini_call(model, payload_nt, key)
-        except urllib.error.HTTPError as ex2:
-            if ex2.code != 400:
+            log(f"  AI editorial: attempt {attempts}/4 ({tag}, model={m})")
+            j = _gemini_call(m, _payload(extra), key)
+            model = m
+            break
+        except urllib.error.HTTPError as ex:
+            error_note = f"HTTP {ex.code}"
+            if ex.code == 404:
+                reason = ""
+                try:
+                    reason = ex.read().decode("utf-8", "replace")
+                except Exception:
+                    pass
+                log(f"  AI editorial: {m} returned HTTP 404 "
+                    f"({reason.strip()[:120] or 'no body'}) - discovering models")
+                alt = _gemini_discover_model(key, exclude=m)
+                if not alt:
+                    raise RuntimeError(
+                        "Gemini model " + m + " unavailable (404) and "
+                        "ListModels returned no usable alternative") from None
+                log(f"  AI editorial: switching to {alt}")
+                if (alt, "discovered") not in queued:
+                    queued.add((alt, "discovered"))
+                    queue.insert(0, (alt, {}, "discovered"))
+            elif ex.code in TRANSIENT:
+                body = ""
+                try:
+                    body = ex.read().decode("utf-8", "replace")
+                except Exception:
+                    pass
+                log(f"  AI editorial: {m} transient HTTP {ex.code} "
+                    f"({body.strip()[:100]}) - backing off {TRANSIENT_BACKOFF_S}s")
+                time.sleep(TRANSIENT_BACKOFF_S)
+                if tag != "transient-retry":
+                    if (m, "transient-retry") not in queued:
+                        queued.add((m, "transient-retry"))
+                        queue.insert(0, (m, extra, "transient-retry"))
+                else:
+                    alt = _gemini_discover_model(key, exclude=m)
+                    if not alt:
+                        raise RuntimeError(
+                            "Gemini " + error_note + " on " + m +
+                            " after retry and no alternative model found") from None
+                    log(f"  AI editorial: {m} still busy - switching to {alt}")
+                    if (alt, "discovered") not in queued:
+                        queued.add((alt, "discovered"))
+                        queue.insert(0, (alt, {}, "discovered"))
+            elif ex.code == 400 and tag == "no-thinking":
+                log("  AI editorial: thinking-disabled rejected (HTTP 400) - plain retry")
+                if (m, "plain-retry") not in queued:
+                    queued.add((m, "plain-retry"))
+                    queue.insert(0, (m, {}, "plain-retry"))
+            else:
                 raise
-            log("  AI editorial: thinking-disabled rejected (HTTP 400) - plain retry")
-            j = _gemini_call(model, payload, key)
         except (TimeoutError, urllib.error.URLError):
-            log("  AI editorial: thinking-disabled attempt also timed out - plain retry")
-            j = _gemini_call(model, payload, key)
+            error_note = "timeout"
+            if "thinkingConfig" not in extra:
+                log(f"  AI editorial: attempt {attempts} timed out - "
+                    "retrying with thinking disabled")
+                if (m, "no-thinking") not in queued:
+                    queued.add((m, "no-thinking"))
+                    queue.insert(0, (m, {"thinkingConfig": {"thinkingBudget": 0}},
+                                     "no-thinking"))
+            else:
+                raise
+    if j is None:
+        err = RuntimeError("all AI editorial attempts exhausted; last error: "
+                           + error_note)
+        err.code = error_note + " - retries exhausted"
+        raise err
     cands = j.get("candidates") or []
     if not cands:
         block = (j.get("promptFeedback") or {}).get("blockReason", "")
