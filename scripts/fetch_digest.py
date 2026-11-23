@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Sam's daily wrap up - Path C V2.2 (deterministic fetch + AI editorial + push
+"""Sam's daily wrap up - Path C V2.3 (deterministic fetch + AI editorial + push
 + delivery self-report: every run writes its delivery results into the edition
 footer and the Actions step summary, keeping 'Saved to:' as the last line).
 
@@ -407,19 +407,61 @@ def validate_ai_regions(ai_text, pool_urls, region_titles):
     return ai_text.strip() + "\n"
 
 
+def _gemini_call(model, payload, key):
+    """One generateContent request. Raises urllib.error.HTTPError on HTTP errors."""
+    import urllib.request
+    url = ("https://generativelanguage.googleapis.com/v1beta/models/"
+           + model + ":generateContent")
+    req = urllib.request.Request(
+        url,
+        data=json.dumps(payload).encode("utf-8"),
+        headers={**UA, "Content-Type": "application/json",
+                 "x-goog-api-key": key})
+    with urllib.request.urlopen(req, timeout=150) as resp:
+        return json.loads(resp.read().decode())
+
+
+def _gemini_discover_model(key):
+    """Query the Gemini ListModels endpoint and pick the best available text
+    model for this key. Preference: the flash-latest alias, then newest flash,
+    then flash-lite tiers, then any gemini model supporting generateContent.
+    Returns the model id string, or None if nothing usable is found."""
+    import urllib.request
+    req = urllib.request.Request(
+        "https://generativelanguage.googleapis.com/v1beta/models",
+        headers={**UA, "x-goog-api-key": key})
+    with urllib.request.urlopen(req, timeout=60) as resp:
+        j = json.loads(resp.read().decode())
+    names = []
+    for m in j.get("models") or []:
+        if "generateContent" not in (m.get("supportedGenerationMethods") or []):
+            continue
+        n = (m.get("name") or "").replace("models/", "")
+        if n.startswith("gemini-"):
+            names.append(n)
+    for pref in ("gemini-flash-latest", "gemini-3.8-flash", "gemini-3.6-flash",
+                 "gemini-3.5-flash-lite", "gemini-3.1-flash-lite"):
+        if pref in names:
+            return pref
+    cands = [n for n in names if not any(
+        t in n for t in ("embed", "tts", "image", "vlm", "thinking"))] or names
+    return sorted(cands)[-1] if cands else None
+
+
 def ai_edition(cfg, regions_out, now_melb):
     """Call the Google Gemini API to edit the edition body from the fetched pool.
-    Returns (body_lines, model_string). Raises on any failure - the caller falls
-    back to the deterministic edition. Markets never enter this function."""
+    On 404 'no longer available to new users' (Google retires model ids ahead of
+    shutdown dates), auto-discovers a current model via ListModels and retries
+    once. Returns (body_lines, model_string). Raises on any failure - the caller
+    falls back to the deterministic edition. Markets never enter this function."""
     import urllib.request
+    import urllib.error
     key = os.environ.get("LLM_API_KEY", "").strip()
     if not key:
         raise ValueError("no LLM_API_KEY")
     model = os.environ.get("LLM_MODEL", "").strip()
     if not model or model.startswith("glm-"):
-        model = "gemini-2.5-flash"  # built-in default; stale glm- values self-heal
-    url = ("https://generativelanguage.googleapis.com/v1beta/models/"
-           + model + ":generateContent")
+        model = "gemini-flash-latest"  # Google's alias - always the current flash model
     pool = {
         "edition_date": now_melb.strftime("%a %d %b %Y"),
         "regions": [],
@@ -442,13 +484,27 @@ def ai_edition(cfg, regions_out, now_melb):
         "contents": [{"parts": [{"text": prompt}]}],
         "generationConfig": {"temperature": 0.4, "maxOutputTokens": 8000},
     }
-    req = urllib.request.Request(
-        url,
-        data=json.dumps(payload).encode("utf-8"),
-        headers={**UA, "Content-Type": "application/json",
-                 "x-goog-api-key": key})
-    with urllib.request.urlopen(req, timeout=150) as resp:
-        j = json.loads(resp.read().decode())
+    try:
+        j = _gemini_call(model, payload, key)
+    except urllib.error.HTTPError as ex:
+        if ex.code != 404:
+            raise
+        reason = ""
+        try:
+            reason = ex.read().decode("utf-8", "replace")
+        except Exception:
+            pass
+        if "no longer available" not in reason:
+            raise RuntimeError(f"Gemini HTTP 404: {reason[:160]}") from None
+        alt = _gemini_discover_model(key)
+        if not alt:
+            raise RuntimeError(
+                "Gemini model " + model + " unavailable for this key and "
+                "ListModels returned no usable alternative") from None
+        log(f"  AI editorial: model {model} rejected for this key - "
+            f"retrying with {alt}")
+        model = alt
+        j = _gemini_call(model, payload, key)
     cands = j.get("candidates") or []
     if not cands:
         block = (j.get("promptFeedback") or {}).get("blockReason", "")
