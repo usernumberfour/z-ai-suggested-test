@@ -2,91 +2,91 @@
 
 V2 pipeline (GitHub Actions) - RSS feeds + market endpoints + AI editorial layer (Gemini, when configured).
 
-Generated: 00:26 Melbourne - Coverage window: Sun 22 Nov 23:56 -> Tue 24 Nov 00:26 Melbourne
+Generated: 08:39 Melbourne - Coverage window: Mon 23 Nov 08:09 -> Tue 24 Nov 08:39 Melbourne
 
 ## Melbourne & Victoria
 
-- [Big squeeze on Australian renters deepens, spreads](https://www.abc.net.au/news/2026-11-24/rental-affordability-remains-at-crisis-levels-across-australia/107419030) - ABC News Melbourne - 00:19, Tue 24 Nov Melbourne
-- [Superquiz, Tuesday, November 24](https://www.theage.com.au/national/superquiz-tuesday-november-24-20261123-p61gkk.html?ref=rss&utm_medium=rss&utm_source=rss_feed) - The Age - 23:59, Mon 23 Nov Melbourne
-- [Cats star Georgie Prespakis wins AFLW best and fairest](https://www.abc.net.au/news/2026-11-23/geelong-cats-star-georgie-prespakis-wins-aflw-best-and-fairest/107418916) - ABC News Melbourne - 23:26, Mon 23 Nov Melbourne
-- [Georgie Prespakis wins AFLW’s top honour as unstoppable Garner breaks All-Australian record](https://www.theage.com.au/sport/afl/unstoppable-jasmine-garner-breaks-all-australian-record-at-w-awards-night-20261123-p61giq.html?ref=rss&utm_medium=rss&utm_source=rss_feed) - The Age - 22:00, Mon 23 Nov Melbourne
-- [Best of cartoons, November 24, 2026](https://www.theage.com.au/politics/federal/best-of-cartoons-november-24-2026-20261123-p61gkg.html?ref=rss&utm_medium=rss&utm_source=rss_feed) - The Age - 21:53, Mon 23 Nov Melbourne
+- [Election promises not enough to fix Victoria's crumbling roads, experts say](https://www.abc.net.au/news/2026-11-24/victorian-election-parties-pothole-promises/107416310) - ABC News Melbourne - 08:36, Tue 24 Nov Melbourne
+- [Breaking: Hobart's Macquarie Point stadium cost rises to $1.23b](https://www.abc.net.au/news/2026-11-24/cost-of-hobart-macquarie-point-stadium-rises/107417074) - ABC News Melbourne - 08:31, Tue 24 Nov Melbourne
+- [BBC bans Bluey float from Aussie Christmas parade over copyright](https://www.abc.net.au/news/2026-11-24/bbc-orders-mount-gambier-parade-bluey-float-banned/107415938) - ABC News Melbourne - 08:31, Tue 24 Nov Melbourne
+- [Video reveals how Ukrainian forces sank Russian warship](https://www.theage.com.au/world/video-reveals-how-ukrainian-forces-sank-russian-warship-20261124-p61goz.html?ref=rss&utm_medium=rss&utm_source=rss_feed) - The Age - 08:26, Tue 24 Nov Melbourne
+- [Australia news LIVE: Wong to deliver major foreign policy speech defending alliance with the US; Nvidia reinstates Jensen Huang as chief executive 11 ](https://www.theage.com.au/national/australia-news-live-wong-to-deliver-major-foreign-policy-speech-defending-alliance-with-the-us-nvidia-reinstates-jensen-huang-as-chief-executive-11-days-after-his-resignation-20261124-p61gny.html?ref=rss&utm_medium=rss&utm_source=rss_feed) - The Age - 08:26, Tue 24 Nov Melbourne
 
 ## Australia (national)
 
-- [Up to 1.1m people eligible to join class action against Jetstar over alleged failure to refund Covid flights](https://www.theguardian.com/business/2026/nov/23/up-to-11m-people-eligible-to-join-class-action-against-jetstar-over-alleged-failure-to-refund-covid-flights-ntwnfb) - Guardian Australia - 19:24, Mon 23 Nov Melbourne
-- [Constitutional law expert brands defence bill allowing secret security rules ‘lazy and irresponsible’](https://www.theguardian.com/australia-news/2026/nov/23/constitutional-law-expert-brands-defence-bill-allowing-secret-security-rules-lazy-and-irresponsible) - Guardian Australia - 19:23, Mon 23 Nov Melbourne
-- [Clubs and families revolt as Football Queensland charges $5 a head to watch children play](https://www.theguardian.com/australia-news/2026/nov/23/football-queensland-gate-fee-kids-soccer-outrage) - Guardian Australia - 18:30, Mon 23 Nov Melbourne
-- [NSW MP Alex Greenwich drops support for Fred Nile state funeral after blowback from LGBTQ+ community – as it happened](https://www.theguardian.com/australia-news/live/2026/nov/23/anthony-albanese-digital-duty-of-care-labor-greens-coalition-one-nation-angus-taylor-pauline-hanson-penny-wong-ai-ntwnfb) - Guardian Australia - 17:13, Mon 23 Nov Melbourne
-- [Love made a fool of Beau Lamarre-Condon but did not make him a murderer, defence argues](https://www.theguardian.com/australia-news/2026/nov/23/beau-lamarre-condon-trail-executed-jesse-baird-prosecution-argues-ntwnfb) - Guardian Australia - 15:34, Mon 23 Nov Melbourne
+- [Australian politics live: Labor to ‘save more than we spend’ in budget update, Chalmers says; rental affordability plummets to 14-year low](https://www.theguardian.com/australia-news/live/2026/nov/24/labor-penny-wong-us-china-anthony-albanese-final-sitting-week-ntwnfb) - Guardian Australia - 08:24, Tue 24 Nov Melbourne
+- [Morning Mail: Jensen Huang reinstated at Nvidia; DV and smart car warnings; and the word of the year](https://www.theguardian.com/australia-news/2026/nov/24/morning-mail-tuesday-ntwnfb) - Guardian Australia - 06:51, Tue 24 Nov Melbourne
+- [Cop31 collapses: why did climate talks fall apart? - The Latest](https://www.theguardian.com/news/audio/2026/nov/23/cop31-collapses-why-did-climate-talks-fall-apart-the-latest) - Guardian Australia - 04:19, Tue 24 Nov Melbourne
+- [Queensland has a history of slavery. These unmarked graves tell Australia's dark history – video](https://www.theguardian.com/world/video/2026/nov/24/queensland-has-a-history-of-slavery-these-unmarked-graves-tell-australia-dark-history-video-ntwnfb) - Guardian Australia - 01:00, Tue 24 Nov Melbourne
+- [International students didn’t cause Australia’s university crisis. Funding failures did | Kate Fullagar and Michelle Arrow](https://www.theguardian.com/australia-news/2026/nov/24/international-students-university-funding-failures-australia-ntwnfb) - Guardian Australia - 01:00, Tue 24 Nov Melbourne
 
 ## Pacific
 
-- [‘River of filth’ - Motueka residents want action on wastewater problems](https://www.rnz.co.nz/news/environment/2752376/river-of-filth-motueka-residents-want-action-on-wastewater-problems) - RNZ National - 19:39, Mon 23 Nov Melbourne
-- [Hutt Valley locals concerned over potential pool closures as council tries to balance rate caps](https://www.rnz.co.nz/news/regional/2752346/hutt-valley-locals-concerned-over-potential-pool-closures-as-council-tries-to-balance-rate-caps) - RNZ National - 18:54, Mon 23 Nov Melbourne
-- [Seeds grown in simulated atmosphere secured in Arctic Circle doomsday vault](https://www.rnz.co.nz/news/environment/2751858/seeds-grown-in-simulated-atmosphere-secured-in-arctic-circle-doomsday-vault) - RNZ National - 18:05, Mon 23 Nov Melbourne
-- [Final defendant in alleged mortgage and investment fraud pleads not guilty](https://www.rnz.co.nz/news/crime-and-justice/2752216/final-defendant-in-alleged-mortgage-and-investment-fraud-pleads-not-guilty) - RNZ National - 18:04, Mon 23 Nov Melbourne
-- [Mercury cuts ribbon on Northland's $287m Kaiwaikawe Wind Farm](https://www.rnz.co.nz/news/business/2750898/mercury-cuts-ribbon-on-northland-s-287m-kaiwaikawe-wind-farm) - RNZ National - 17:34, Mon 23 Nov Melbourne
+- [Auckland could save up to $17 billion over 10 years by planning energy use - report](https://www.rnz.co.nz/news/business/2755657/auckland-could-save-up-to-17-billion-over-10-years-by-planning-energy-use-report) - RNZ National - 08:09, Tue 24 Nov Melbourne
+- [Christmas food parcels stretched as City Mission faces unprecedented demand](https://www.rnz.co.nz/news/community/2757293/christmas-food-parcels-stretched-as-city-mission-faces-unprecedented-demand) - RNZ National - 07:59, Tue 24 Nov Melbourne
+- [Social supermarket serves up cheaper food with a side of financial advice](https://www.rnz.co.nz/news/personal-finance/2754095/social-supermarket-serves-up-cheaper-food-with-a-side-of-financial-advice) - RNZ National - 07:47, Tue 24 Nov Melbourne
+- [When threatening to leave unlocks a better deal](https://www.rnz.co.nz/news/personal-finance/2753063/when-threatening-to-leave-unlocks-a-better-deal) - RNZ National - 07:30, Tue 24 Nov Melbourne
+- [Manusina opens door to eligible Samoan women rugby players for 2027](https://www.rnz.co.nz/news/pacific/2756676/manusina-opens-door-to-eligible-samoan-women-rugby-players-for-2027) - RNZ Pacific - 07:24, Tue 24 Nov Melbourne
 
 ## Southeast Asia
 
-- [CNA Explains: Why are stock markets falling so sharply, and could this become another dotcom crash?](https://www.channelnewsasia.com/business/cna-explains-ai-stock-market-correction-dotcom-crash-6574601) - CNA - 00:16, Tue 24 Nov Melbourne
-- [Man City's winless run is part of a reset, says Maresca](https://www.channelnewsasia.com/sport/man-citys-winless-run-part-reset-says-maresca-6575026) - CNA - 23:59, Mon 23 Nov Melbourne
-- [Indonesia says 24 killed in factory fire, rescuers search for dozens missing](https://www.scmp.com/news/asia/southeast-asia/article/3375508/indonesia-says-24-killed-factory-fire-rescuers-search-dozens-missing) - SCMP Asia - 23:52, Mon 23 Nov Melbourne
-- [Pasir Ris housing plans: Nature groups welcome coastal habitat conservation, but concerned over wildlife connectivity](https://www.channelnewsasia.com/singapore/pasir-ris-housing-plans-hdb-nature-groups-environment-conservation-6574741) - CNA - 23:51, Mon 23 Nov Melbourne
-- [Arm's Haas extends contract to lead chip firm through 2033 amid Nvidia top job chatter](https://www.channelnewsasia.com/business/arms-haas-extends-contract-lead-chip-firm-through-2033-amid-nvidia-top-job-chatter-6575006) - CNA - 23:49, Mon 23 Nov Melbourne
+- [Esteghlal draw ends Al-Ain's perfect Asian Champions League start](https://www.channelnewsasia.com/sport/esteghlal-draw-ends-al-ains-perfect-asian-champions-league-start-6576036) - CNA - 08:10, Tue 24 Nov Melbourne
+- [Iran lashes singer dozens of times over concert: reports](https://www.channelnewsasia.com/world/iran-singer-lashes-ahmadi-hijab-concert-video-6576006) - CNA - 08:08, Tue 24 Nov Melbourne
+- [Mercury spacecraft BepiColombo 'on track' despite glitch, ESA says](https://www.channelnewsasia.com/business/mercury-spacecraft-bepicolombo-track-despite-glitch-esa-says-6576011) - CNA - 08:03, Tue 24 Nov Melbourne
+- [Yemen's Houthis say Saudi attack kills 17](https://www.channelnewsasia.com/world/yemen-houthis-saudi-strikes-kill-seventeen-6575956) - CNA - 07:42, Tue 24 Nov Melbourne
+- [Social media companies not liable for Buffalo mass shooting, New York's highest court rules](https://www.channelnewsasia.com/business/social-media-companies-not-liable-buffalo-mass-shooting-new-yorks-highest-court-rules-6575981) - CNA - 07:36, Tue 24 Nov Melbourne
 
 ## India
 
-- [Pampa road upgrade model to be replicated across Keralam](https://www.thehindu.com/news/national/kerala/pampa-road-upgrade-model-to-be-replicated-across-keralam/article71734516.ece) - The Hindu (National) - 00:21, Tue 24 Nov Melbourne
-- [Booze on tap: Liquor 'flows' from handpump in UP's Jhansi village, woman arrested](https://www.thehindu.com/news/national/booze-on-tap-liquor-flows-from-handpump-in-ups-jhansi-village-woman-arrested/article71734693.ece) - The Hindu (National) - 00:20, Tue 24 Nov Melbourne
-- [Congress-SP seat-sharing discussions to continue on November 24](https://www.thehindu.com/news/national/uttar-pradesh/congress-sp-seat-sharing-discussions-to-continue-on-november-24/article71734959.ece) - The Hindu (National) - 00:18, Tue 24 Nov Melbourne
-- [Central University V-C receives Vishishta Shikshaka Samman](https://www.thehindu.com/news/national/karnataka/central-university-v-c-receives-vishishta-shikshaka-samman/article71731794.ece) - The Hindu (National) - 00:18, Tue 24 Nov Melbourne
-- [Floral models of Bhuvaneshwari, Gandaberunda among attractions at Cubbon Park flower show in Bengaluru](https://www.thehindu.com/news/national/karnataka/floral-models-of-bhuvaneshwari-gandaberunda-among-attractions-at-cubbon-park-flower-show-in-bengaluru/article71734190.ece) - The Hindu (National) - 00:17, Tue 24 Nov Melbourne
+- [Will bank manager accept Kayalvizhi Alagiri’s apology, asks Madras High Court](https://www.thehindu.com/news/national/tamil-nadu/will-bank-manager-accept-kayalvizhi-alagiris-apology-asks-madras-high-court/article71735095.ece) - The Hindu (National) - 07:59, Tue 24 Nov Melbourne
+- [Proposal for extending scholarship to Sri Lankan students to pursue medical education in Tamil Nadu](https://www.thehindu.com/news/national/tamil-nadu/proposal-for-extending-scholarship-to-sri-lankan-students-to-pursue-medical-education-in-tamil-nadu/article71735477.ece) - The Hindu (National) - 07:34, Tue 24 Nov Melbourne
+- [No Winter Session of Parliament? Skipped only four times in history](https://www.thehindu.com/news/national/no-winter-session-of-parliament-skipped-only-four-times-in-history/article71735258.ece) - The Hindu (National) - 07:32, Tue 24 Nov Melbourne
+- [Inquiry into his old foreign visits based on false allegations, says Naveen Patnaik](https://www.thehindu.com/news/national/odisha/inquiry-into-his-old-foreign-visits-based-on-false-allegations-says-naveen-patnaik/article71736237.ece) - The Hindu (National) - 07:28, Tue 24 Nov Melbourne
+- [CJP’s Saurav Das claims he was stopped at Delhi airport from travelling to U.K.](https://www.thehindu.com/news/national/cjps-saurav-das-claims-he-was-stopped-at-delhi-airport-from-travelling-to-uk/article71736209.ece) - The Hindu (National) - 06:49, Tue 24 Nov Melbourne
 
 ## Middle East
 
-- [Palestinian female detainees report death threats and forced removal of hijabs at Israeli Prison](https://www.middleeastmonitor.com/20261123-palestinian-female-detainees-report-death-threats-and-forced-removal-of-hijabs-at-israeli-prison/) - Middle East Monitor - 00:21, Tue 24 Nov Melbourne
-- [Houthis claim seizure of ‘huge’ weapons stockpiles in Mokha](https://www.middleeastmonitor.com/20261123-houthis-claim-seizure-of-huge-weapons-stockpiles-in-mokha/) - Middle East Monitor - 00:14, Tue 24 Nov Melbourne
-- [“Let us live”: Palestinian women protest in Gaza](https://www.middleeastmonitor.com/20261123-let-us-live-palestinian-women-protest-in-gaza/) - Middle East Monitor - 23:48, Mon 23 Nov Melbourne
-- [Iran threatens response to any attack amid naval blockade](https://www.aljazeera.com/video/newsfeed/2026/11/23/iran-threatens-response-to-any-attack-amid-naval-blockade?traffic_source=rss) - Al Jazeera - 23:25, Mon 23 Nov Melbourne
-- [Israel advances plans for 1,515 new settlement units in occupied West Bank](https://www.middleeastmonitor.com/20261123-israel-advances-plans-for-1515-new-settlement-units-in-occupied-west-bank/) - Middle East Monitor - 23:20, Mon 23 Nov Melbourne
+- [Israel’s southern Syria incursion triggers fear and destruction](https://www.aljazeera.com/video/newsfeed/2026/11/23/israels-southern-syria-incursion-triggers-fear-and-destruction?traffic_source=rss) - Al Jazeera - 08:19, Tue 24 Nov Melbourne
+- [The Systematic Destruction of Gaza’s Health Sector: Humanitarian and Legal Consequences](https://www.middleeastmonitor.com/20261123-the-systematic-destruction-of-gazas-health-sector-humanitarian-and-legal-consequences/) - Middle East Monitor - 08:13, Tue 24 Nov Melbourne
+- [Iran flogs singer Parastoo Ahmadi for performing without headscarf](https://www.aljazeera.com/news/2026/11/23/iran-flogs-singer-parastoo-ahmadi-for-performing-without-headscarf?traffic_source=rss) - Al Jazeera - 07:41, Tue 24 Nov Melbourne
+- [Iran hits US bases and civilian sites in the Gulf after a lull](https://www.aljazeera.com/video/inside-story/2026/11/23/iran-hits-us-bases-and-civilian-sites-in-the-gulf-after-a-lull?traffic_source=rss) - Al Jazeera - 07:26, Tue 24 Nov Melbourne
+- [Indonesia and the Mecca Pact: a new security direction, or more room to manoeuvre?](https://www.middleeastmonitor.com/20261123-indonesia-and-the-mecca-pact-a-new-security-direction-or-more-room-to-manoeuvre/) - Middle East Monitor - 07:12, Tue 24 Nov Melbourne
 
 ## Europe
 
-- [South Korea and China agree wider trade deal covering entertainment](https://www.euronews.com/2026/11/23/south-korea-and-china-agree-wider-trade-deal-covering-entertainment) - Euronews - 00:23, Tue 24 Nov Melbourne
-- [Japan launches Asian oil task force amid Gulf supply disruptions](https://www.euronews.com/2026/11/23/japan-launches-asian-oil-task-force-amid-gulf-supply-disruptions) - Euronews - 00:18, Tue 24 Nov Melbourne
-- ['I want to destroy capitalism, not France': On the streets with the French ultra left](https://www.bbc.co.uk/news/articles/cw074km48myeo?at_medium=RSS&at_campaign=rss) - BBC Europe - 00:09, Tue 24 Nov Melbourne
-- [Hungary's PM to visit Transcarpathia, pledges support to Ukrainian people and local Hungarians](https://www.euronews.com/2026/11/23/hungarys-pm-to-visit-transcarpathia-pledges-support-to-ukrainian-people-and-local-hungaria) - Euronews - 00:09, Tue 24 Nov Melbourne
-- [EU Commission confirms personal data leak after cyberattack, warns of further disruption](https://www.politico.eu/article/european-commission-personal-data-leak-cyberattack-disruption/?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication) - Politico Europe - 00:08, Tue 24 Nov Melbourne
+- [German-Ukrainian interceptor shoots down Russian jet-powered drone, company says](https://www.euronews.com/2026/11/23/german-ukrainian-interceptor-shoots-down-russian-jet-powered-drone-company-says) - Euronews - 08:18, Tue 24 Nov Melbourne
+- [Belgium: Workers march against spending cuts as living costs rise](https://www.euronews.com/video/2026/11/23/belgium-workers-march-against-spending-cuts-as-living-costs-rise) - Euronews - 08:09, Tue 24 Nov Melbourne
+- [Finland summons Russian ambassador over suspected helicopter incursion](https://www.politico.eu/article/finland-summons-russian-ambassador-over-suspected-helicopter-incursion/?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication) - Politico Europe - 08:02, Tue 24 Nov Melbourne
+- [What went wrong at the COP31 climate talks? Europe Tonight breaks it down](https://www.euronews.com/2026/11/23/what-went-wrong-at-the-cop31-climate-talks-europe-tonight-breaks-it-down) - Euronews - 07:35, Tue 24 Nov Melbourne
+- [NATO warns of intensifying threats as Ukraine peace proposals face key questions](https://www.euronews.com/2026/11/23/nato-warns-of-intensifying-threats-as-ukraine-peace-proposals-face-key-questions) - Euronews - 07:21, Tue 24 Nov Melbourne
 
 ## Africa
 
-- [BLOG: LIVE: Joburg mayor won’t be elected in first council sitting](https://www.dailymaverick.co.za/article/2026-11-23-live-joburgs-new-council-sits-for-the-first-time/) - Daily Maverick - 00:01, Tue 24 Nov Melbourne
-- [Russia-Ukraine war spreads to Africa as ships attacked](https://www.premiumtimesng.com/foreign/world-foreign/927377-russia-ukraine-war-spreads-to-africa-as-ships-attacked.html) - Premium Times Nigeria - 23:47, Mon 23 Nov Melbourne
-- [Search and rescue teams race against time to find survivors after Nigeria boat tragedy](https://www.bbc.co.uk/news/articles/cq7820xjm49po?at_medium=RSS&at_campaign=rss) - BBC Africa - 23:43, Mon 23 Nov Melbourne
-- [Presidential villa suffers water and power cuts, Nigerian leader says](https://www.bbc.co.uk/news/articles/cv1j65xjjk65o?at_medium=RSS&at_campaign=rss) - BBC Africa - 23:33, Mon 23 Nov Melbourne
-- [South African township turns discarded shipping container into community sensory therapy room](http://www.africanews.com/2026/11/23/south-african-township-turns-discarded-shipping-container-into-community-sensory-therapy-r/) - Africanews - 23:30, Mon 23 Nov Melbourne
+- [Police speak on deadly attack on NDC supporters in Delta](https://www.premiumtimesng.com/news/top-news/927528-police-speak-on-deadly-attack-on-ndc-supporters-in-delta.html) - Premium Times Nigeria - 08:38, Tue 24 Nov Melbourne
+- [PATRONAGE SCHEME?: Inside the Patriotic Alliance’s ‘cadre deployment’ network](https://www.dailymaverick.co.za/article/2026-11-23-inside-the-patriotic-alliances-cadre-deployment-network/) - Daily Maverick - 08:17, Tue 24 Nov Melbourne
+- [NATO to send early-warning system aircraft to Poland after missiles incident](https://www.dailymaverick.co.za/article/2026-11-23-nato-to-send-early-warning-system-aircraft-to-poland-after-missiles-incident/) - Daily Maverick - 08:02, Tue 24 Nov Melbourne
+- [2027: Tinubu meets with Igbo leaders, traders in Lagos](https://www.premiumtimesng.com/news/top-news/927518-2027-tinubu-meets-with-igbo-leaders-traders-in-lagos.html) - Premium Times Nigeria - 07:57, Tue 24 Nov Melbourne
+- [Trump says he assured Nvidia that Jensen Huang posed no national security threat](https://www.dailymaverick.co.za/article/2026-11-23-trump-says-he-assured-nvidia-that-jensen-huang-posed-no-national-security-threat/) - Daily Maverick - 07:55, Tue 24 Nov Melbourne
 
 ## South America
 
+- [Uruguay will not announce its CPTPP accession this year and will consult business and unions](https://en.mercopress.com/2026/11/23/uruguay-will-not-announce-its-cptpp-accession-this-year-and-will-consult-business-and-unions?utm_source=feed&utm_medium=rss&utm_content=main&utm_campaign=rss) - Mercopress - 08:36, Tue 24 Nov Melbourne
+- [Nvidia reinstates Jensen Huang as CEO after assurances from the US government](https://en.mercopress.com/2026/11/23/nvidia-reinstates-jensen-huang-as-ceo-after-assurances-from-the-us-government?utm_source=feed&utm_medium=rss&utm_content=main&utm_campaign=rss) - Mercopress - 02:08, Tue 24 Nov Melbourne
+- [Mexican soldiers attacked in wake of drug lord's arrest](https://www.bbc.co.uk/news/articles/c5rmgkv2lk73o?at_medium=RSS&at_campaign=rss) - BBC Latin America - 01:54, Tue 24 Nov Melbourne
 - [Seattle airport operator 'outraged' over ICE arrest of two Mexican passengers](https://www.bbc.co.uk/news/articles/cmwy479wz91no?at_medium=RSS&at_campaign=rss) - BBC Latin America - 23:50, Mon 23 Nov Melbourne
 - [The past as a political weapon](https://www.batimes.com.ar/news/opinion-and-analysis/the-past-as-a-political-weapon.phtml) - Buenos Aires Times - 22:57, Mon 23 Nov Melbourne
-- [Bolsonaro "clinically stable" in intensive care with an intestinal obstruction](https://en.mercopress.com/2026/11/23/bolsonaro-clinically-stable-in-intensive-care-with-an-intestinal-obstruction?utm_source=feed&utm_medium=rss&utm_content=main&utm_campaign=rss) - Mercopress - 15:17, Mon 23 Nov Melbourne
-- [COP31 ends without a major climate deal amid divisions over fossil fuels](https://en.mercopress.com/2026/11/23/cop31-ends-without-a-major-climate-deal-amid-divisions-over-fossil-fuels?utm_source=feed&utm_medium=rss&utm_content=main&utm_campaign=rss) - Mercopress - 15:12, Mon 23 Nov Melbourne
-- [Colombia's government asks X to suspend Petro's account after he calls for the president to resign](https://en.mercopress.com/2026/11/23/colombia-s-government-asks-x-to-suspend-petro-s-account-after-he-calls-for-the-president-to-resign?utm_source=feed&utm_medium=rss&utm_content=main&utm_campaign=rss) - Mercopress - 15:06, Mon 23 Nov Melbourne
 
 ## North America
 
-- [Democrats reveal details for 2028 presidential primary after midterm victories – US politics live](https://www.theguardian.com/us-news/live/2026/nov/23/donald-trump-democrats-republicans-presidential-primary-midterms-house-latest-news-updates) - Guardian US - 00:16, Tue 24 Nov Melbourne
-- [Falling markets: will I lose money, and is there anything I can do?](https://www.theguardian.com/business/2026/nov/23/falling-markets-will-i-lose-money-shares-tech-ai-investments) - Guardian US - 00:08, Tue 24 Nov Melbourne
-- [Nine people shot at central California concert with one in critical condition](https://www.theguardian.com/us-news/2026/nov/23/concert-shooting-california-strathmore) - Guardian US - 00:00, Tue 24 Nov Melbourne
-- [Smarter permitting can solve America’s energy and affordability crises](https://thehill.com/opinion/energy-environment/6234609-congress-permitting-reform/) - The Hill - 00:00, Tue 24 Nov Melbourne
-- [Army detonation of lead azide moved to Wednesday in Iowa](https://thehill.com/homenews/state-watch/6236662-iowa-army-detonation-lead-azide-resecheduled/) - The Hill - 23:54, Mon 23 Nov Melbourne
+- [In West Bank, ambulance drivers say Israeli checkpoints are dangerous obstacles to work](https://www.npr.org/2026/11/23/nx-s1-6043661/in-west-bank-ambulance-drivers-say-israeli-checkpoints-are-dangerous-obstacles-to-work) - NPR World - 08:34, Tue 24 Nov Melbourne
+- [California Democrat to resign from Congress after evidence of sexual misconduct](https://www.bbc.co.uk/news/articles/cm2l5kgpw5l5o?at_medium=RSS&at_campaign=rss) - BBC US & Canada - 08:29, Tue 24 Nov Melbourne
+- [Why Nvidia’s board changed its mind on Jensen Huang](https://thehill.com/policy/technology/6238401-jensen-huang-returns-nvidia-board/) - The Hill - 08:28, Tue 24 Nov Melbourne
+- [Top Democrats raise corruption concerns after Trump involvement in Jensen Huang’s Nvidia reinstatement – live](https://www.theguardian.com/us-news/live/2026/nov/23/donald-trump-democrats-republicans-presidential-primary-midterms-house-latest-news-updates) - Guardian US - 08:18, Tue 24 Nov Melbourne
+- [More than 700,000 Russian soldiers have been killed in Ukraine: Analysis](https://thehill.com/policy/defense/6238400-russian-casualties-ukraine-war-putin-zelensky/) - The Hill - 08:16, Tue 24 Nov Melbourne
 
 **East Asia & Australia**
-- S&P/ASX 200: 8,610.00 (+0.20%) - closed
-- S&P/NZX 50: 13,730.53 (-2.67%) - closed
+- S&P/ASX 200: 8,688.00 (+1.11%) - closed
+- S&P/NZX 50: 13,897.66 (+1.22%) - still trading
 
 **Southeast Asia**
 - SET: 1,454.49 (+0.08%) - closed
@@ -101,26 +101,29 @@ Generated: 00:26 Melbourne - Coverage window: Sun 22 Nov 23:56 -> Tue 24 Nov 00:
 - Tadawul TASI: 9,937.26 (-0.23%) - closed
 
 **Europe**
-- FTSE 100: 10,411.38 (+0.63%) - still trading
-- DAX: 25,023.75 (+0.89%) - still trading
-- EURO STOXX 50: 5,994.27 (+0.88%) - still trading
+- FTSE 100: 10,480.83 (+1.30%) - closed
+- DAX: 25,337.27 (+2.15%) - closed
+- EURO STOXX 50: 6,074.48 (+2.23%) - closed
 
 **Africa**
-- JSE Top 40 (Satrix 40 proxy): 9,868.00 (+1.18%) - still trading
+- JSE Top 40 (Satrix 40 proxy): 9,918.00 (+1.69%) - closed
 - EGX 30: 50,712.00 (+1.44%) - closed
 
 **South America**
-- Ibovespa: 164,514.23 (-1.12%) - still trading
+- Ibovespa: 164,796.05 (-0.95%) - closed
 
 **North America**
-- S&P 500: 6,910.39 (-3.70%) - closed
-- Dow: 48,147.33 (-1.93%) - closed
-- Nasdaq: 22,617.73 (-5.28%) - closed
+- S&P 500: 7,237.17 (+4.73%) - closed
+- Dow: 49,595.31 (+3.01%) - closed
+- Nasdaq: 24,089.56 (+6.51%) - closed
 
 ---
 Feeds: 29/29 fetched OK
 Markets: 17 sources OK
 Pipeline: Path C V2 - deterministic fetch + market endpoints + AI editorial, AI sees only fetched items, markets stay deterministic. Sources: config/feeds.yaml.
-AI editorial: FAILED this run (TimeoutError) - deterministic edition served, cadence unaffected
+AI editorial: FAILED this run (HTTPError HTTP 503: {
+  "error": {
+    "code": 503,
+    "message": "This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later) - deterministic edition served, cadence unaffected
 Delivery: Telegram 200
 Saved to: editions/daily-wrapup-2026-11-24.md
