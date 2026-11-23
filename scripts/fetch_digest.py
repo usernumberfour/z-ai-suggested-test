@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Sam's daily wrap up - Path C V2.3 (deterministic fetch + AI editorial + push
+"""Sam's daily wrap up - Path C V2.5 (deterministic fetch + AI editorial + push
 + delivery self-report: every run writes its delivery results into the edition
 footer and the Actions step summary, keeping 'Saved to:' as the last line).
 
@@ -407,8 +407,9 @@ def validate_ai_regions(ai_text, pool_urls, region_titles):
     return ai_text.strip() + "\n"
 
 
-def _gemini_call(model, payload, key):
-    """One generateContent request. Raises urllib.error.HTTPError on HTTP errors."""
+def _gemini_call(model, payload, key, timeout=240):
+    """One generateContent request. Raises urllib.error.HTTPError on HTTP errors
+    and TimeoutError/URLError when the model does not answer in time."""
     import urllib.request
     url = ("https://generativelanguage.googleapis.com/v1beta/models/"
            + model + ":generateContent")
@@ -417,14 +418,15 @@ def _gemini_call(model, payload, key):
         data=json.dumps(payload).encode("utf-8"),
         headers={**UA, "Content-Type": "application/json",
                  "x-goog-api-key": key})
-    with urllib.request.urlopen(req, timeout=150) as resp:
+    with urllib.request.urlopen(req, timeout=timeout) as resp:
         return json.loads(resp.read().decode())
 
 
-def _gemini_discover_model(key):
+def _gemini_discover_model(key, exclude=None):
     """Query the Gemini ListModels endpoint and pick the best available text
-    model for this key. Preference: the flash-latest alias, then newest flash,
-    then flash-lite tiers, then any gemini model supporting generateContent.
+    model for this key. Preference: gemini-4-hydrogen, the flash-latest alias,
+    then newest flash, then flash-lite tiers, then any gemini model supporting
+    generateContent. The failed model (exclude) is never re-picked.
     Returns the model id string, or None if nothing usable is found."""
     import urllib.request
     req = urllib.request.Request(
@@ -437,10 +439,10 @@ def _gemini_discover_model(key):
         if "generateContent" not in (m.get("supportedGenerationMethods") or []):
             continue
         n = (m.get("name") or "").replace("models/", "")
-        if n.startswith("gemini-"):
+        if n.startswith("gemini-") and n != exclude:
             names.append(n)
-    for pref in ("gemini-flash-latest", "gemini-3.8-flash", "gemini-3.6-flash",
-                 "gemini-3.5-flash-lite", "gemini-3.1-flash-lite"):
+    for pref in ("gemini-4-hydrogen", "gemini-flash-latest", "gemini-3.8-flash",
+                 "gemini-3.6-flash", "gemini-3.5-flash-lite", "gemini-3.1-flash-lite"):
         if pref in names:
             return pref
     cands = [n for n in names if not any(
@@ -461,7 +463,9 @@ def ai_edition(cfg, regions_out, now_melb):
         raise ValueError("no LLM_API_KEY")
     model = os.environ.get("LLM_MODEL", "").strip()
     if not model or model.startswith("glm-"):
-        model = "gemini-flash-latest"  # Google's alias - always the current flash model
+        # Google-recommended for new projects (models docs, Nov 2026). Any 404
+        # self-heals via ListModels discovery, so a wrong pin cannot cost a night.
+        model = "gemini-4-hydrogen"
     pool = {
         "edition_date": now_melb.strftime("%a %d %b %Y"),
         "regions": [],
@@ -480,10 +484,11 @@ def ai_edition(cfg, regions_out, now_melb):
             pool_urls.add(it["url"])
         pool["regions"].append(entry)
     prompt = AI_PROMPT + json.dumps(pool, ensure_ascii=False)
-    payload = {
-        "contents": [{"parts": [{"text": prompt}]}],
-        "generationConfig": {"temperature": 0.4, "maxOutputTokens": 8000},
-    }
+    base_cfg = {"temperature": 0.4, "maxOutputTokens": 8000}
+    payload = {"contents": [{"parts": [{"text": prompt}]}],
+               "generationConfig": base_cfg}
+    # Attempt 1 - also carries the 404 self-heal (ANY 404 on the model id:
+    # retired models, name drift, regional gating - discovery fixes them all).
     try:
         j = _gemini_call(model, payload, key)
     except urllib.error.HTTPError as ex:
@@ -494,17 +499,34 @@ def ai_edition(cfg, regions_out, now_melb):
             reason = ex.read().decode("utf-8", "replace")
         except Exception:
             pass
-        if "no longer available" not in reason:
-            raise RuntimeError(f"Gemini HTTP 404: {reason[:160]}") from None
-        alt = _gemini_discover_model(key)
+        log(f"  AI editorial: model {model} returned HTTP 404 "
+            f"({reason.strip()[:120] or 'no body'}) - discovering available models")
+        alt = _gemini_discover_model(key, exclude=model)
         if not alt:
             raise RuntimeError(
                 "Gemini model " + model + " unavailable for this key and "
                 "ListModels returned no usable alternative") from None
-        log(f"  AI editorial: model {model} rejected for this key - "
-            f"retrying with {alt}")
+        log(f"  AI editorial: switching to {alt}")
         model = alt
         j = _gemini_call(model, payload, key)
+    except (TimeoutError, urllib.error.URLError):
+        # Thinking-class models can exceed the time limit while reasoning.
+        # Attempt 2: thinking explicitly disabled; attempt 3: plain retry
+        # (covers APIs that reject the thinkingConfig field with a 400).
+        log("  AI editorial: attempt 1 timed out - retrying with thinking disabled")
+        payload_nt = {"contents": [{"parts": [{"text": prompt}]}],
+                      "generationConfig": dict(base_cfg,
+                                               thinkingConfig={"thinkingBudget": 0})}
+        try:
+            j = _gemini_call(model, payload_nt, key)
+        except urllib.error.HTTPError as ex2:
+            if ex2.code != 400:
+                raise
+            log("  AI editorial: thinking-disabled rejected (HTTP 400) - plain retry")
+            j = _gemini_call(model, payload, key)
+        except (TimeoutError, urllib.error.URLError):
+            log("  AI editorial: thinking-disabled attempt also timed out - plain retry")
+            j = _gemini_call(model, payload, key)
     cands = j.get("candidates") or []
     if not cands:
         block = (j.get("promptFeedback") or {}).get("blockReason", "")
