@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
-"""Sam's daily wrap up - Path C V2.1 (deterministic fetch + AI editorial + push
+"""Sam's daily wrap up - Path C V2.2 (deterministic fetch + AI editorial + push
 + delivery self-report: every run writes its delivery results into the edition
 footer and the Actions step summary, keeping 'Saved to:' as the last line).
 
-GitHub Actions runs this nightly at 21:00 Melbourne (double-cron + DST guard).
+GitHub Actions runs this nightly at 21:13 Melbourne (off-peak cron + same-evening
+catch-up slot + DST guard).
 Reads config/feeds.yaml, fetches RSS feeds + market endpoints, optionally lets
-an LLM (Z.ai GLM) perform editorial selection/threading on the fetched pool,
+an LLM (Google Gemini) perform editorial selection/threading on the fetched pool,
 writes editions/daily-wrapup-YYYY-MM-DD.md, optionally delivers via Discord /
 Telegram / WhatsApp / Email if the corresponding secrets are present.
 
@@ -407,15 +408,18 @@ def validate_ai_regions(ai_text, pool_urls, region_titles):
 
 
 def ai_edition(cfg, regions_out, now_melb):
-    """Call the configured GLM API to edit the edition body from the fetched pool.
+    """Call the Google Gemini API to edit the edition body from the fetched pool.
     Returns (body_lines, model_string). Raises on any failure - the caller falls
     back to the deterministic edition. Markets never enter this function."""
     import urllib.request
     key = os.environ.get("LLM_API_KEY", "").strip()
     if not key:
         raise ValueError("no LLM_API_KEY")
-    model = os.environ.get("LLM_MODEL", "").strip() or "glm-4.6"
-    base = os.environ.get("LLM_BASE_URL", "").strip().rstrip("/") or "https://api.z.ai/api/paas/v4"
+    model = os.environ.get("LLM_MODEL", "").strip()
+    if not model or model.startswith("glm-"):
+        model = "gemini-2.5-flash"  # built-in default; stale glm- values self-heal
+    url = ("https://generativelanguage.googleapis.com/v1beta/models/"
+           + model + ":generateContent")
     pool = {
         "edition_date": now_melb.strftime("%a %d %b %Y"),
         "regions": [],
@@ -435,20 +439,24 @@ def ai_edition(cfg, regions_out, now_melb):
         pool["regions"].append(entry)
     prompt = AI_PROMPT + json.dumps(pool, ensure_ascii=False)
     payload = {
-        "model": model,
-        "messages": [{"role": "user", "content": prompt}],
-        "temperature": 0.4,
-        "max_tokens": 8000,
+        "contents": [{"parts": [{"text": prompt}]}],
+        "generationConfig": {"temperature": 0.4, "maxOutputTokens": 8000},
     }
     req = urllib.request.Request(
-        base + "/chat/completions",
+        url,
         data=json.dumps(payload).encode("utf-8"),
         headers={**UA, "Content-Type": "application/json",
-                 "Authorization": "Bearer " + key})
+                 "x-goog-api-key": key})
     with urllib.request.urlopen(req, timeout=150) as resp:
         j = json.loads(resp.read().decode())
-    content = (j.get("choices") or [{}])[0].get("message", {}).get("content", "")
-    content = re.sub(r"(?s)<think>.*?</think>", "", content).strip()
+    cands = j.get("candidates") or []
+    if not cands:
+        block = (j.get("promptFeedback") or {}).get("blockReason", "")
+        raise ValueError("Gemini returned no candidates"
+                         + (f" (blocked: {block})" if block else ""))
+    content = "".join(
+        p.get("text", "") for p in (cands[0].get("content") or {}).get("parts") or []
+    ).strip()
     region_titles = [r["title"] for r in cfg["regions"]]
     body = validate_ai_regions(content, pool_urls, region_titles)
     if body is None:
@@ -526,7 +534,7 @@ def render(cfg, regions_out, markets_lines, now_utc, now_melb, feeds_total, feed
     out.append(f"# Sam's daily wrap up - {now_melb.strftime('%a %d %b %Y')} (Melbourne)")
     out.append("")
     out.append("V2 pipeline (GitHub Actions) - RSS feeds + market endpoints "
-               "+ AI editorial layer (GLM, when configured).")
+               "+ AI editorial layer (Gemini, when configured).")
     out.append("")
     out.append(f"Generated: {now_melb.strftime('%H:%M')} Melbourne - "
                f"Coverage window: {start.astimezone(MELB).strftime('%a %d %b %H:%M')} -> "
@@ -707,7 +715,7 @@ def main():
 
     regions_body, ai_note = None, None
     if os.environ.get("LLM_API_KEY", "").strip():
-        log("  AI editorial: calling GLM...")
+        log("  AI editorial: calling Gemini...")
         try:
             regions_body, model_used = ai_edition(cfg, regions_out, now_melb)
             ai_note = f"AI editorial: on ({model_used}) - validated against fetched pool"

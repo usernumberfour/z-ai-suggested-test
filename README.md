@@ -90,7 +90,9 @@ local hours, including Sunday–Thursday markets like Tadawul).
 - It is a **clippings digest** — freshest items per source, not an editorially
   selected/synthesized analysis. Selection depth = V2 (AI step inside the pipeline).
 - No verifiable timestamp → item excluded (timestamp discipline is enforced, not hoped for).
-- EGX 30 has no free reliable endpoint → reported as `unavailable`, not faked.
+- Markets use a fallback chain per index: TradingView scan (one request, ~16
+  indices) → TradingEconomics (ASX 200) → Yahoo → Stooq → honest `unavailable`.
+  Yahoo rate-limits GitHub/Azure IPs, so the chain starts elsewhere on purpose.
 - JSE Top 40 uses the Satrix 40 ETF as a proxy (labeled as such in the edition).
 
 ## Tuning without code
