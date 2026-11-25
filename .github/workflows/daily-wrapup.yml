@@ -2,10 +2,27 @@ name: daily-wrapup
 
 on:
   schedule:
-    # 21:00 Melbourne year-round: 10:00 UTC in AEDT (UTC+11), 11:00 UTC in AEST (UTC+10).
-    # The script's DST guard produces only in the correct hour; the other run self-skips.
-    - cron: "0 10 * * *"
-    - cron: "0 11 * * *"
+    # Evidence (runs API + edition footers, 22-24 Nov 2026): :00 crons were delivered
+    # 92 min, 2h05 and 10h+ late - GitHub's scheduler backlog on low-activity repos
+    # swallows single slots, on-peak or not. Fix: an evening GRID. One 10-minute slot
+    # through the 21:00-21:55 window in each DST regime; the first slot to actually
+    # fire produces the edition, every later slot self-skips on the duplicate guard,
+    # and slots landing outside the evening window are stopped by the script's DST
+    # guard (proven: the 07:28/08:01 runs of 25 Nov skipped cleanly).
+    #   AEDT (UTC+11): "xx 10" = 21:xx Melbourne, "xx 11" = 22:xx catch-up hour.
+    #   AEST (UTC+10): "xx 11" = 21:xx Melbourne, "xx 10" self-skips (DST guard).
+    - cron: "5 10 * * *"
+    - cron: "15 10 * * *"
+    - cron: "25 10 * * *"
+    - cron: "35 10 * * *"
+    - cron: "45 10 * * *"
+    - cron: "55 10 * * *"
+    - cron: "5 11 * * *"
+    - cron: "15 11 * * *"
+    - cron: "25 11 * * *"
+    - cron: "35 11 * * *"
+    - cron: "45 11 * * *"
+    - cron: "55 11 * * *"
   workflow_dispatch: {}
 
 permissions:
@@ -18,7 +35,7 @@ concurrency:
 jobs:
   produce:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
 
