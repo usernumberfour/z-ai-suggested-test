@@ -3,8 +3,9 @@
 + delivery self-report: every run writes its delivery results into the edition
 footer and the Actions step summary, keeping 'Saved to:' as the last line).
 
-GitHub Actions runs this nightly at 21:13 Melbourne (off-peak cron + same-evening
-catch-up slot + DST guard).
+GitHub Actions runs this nightly via an evening grid of 10-minute slots
+(21:05-21:55 plus 22:05-22:55 Melbourne, DST-safe): the first slot that fires
+produces the edition, every other slot self-skips (duplicate + DST guards).
 Reads config/feeds.yaml, fetches RSS feeds + market endpoints, optionally lets
 an LLM (Google Gemini) perform editorial selection/threading on the fetched pool,
 writes editions/daily-wrapup-YYYY-MM-DD.md, optionally delivers via Discord /
@@ -428,20 +429,22 @@ def _gemini_discover_model(key, exclude=None):
     """Query the Gemini ListModels endpoint and pick the best available text
     model for this key. Preference: gemini-4-hydrogen, the flash-latest alias,
     then newest flash, then flash-lite tiers, then any gemini model supporting
-    generateContent. The failed model (exclude) is never re-picked.
-    Returns the model id string, or None if nothing usable is found."""
+    generateContent. `exclude` takes one model id or a set: no model in it is
+    ever re-picked, so a second fallback can never return to an already-failed
+    model. Returns the model id string, or None if nothing usable is found."""
     import urllib.request
     req = urllib.request.Request(
         "https://generativelanguage.googleapis.com/v1beta/models",
         headers={**UA, "x-goog-api-key": key})
     with urllib.request.urlopen(req, timeout=60) as resp:
         j = json.loads(resp.read().decode())
+    excl = {exclude} if isinstance(exclude, str) else set(exclude or ())
     names = []
     for m in j.get("models") or []:
         if "generateContent" not in (m.get("supportedGenerationMethods") or []):
             continue
         n = (m.get("name") or "").replace("models/", "")
-        if n.startswith("gemini-") and n != exclude:
+        if n.startswith("gemini-") and n not in excl:
             names.append(n)
     for pref in ("gemini-4-hydrogen", "gemini-flash-latest", "gemini-3.8-flash",
                  "gemini-3.6-flash", "gemini-3.5-flash-lite", "gemini-3.1-flash-lite"):
@@ -454,9 +457,12 @@ def _gemini_discover_model(key, exclude=None):
 
 def ai_edition(cfg, regions_out, now_melb):
     """Call the Google Gemini API to edit the edition body from the fetched pool.
-    On 404 'no longer available to new users' (Google retires model ids ahead of
-    shutdown dates), auto-discovers a current model via ListModels and retries
-    once. Returns (body_lines, model_string). Raises on any failure - the caller
+    Resilience queue (max 4 attempts; each failure class enqueues its recovery):
+      404 (model retired)   -> ListModels discovery, retry on another model
+      429/5xx (high demand) -> wait, retry same model, then switch models
+      timeout               -> retry with thinking disabled
+    Discovery never re-picks a model that already failed this run.
+    Returns (body_lines, model_string). Raises on any failure - the caller
     falls back to the deterministic edition. Markets never enter this function."""
     import urllib.request
     import urllib.error
@@ -501,6 +507,7 @@ def ai_edition(cfg, regions_out, now_melb):
     # Capped at 4 attempts; the caller's deterministic fallback covers exhaustion.
     queue = [(model, {}, "standard")]
     queued = {(model, "standard")}
+    failed = set()   # models already rejected this run - discovery never re-picks
     j, error_note = None, "unknown"
     attempts = 0
     while queue and attempts < 4:
@@ -521,7 +528,8 @@ def ai_edition(cfg, regions_out, now_melb):
                     pass
                 log(f"  AI editorial: {m} returned HTTP 404 "
                     f"({reason.strip()[:120] or 'no body'}) - discovering models")
-                alt = _gemini_discover_model(key, exclude=m)
+                failed.add(m)
+                alt = _gemini_discover_model(key, exclude=failed)
                 if not alt:
                     raise RuntimeError(
                         "Gemini model " + m + " unavailable (404) and "
@@ -544,7 +552,8 @@ def ai_edition(cfg, regions_out, now_melb):
                         queued.add((m, "transient-retry"))
                         queue.insert(0, (m, extra, "transient-retry"))
                 else:
-                    alt = _gemini_discover_model(key, exclude=m)
+                    failed.add(m)
+                    alt = _gemini_discover_model(key, exclude=failed)
                     if not alt:
                         raise RuntimeError(
                             "Gemini " + error_note + " on " + m +
