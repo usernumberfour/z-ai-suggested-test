@@ -2,15 +2,15 @@
 
 V2 pipeline (GitHub Actions) - RSS feeds + market endpoints + AI editorial layer (Gemini, when configured).
 
-Generated: 21:05 Melbourne - Coverage window: Wed 25 Nov 20:35 -> Thu 26 Nov 21:05 Melbourne
+Generated: 21:35 Melbourne - Coverage window: Wed 25 Nov 21:05 -> Thu 26 Nov 21:35 Melbourne
 
 ## Melbourne & Victoria
 
+- [Best of cartoons, November 27, 2026](https://www.theage.com.au/politics/federal/best-of-cartoons-november-27-2026-20261126-p61hoj.html?ref=rss&utm_medium=rss&utm_source=rss_feed) - The Age - 21:29, Thu 26 Nov Melbourne
+- [Queensland Ambulance Service commissioner resigns](https://www.theage.com.au/national/queensland-ambulance-service-commissioner-resigns-20261126-p61hpv.html?ref=rss&utm_medium=rss&utm_source=rss_feed) - The Age - 21:15, Thu 26 Nov Melbourne
 - [The cat’s out of the bag](https://www.theage.com.au/national/nsw/the-cat-s-out-of-the-bag-20261126-p61hf1.html?ref=rss&utm_medium=rss&utm_source=rss_feed) - The Age - 21:00, Thu 26 Nov Melbourne
 - [Which pop star did Molly Meldrum claim saved his life? Take the Brisbane Times Quiz](https://www.theage.com.au/national/queensland/which-pop-star-did-molly-meldrum-claim-saved-his-life-take-the-brisbane-times-quiz-20261126-p61hi9.html?ref=rss&utm_medium=rss&utm_source=rss_feed) - The Age - 20:59, Thu 26 Nov Melbourne
 - [Report finds Support at Home co-payments should be reviewed](https://www.abc.net.au/news/2026-11-26/support-at-home-payments-require-review/107426872) - ABC News Melbourne - 20:27, Thu 26 Nov Melbourne
-- [Why Clayton and Weatherald must be the two men considered for Test spot](https://www.theage.com.au/sport/cricket/why-clayton-and-weatherald-must-be-the-two-men-considered-for-test-spot-20261126-p61hal.html?ref=rss&utm_medium=rss&utm_source=rss_feed) - The Age - 20:21, Thu 26 Nov Melbourne
-- [Qantas plane aborted Sydney landing to avoid collision with New Zealand carrier](https://www.theage.com.au/national/nsw/qantas-plane-aborted-sydney-landing-to-avoid-collision-with-new-zealand-carrier-20261126-p61hpj.html?ref=rss&utm_medium=rss&utm_source=rss_feed) - The Age - 20:00, Thu 26 Nov Melbourne
 
 ## Australia (national)
 
@@ -22,51 +22,51 @@ Generated: 21:05 Melbourne - Coverage window: Wed 25 Nov 20:35 -> Thu 26 Nov 21:
 
 ## Pacific
 
+- ['Neutral from the outset': Wellington mayor Andrew Little still holding back over rates controversy](https://www.rnz.co.nz/news/regional/2798557/neutral-from-the-outset-wellington-mayor-andrew-little-still-holding-back-over-rates-controversy) - RNZ National - 21:12, Thu 26 Nov Melbourne
 - [Police search for family of boy found in Kaitaia](https://www.rnz.co.nz/news/crime-and-justice/2802173/police-search-for-family-of-boy-found-in-kaitaia) - RNZ National - 19:49, Thu 26 Nov Melbourne
 - [Auckland mayor Wayne Brown says China trip was significantly under budget](https://www.rnz.co.nz/news/regional/2801819/auckland-mayor-wayne-brown-says-china-trip-was-significantly-under-budget) - RNZ National - 18:47, Thu 26 Nov Melbourne
 - [Poisonous invasive cane toad 'size of a guinea pig' spotted in Tauranga](https://www.rnz.co.nz/news/environment/2801504/poisonous-invasive-cane-toad-size-of-a-guinea-pig-spotted-in-tauranga) - RNZ National - 17:57, Thu 26 Nov Melbourne
 - [Shane Jones promises to pause and review $200 million Gas Security Fund](https://www.rnz.co.nz/news/political/2801306/shane-jones-promises-to-pause-and-review-200-million-gas-security-fund) - RNZ National - 17:45, Thu 26 Nov Melbourne
-- [Gastroenteritis outbreak at Waikato school camp](https://www.rnz.co.nz/news/health/2800879/gastroenteritis-outbreak-at-waikato-school-camp) - RNZ National - 16:33, Thu 26 Nov Melbourne
 
 ## Southeast Asia
 
-- [1Password customer data, source code taken in GitHub breach](https://www.rappler.com/technology/1password-customer-data-source-code-taken-github-breach/) - Rappler - 21:02, Thu 26 Nov Melbourne
-- [Excise tax on your coffee? House leader shuts down suggestion](https://www.rappler.com/philippines/house-leader-shuts-down-suggestion-impose-excise-tax-coffee/) - Rappler - 21:01, Thu 26 Nov Melbourne
-- [Families with complex needs to get ‘more coordinated’ support from 2029 as Singapore revamps services](https://www.channelnewsasia.com/singapore/one-family-service-coordinated-support-social-services-msf-6584151) - CNA - 21:00, Thu 26 Nov Melbourne
-- [CPF not a way to suppress domestic consumption, potential US tariffs a surprise: DPM Gan](https://www.channelnewsasia.com/singapore/us-singapore-trump-tariffs-cpf-scheme-dpm-gan-6584361) - CNA - 21:00, Thu 26 Nov Melbourne
-- [[READOUT] What businesses can get out of ASEAN 2026](https://www.rappler.com/voices/newsletters/readout-business-investment-asean-2026/) - Rappler - 21:00, Thu 26 Nov Melbourne
+- [Indian trade body urges retaliatory tariffs on US goods, warns 500,000 jobs at risk](https://www.channelnewsasia.com/asia/indian-trade-body-urges-retaliatory-tariffs-us-goods-warns-500000-jobs-risk-6584816) - CNA - 21:29, Thu 26 Nov Melbourne
+- [Malaysia wants priority over other lenders if it backs AirAsia](https://www.channelnewsasia.com/business/malaysia-priority-lenders-airasia-6584846) - CNA - 21:19, Thu 26 Nov Melbourne
+- [Lee blames F1 drivers for missing eight-iron at Australian PGA Championship](https://www.channelnewsasia.com/sport/lee-blames-f1-drivers-missing-eight-iron-australian-pga-championship-6584821) - CNA - 21:11, Thu 26 Nov Melbourne
+- [Two bowlers out of South Africa squad for Bangladesh series](https://www.channelnewsasia.com/sport/two-bowlers-out-south-africa-squad-bangladesh-series-6584806) - CNA - 21:06, Thu 26 Nov Melbourne
+- [Lacson asks: Why settle unpaid 2024 DSWD guarantee letters in 2027?](https://www.rappler.com/philippines/lacson-flags-unpaid-dswd-guarantee-letters-2024/) - Rappler - 21:05, Thu 26 Nov Melbourne
 
 ## India
 
-- [Constitution Day LIVE updates: U.P. taught BJP a lesson in 2024 LS polls, silenced Modi’s ‘400 paar’ slogan: Kharge](https://www.thehindu.com/news/national/constitution-day-indian-democracy-pm-modi-congress-samvidhan-raksha-march-november-26-2026-live-updates/article71745137.ece) - The Hindu (National) - 21:04, Thu 26 Nov Melbourne
-- [FOAM pitches four-point plan to strengthen Mysuru’s tourism sector](https://www.thehindu.com/news/national/karnataka/foam-pitches-four-point-plan-to-strengthen-mysurus-tourism-sector/article71741168.ece) - The Hindu (National) - 21:02, Thu 26 Nov Melbourne
-- [Buzz at Cyberabad Moves 2026 as citizens, experts discuss mobility challenges and solutions](https://www.thehindu.com/news/cities/Hyderabad/buzz-at-cyberabad-moves-2026-as-citizens-experts-discuss-mobility-challenges-and-solutions/article71745899.ece) - The Hindu (National) - 20:59, Thu 26 Nov Melbourne
-- [India-Nepal weekly train: Check stations, timings and more about Ayodhya-Janakpur Saryu-Kamala Express](https://www.thehindu.com/news/national/ayodhya-janakpur-weekly-express-train-stations-timings-ticket-price-india-nepal-bihar-uttar-pradesh-details/article71723535.ece) - The Hindu (National) - 20:58, Thu 26 Nov Melbourne
-- [Plea seeks guidelines to govern protests; Supreme Court issues notice to Centre, CJP leaders](https://www.thehindu.com/news/national/plea-seeks-guidelines-to-govern-protests-supreme-court-issues-notice-to-centre-cjp-leaders/article71745950.ece) - The Hindu (National) - 20:57, Thu 26 Nov Melbourne
+- [10 years and doubled cost: The four-laning saga of Mangaluru-Bengaluru NH 75 in Dakshina Kannada and Hassan](https://www.thehindu.com/news/cities/Mangalore/10-years-and-doubled-cost-the-four-laning-saga-of-mangaluru-bengaluru-national-highway-75-in-dakshina-kannada-and-hassan/article71745789.ece) - The Hindu (National) - 21:30, Thu 26 Nov Melbourne
+- [AIADMK announces protests across Tamil Nadu against TVK government on December 2](https://www.thehindu.com/news/national/tamil-nadu/aiadmk-announces-protests-across-tamil-nadu-against-tvk-government-on-december-2-2026/article71745989.ece) - The Hindu (National) - 21:30, Thu 26 Nov Melbourne
+- [Buzz at Cyberabad Moves 2026 as citizens, experts discuss mobility challenges and solutions](https://www.thehindu.com/news/cities/Hyderabad/buzz-at-cyberabad-moves-2026-as-citizens-experts-discuss-mobility-challenges-and-solutions/article71745899.ece) - The Hindu (National) - 21:29, Thu 26 Nov Melbourne
+- [Andhra Pradesh local body polls: counting under way in gram panchayats; TDP, YSRCP trade allegations | LIVE](https://www.thehindu.com/news/national/andhra-pradesh/urban-local-bodies-polls-andhra-pradesh-tdp-ysrcp-live-updates-november-26-2026/article71745216.ece) - The Hindu (National) - 21:25, Thu 26 Nov Melbourne
+- [India-Nepal weekly train: Check ticket fares, stations, timings and more about Ayodhya-Janakpur Saryu-Kamala Express](https://www.thehindu.com/news/national/ayodhya-janakpur-weekly-express-train-stations-timings-ticket-price-india-nepal-bihar-uttar-pradesh-details/article71723535.ece) - The Hindu (National) - 21:22, Thu 26 Nov Melbourne
 
 ## Middle East
 
+- [Iraq begins closing unofficial border crossings with neighboring countries](https://www.middleeastmonitor.com/20261126-iraq-begins-closing-unofficial-border-crossings-with-neighboring-countries/) - Middle East Monitor - 21:30, Thu 26 Nov Melbourne
+- [Ukraine’s attack on Benghazi: Naked aggression on Libyan soil](https://www.middleeastmonitor.com/20261126-ukraines-attack-on-benghazi-naked-aggression-on-libyan-soil/) - Middle East Monitor - 21:30, Thu 26 Nov Melbourne
+- [Hind Rajab Foundation files criminal complaint against 2 Israeli soldiers in Spain](https://www.middleeastmonitor.com/20261126-hind-rajab-foundation-files-criminal-complaint-against-2-israeli-soldiers-in-spain/) - Middle East Monitor - 21:19, Thu 26 Nov Melbourne
+- [Netanyahu tells aides ‘miracle’ needed to prevent Eisenkot from forming government](https://www.middleeastmonitor.com/20261126-netanyahu-tells-aides-miracle-needed-to-prevent-eisenkot-from-forming-government/) - Middle East Monitor - 21:13, Thu 26 Nov Melbourne
 - [Gaza Mother makes school desks and chairs using cardboard after Israeli occupation prevents entry](https://www.middleeastmonitor.com/20261126-gaza-mother-makes-school-desks-and-chairs-using-cardboard-after-israeli-occupation-prevents-entry/) - Middle East Monitor - 20:15, Thu 26 Nov Melbourne
-- [31 killed, 21 injured in fuel tanker fire in Giza, Egypt](https://www.middleeastmonitor.com/20261126-31-killed-21-injured-in-fuel-tanker-fire-in-giza-egypt/) - Middle East Monitor - 20:06, Thu 26 Nov Melbourne
-- [The three-power summit: Acknowledging a new international reality](https://www.middleeastmonitor.com/20261126-the-three-power-summit-acknowledging-a-new-international-reality/) - Middle East Monitor - 20:00, Thu 26 Nov Melbourne
-- [Israeli attacks on Gaza kill senior education official, seven other people](https://www.aljazeera.com/news/2026/11/26/israeli-attacks-on-gaza-kill-senior-education-official-seven-other-people?traffic_source=rss) - Al Jazeera - 20:00, Thu 26 Nov Melbourne
-- [Rights centre: Israeli attacks kill more than 38,000 women and girls in Gaza](https://www.middleeastmonitor.com/20261126-rights-centre-israeli-attacks-kill-more-than-38000-women-and-girls-in-gaza/) - Middle East Monitor - 19:39, Thu 26 Nov Melbourne
 
 ## Europe
 
-- [New UK-EU treaty has 10-year termination clause](https://www.bbc.co.uk/news/articles/c98r7p65edvgo?at_medium=RSS&at_campaign=rss) - BBC Europe - 20:59, Thu 26 Nov Melbourne
-- [Cheaper, generic HIV prevention drug arrives in Zambia](https://www.euronews.com/2026/11/26/cheaper-generic-hiv-prevention-drug-arrives-in-zambia) - Euronews - 20:58, Thu 26 Nov Melbourne
-- [Ebola cases in Congo surpass 12,000 in fastest-growing outbreak](https://www.euronews.com/2026/11/26/ebola-cases-in-congo-surpass-12000-in-fastest-growing-outbreak) - Euronews - 20:54, Thu 26 Nov Melbourne
-- [New Danish data breach hits 11,000 despite security upgrades](https://www.euronews.com/2026/11/26/new-danish-data-breach-hits-11000-despite-security-upgrades) - Euronews - 20:46, Thu 26 Nov Melbourne
-- [Nuclear explosion in space would create 'a huge bell of radiation' to stay for months, says expert](https://www.euronews.com/video/2026/11/26/nuclear-explosion-in-space-would-create-a-huge-bell-of-radiation-to-stay-for-months-says-e) - Euronews - 20:32, Thu 26 Nov Melbourne
+- [EU must find new revenue or scale back spending plans, MEP says](https://www.euronews.com/video/2026/11/26/eu-must-find-new-revenue-or-scale-back-spending-plans-mep-says) - Euronews - 21:34, Thu 26 Nov Melbourne
+- [US says SpaceX can deploy 1 million satellites to build data centres in space](https://www.euronews.com/2026/11/26/us-says-spacex-can-deploy-1-million-satellites-to-build-data-centres-in-space) - Euronews - 21:30, Thu 26 Nov Melbourne
+- [After initial reluctance, Bulgaria says it's 'ready' to join €45 billion Ukraine loan](https://www.euronews.com/2026/11/26/after-initial-reluctance-bulgaria-says-its-ready-to-join-45-billion-ukraine-loan) - Euronews - 21:18, Thu 26 Nov Melbourne
+- [Less sex, more screens: Britain’s sexual habits are changing](https://www.euronews.com/2026/11/26/less-sex-more-screens-britains-sexual-habits-are-changing) - Euronews - 21:14, Thu 26 Nov Melbourne
+- [UK sent Sri Lankan refugee to Eswatini in secret deal, the BBC says](https://www.euronews.com/2026/11/26/uk-sent-sri-lankan-refugee-to-eswatini-in-secret-deal-the-bbc-says) - Euronews - 21:10, Thu 26 Nov Melbourne
 
 ## Africa
 
+- [FARE DEAL: Pilchards, cabbage and eggs — rethinking ‘healthy’ foreign diets for South Africa](https://www.dailymaverick.co.za/article/2026-11-26-pilchards-cabbage-and-eggs-rethinking-healthy-foreign-diets-for-south-africa/) - Daily Maverick - 21:29, Thu 26 Nov Melbourne
 - [PREMIUM TIMES journalists shine at CJID’s award of excellence](https://www.premiumtimesng.com/news/top-news/928144-premium-times-journalists-shine-at-cjids-award-of-excellence.html) - Premium Times Nigeria - 21:00, Thu 26 Nov Melbourne
 - [US chip curbs, distillation crackdown threaten Chinese AI model development, sources say](https://www.dailymaverick.co.za/article/2026-11-26-us-chip-curbs-distillation-crackdown-threaten-chinese-ai-model-development-sources-say/) - Daily Maverick - 20:42, Thu 26 Nov Melbourne
 - [Prosecco’s ‘heroic’ vines offer a test case in climate resilience](https://www.dailymaverick.co.za/article/2026-11-26-proseccos-heroic-vines-offer-a-test-case-in-climate-resilience/) - Daily Maverick - 20:31, Thu 26 Nov Melbourne
 - [India's top court tightens food warning labels in new setback for industry](https://www.dailymaverick.co.za/article/2026-11-26-indias-top-court-tightens-food-warning-labels-in-new-setback-for-industry/) - Daily Maverick - 20:23, Thu 26 Nov Melbourne
-- [Musk pledges two SpaceX shares for every American child](https://www.dailymaverick.co.za/article/2026-11-26-musk-pledges-two-spacex-shares-for-every-american-child/) - Daily Maverick - 20:13, Thu 26 Nov Melbourne
 
 ## South America
 
@@ -78,14 +78,14 @@ Generated: 21:05 Melbourne - Coverage window: Wed 25 Nov 20:35 -> Thu 26 Nov 21:
 
 ## North America
 
+- [Human flamethrower Aaron Rodgers lays bare the cultural rot at the once-great Steelers](https://www.theguardian.com/sport/2026/nov/26/aaron-rodgers-released-pittsburgh-steelers-nfl-exit) - Guardian US - 21:00, Thu 26 Nov Melbourne
+- [At Albuquerque's Indian Pueblo Kitchen, Native American dishes are the main course](https://www.npr.org/2026/11/26/nx-s1-5983712/indian-pueblo-kitchen-native-american-food-albuquerque) - NPR Top Stories - 21:00, Thu 26 Nov Melbourne
+- ['Memories of a Good Meal': How food made a difference during WWII](https://www.npr.org/2026/11/26/nx-s1-6028781/memories-of-a-good-meal-cookbook-chef-alon-shaya) - NPR Top Stories - 21:00, Thu 26 Nov Melbourne
 - [Musk's plan to send a million SpaceX data satellites into space approved](https://www.bbc.co.uk/news/articles/cwp836l8n1jgo?at_medium=RSS&at_campaign=rss) - BBC US & Canada - 20:27, Thu 26 Nov Melbourne
 - [Alaskan flying team airdrops Thanksgiving turkeys to remote communities](https://www.bbc.co.uk/news/videos/cvze7yk7dy5lo?at_medium=RSS&at_campaign=rss) - BBC US & Canada - 20:22, Thu 26 Nov Melbourne
-- [Four-time MVP Rodgers released and may have played last NFL game](https://www.bbc.co.uk/sport/american-football/articles/c64gn8ryp7jno?at_medium=RSS&at_campaign=rss) - BBC US & Canada - 18:51, Thu 26 Nov Melbourne
-- [FCC says SpaceX can deploy 1 million satellites for data centers in space. Scientists are skeptical](https://www.npr.org/2026/11/26/g-s1-155940/fcc-spacex-satellites-data-centers-in-space) - NPR Top Stories - 17:53, Thu 26 Nov Melbourne
-- [Andy Taylor, guitarist of new wave icons Duran Duran, dies at 65](https://www.npr.org/2026/11/26/g-s1-155934/andy-taylor-duran-duran-obit) - NPR Top Stories - 17:34, Thu 26 Nov Melbourne
 
 **East Asia & Australia**
-- S&P/ASX 200: 8,761.00 (+0.79%) - closed
+- S&P/ASX 200: 8,759.00 (+0.77%) - closed
 - S&P/NZX 50: 13,986.60 (-0.44%) - closed
 
 **Southeast Asia**
@@ -94,20 +94,20 @@ Generated: 21:05 Melbourne - Coverage window: Wed 25 Nov 20:35 -> Thu 26 Nov 21:
 - JCI: 5,242.17 (+0.86%) - closed
 
 **India**
-- Nifty 50: 25,897.40 (+0.30%) - closed
-- Sensex: 84,294.01 (+0.42%) - closed
+- Nifty 50: 25,884.50 (+0.25%) - closed
+- Sensex: 84,328.59 (+0.46%) - closed
 
 **Middle East**
-- Tadawul TASI: 9,911.70 (-0.02%) - still trading
+- Tadawul TASI: 9,912.50 (-0.01%) - still trading
 
 **Europe**
-- FTSE 100: 10,583.68 (+1.50%) - still trading
-- DAX: 25,236.98 (+2.17%) - still trading
-- EURO STOXX 50: 6,022.25 (+2.17%) - still trading
+- FTSE 100: 10,583.65 (+1.50%) - still trading
+- DAX: 25,221.56 (+2.10%) - still trading
+- EURO STOXX 50: 6,016.47 (+2.07%) - still trading
 
 **Africa**
-- JSE Top 40 (Satrix 40 proxy): 9,847.00 (+1.36%) - still trading
-- EGX 30: 50,217.90 (-0.63%) - still trading
+- JSE Top 40 (Satrix 40 proxy): 9,913.00 (+2.04%) - still trading
+- EGX 30: 50,304.40 (-0.46%) - still trading
 
 **South America**
 - Ibovespa: 166,684.61 (+1.58%) - closed
