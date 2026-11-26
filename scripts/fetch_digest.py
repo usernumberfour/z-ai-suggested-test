@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Sam's daily wrap up - Path C V2.6 (deterministic fetch + AI editorial + push
+"""Sam's daily wrap up - Path C V2.6.2 (deterministic fetch + AI editorial + push
 + delivery self-report: every run writes its delivery results into the edition
 footer and the Actions step summary, keeping 'Saved to:' as the last line).
 
@@ -25,8 +25,8 @@ Market data tiers (per index):
   5. honest "unavailable (...)" - never faked
 
 Guards:
-  DST guard       - only produces during the 21:00 Melbourne hour window
-                    (handles AEDT/AEST automatically via double cron).
+  DST guard       - only produces during the 21:00-22:59 Melbourne evening
+                    window (twin cron hours handle AEDT/AEST).
   Duplicate guard - if today's edition already exists complete, skip cleanly.
 """
 import html as html_mod
@@ -410,6 +410,44 @@ def validate_ai_regions(ai_text, pool_urls, region_titles):
     return ai_text.strip() + "\n"
 
 
+def _ai_validate(j, pool_urls, region_titles):
+    """Validate a generateContent response and return (body, None) on success
+    or (None, reason) with a diagnosable reason string. The reason names WHICH
+    check failed (no candidates / empty text / header mismatch / foreign URL /
+    format violation) so an Actions-log reader can see it without guessing."""
+    cands = j.get("candidates") or []
+    if not cands:
+        block = (j.get("promptFeedback") or {}).get("blockReason", "")
+        why = "no candidates" + (f" (blocked: {block})" if block else "")
+        return None, why[:180]
+    content = "".join(
+        p.get("text", "") for p in (cands[0].get("content") or {}).get("parts") or []
+    ).strip()
+    if not content:
+        fr = cands[0].get("finishReason", "") or "unspecified"
+        return None, f"empty text (finishReason: {fr})"[:180]
+    # Tolerant normalizations before strict validation: thinking-class models
+    # sometimes prepend a document title despite the prompt (render() adds the
+    # real one) and may HTML-escape ampersands inside URLs. One leading
+    # single-# line and &amp; entities are fixed; everything else stays strict.
+    content = re.sub(r"\A\s*#[^#].*\n+", "", content)
+    content = content.replace("&amp;", "&")
+    headers = [l[3:].strip() for l in content.splitlines() if l.startswith("## ")]
+    if headers != region_titles:
+        return None, (f"region headers mismatch: expected {region_titles}, "
+                      f"got {headers}")[:180]
+    urls = re.findall(r"\]\((https?://[^)\s]+)\)", content)
+    foreign = [u for u in urls if u not in pool_urls]
+    if foreign:
+        return None, (f"non-pool URL(s): {'; '.join(foreign[:2])} | "
+                      f"snippet: {content[:160]!r}")[:180]
+    body = validate_ai_regions(content, pool_urls, region_titles)
+    if body is None:
+        return None, (f"format violations (stray heading / malformed item line) "
+                      f"snippet: {content[:160]!r}")[:180]
+    return body, None
+
+
 def _gemini_call(model, payload, key, timeout=240):
     """One generateContent request. Raises urllib.error.HTTPError on HTTP errors
     and TimeoutError/URLError when the model does not answer in time."""
@@ -590,13 +628,24 @@ def ai_edition(cfg, regions_out, now_melb):
         block = (j.get("promptFeedback") or {}).get("blockReason", "")
         raise ValueError("Gemini returned no candidates"
                          + (f" (blocked: {block})" if block else ""))
-    content = "".join(
-        p.get("text", "") for p in (cands[0].get("content") or {}).get("parts") or []
-    ).strip()
     region_titles = [r["title"] for r in cfg["regions"]]
-    body = validate_ai_regions(content, pool_urls, region_titles)
+    body, why = _ai_validate(j, pool_urls, region_titles)
     if body is None:
-        raise ValueError("AI output failed validation")
+        # One regen attempt at lower temperature: different sampling often
+        # fixes a formatting slip. The deterministic fallback still covers us.
+        log(f"  AI editorial: output rejected ({why}) - one regen attempt "
+            "at temperature 0.2")
+        try:
+            j = _gemini_call(model, _payload({"temperature": 0.2}), key)
+            body, why = _ai_validate(j, pool_urls, region_titles)
+        except Exception as ex:   # HTTP/timeout on regen -> honest fallback
+            why = f"regen call failed: {type(ex).__name__}"
+            log(f"  AI editorial: {why}")
+            body = None
+    if body is None:
+        err = ValueError("AI output failed validation: " + why)
+        err.ai_reason = why
+        raise err
     return body.splitlines(), model
 
 
@@ -809,7 +858,7 @@ def main():
 
     if not force:
         off = round(now_melb.utcoffset().total_seconds() / 3600)  # 11 (AEDT) or 10 (AEST)
-        allowed = {(10 + off) % 24, (11 + off) % 24}
+        allowed = {21, 22}   # Melbourne evening window - constant across DST regimes
         if now_melb.hour not in allowed:
             log(f"SKIP DST guard: Melbourne hour {now_melb.hour:02d} not in {sorted(allowed)} "
                 f"(this is the AEST/AEDT twin cron that self-skips)")
@@ -863,7 +912,12 @@ def main():
                 body = ex.read().decode("utf-8", "replace")[:160]
             except Exception:
                 pass
-            tag = type(ex).__name__ + (f" HTTP {code}" if code != "" else "")
+            tag = type(ex).__name__
+            ai_reason = getattr(ex, "ai_reason", "")
+            if not ai_reason and code != "":
+                ai_reason = f"HTTP {code}"
+            if ai_reason:
+                tag += f": {ai_reason}"
             ai_note = (f"AI editorial: FAILED this run ({tag}"
                        + (f": {body}" if body else "") + ") - "
                        "deterministic edition served, cadence unaffected")
