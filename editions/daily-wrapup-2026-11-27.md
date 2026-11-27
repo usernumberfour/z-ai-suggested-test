@@ -2,15 +2,15 @@
 
 V2 pipeline (GitHub Actions) - RSS feeds + market endpoints + AI editorial layer (Gemini, when configured).
 
-Generated: 21:05 Melbourne - Coverage window: Thu 26 Nov 20:35 -> Fri 27 Nov 21:05 Melbourne
+Generated: 21:35 Melbourne - Coverage window: Thu 26 Nov 21:05 -> Fri 27 Nov 21:35 Melbourne
 
 ## Melbourne & Victoria
 
-- [Finalists clash in chaotic Supercars opener](https://www.theage.com.au/sport/motorsport/finalists-clash-in-chaotic-supercars-opener-20261127-p61i0o.html?ref=rss&utm_medium=rss&utm_source=rss_feed) - The Age - 20:44, Fri 27 Nov Melbourne
-- [North Melbourne vs Melbourne LIVE: Tayla Harris takes to the skies to fire up Dees but Roos lead in AFLW decider](https://www.theage.com.au/sport/afl/north-melbourne-vs-melbourne-live-roos-demons-face-off-at-ikon-park-in-the-aflw-grand-final-20261127-p61htc.html?ref=rss&utm_medium=rss&utm_source=rss_feed) - The Age - 20:36, Fri 27 Nov Melbourne
-- [Driver sentenced to 10 years for crash that killed father, four-year-old son](https://www.theage.com.au/national/queensland/driver-sentenced-to-10-years-for-crash-that-killed-father-four-year-old-son-20261127-p61i0g.html?ref=rss&utm_medium=rss&utm_source=rss_feed) - The Age - 20:28, Fri 27 Nov Melbourne
-- [Mushroom murderer Erin Patterson launches last-ditch bid for freedom](https://www.theage.com.au/national/mushroom-murderer-erin-patterson-launches-last-ditch-bid-for-freedom-20261127-p61hz4.html?ref=rss&utm_medium=rss&utm_source=rss_feed) - The Age - 20:08, Fri 27 Nov Melbourne
-- [SA Police forced to tear-up more than 8000 Speeding Fines](https://www.theage.com.au/national/sa-police-forced-to-tear-up-more-than-8000-speeding-fines-20261127-p61i0l.html?ref=rss&utm_medium=rss&utm_source=rss_feed) - The Age - 20:04, Fri 27 Nov Melbourne
+- [North Melbourne vs Melbourne LIVE: Garner leads Roos to third-straight AFLW flag with inspired final term over Demons](https://www.theage.com.au/sport/afl/north-melbourne-vs-melbourne-live-roos-demons-face-off-at-ikon-park-in-the-aflw-grand-final-20261127-p61htc.html?ref=rss&utm_medium=rss&utm_source=rss_feed) - The Age - 21:34, Fri 27 Nov Melbourne
+- [Perth man dies following alleged playground attack](https://www.theage.com.au/national/perth-man-dies-following-alleged-playground-attack-20261127-p61i0t.html?ref=rss&utm_medium=rss&utm_source=rss_feed) - The Age - 21:19, Fri 27 Nov Melbourne
+- [SA Police forced to tear-up more than 8000 Speeding Fines](https://www.theage.com.au/national/sa-police-forced-to-tear-up-more-than-8000-speeding-fines-20261127-p61i0l.html?ref=rss&utm_medium=rss&utm_source=rss_feed) - The Age - 21:13, Fri 27 Nov Melbourne
+- [England bowler cops nasty blow, gets wicket next ball](https://www.theage.com.au/national/england-bowler-cops-nasty-blow-gets-wicket-next-ball-20261127-p61i0r.html?ref=rss&utm_medium=rss&utm_source=rss_feed) - The Age - 21:13, Fri 27 Nov Melbourne
+- [Marquez makes shock retirement announcement](https://www.theage.com.au/sport/motorsport/marquez-makes-shock-retirement-announcement-20261127-p61i0q.html?ref=rss&utm_medium=rss&utm_source=rss_feed) - The Age - 21:09, Fri 27 Nov Melbourne
 
 ## Australia (national)
 
@@ -30,43 +30,43 @@ Generated: 21:05 Melbourne - Coverage window: Thu 26 Nov 20:35 -> Fri 27 Nov 21:
 
 ## Southeast Asia
 
+- [Around 100,000 British defence veterans contacted amid ‘heightened threat’](https://www.channelnewsasia.com/world/uk-british-defence-veterans-contact-6587376) - CNA - 21:17, Fri 27 Nov Melbourne
 - [Why Trump’s new tariff threats may spur Southeast Asia to rethink US trade deals](https://www.scmp.com/week-asia/economics/article/3376040/why-trumps-new-tariff-threats-may-spur-southeast-asia-rethink-us-trade-deals) - SCMP Asia - 21:00, Fri 27 Nov Melbourne
 - [Better fare transparency, support for ComfortDelGro’s taxi, private-hire drivers from Dec 1](https://www.channelnewsasia.com/singapore/taxi-private-hire-drivers-fares-comfortdelgro-zig-6587181) - CNA - 21:00, Fri 27 Nov Melbourne
 - [Oil on track to snap three-week losing streak over supply fears](https://www.channelnewsasia.com/business/oil-track-snap-three-week-losing-streak-over-supply-fears-6586546) - CNA - 20:56, Fri 27 Nov Melbourne
 - [New road traffic laws, including ban on holding mobile phones while driving, to take effect on Dec 1](https://www.channelnewsasia.com/singapore/new-road-traffic-rules-december-1-mobile-phone-driving-6587261) - CNA - 20:53, Fri 27 Nov Melbourne
-- [MotoGP champion Marquez to retire after 2026 season](https://www.channelnewsasia.com/sport/motogp-champion-marquez-retire-after-2026-season-6587331) - CNA - 20:49, Fri 27 Nov Melbourne
 
 ## India
 
-- [Punjab CM launches Smart Ration Card Scheme to benefit 10 lakh beneficiaries](https://www.thehindu.com/news/national/punjab/punjab-cm-launches-smart-ration-card-scheme-to-benefit-10-lakh-beneficiaries/article71750004.ece) - The Hindu (National) - 21:01, Fri 27 Nov Melbourne
-- [Thirupparankundram row LIVE: Supreme Court orders deepam to be lit at 'deepathoon' on November 28, suspends Board of Trustees](https://www.thehindu.com/news/national/tamil-nadu/thiruparankundram-deepam-issue-supreme-court-contempt-tamil-nadu-karthigai-deepam-deepathoon-row-live-updates-november-27-2026/article71749336.ece) - The Hindu (National) - 21:01, Fri 27 Nov Melbourne
-- [IBM ends U.S. visa, green card sponsorship for most roles in consulting unit](https://www.thehindu.com/news/national/tech-workers-woes-ibm-ends-us-visa-green-card-sponsorship-for-most-roles-in-consulting-unit/article71750142.ece) - The Hindu (National) - 21:01, Fri 27 Nov Melbourne
-- [Union Cabinet clears delimitation bill](https://www.thehindu.com/news/national/union-cabinet-clears-delimitation-bill/article71750210.ece) - The Hindu (National) - 21:01, Fri 27 Nov Melbourne
-- [NDA-SAD reunion: Why the Akali Dal severed ties with BJP 6 years ago](https://www.thehindu.com/news/national/punjab/nda-sad-reunion-why-did-akali-dal-broke-alliance-with-bjp-6-years-ago/article71741205.ece) - The Hindu (National) - 20:56, Fri 27 Nov Melbourne
+- [Keralam may witness early summer-like conditions this year as rain deficit set to widen further](https://www.thehindu.com/news/national/kerala/keralam-may-witness-early-summer-like-conditions-this-year-as-rain-deficit-set-to-widen-further/article71415755.ece) - The Hindu (National) - 21:31, Fri 27 Nov Melbourne
+- [Ex-CJI Gavai writes to President Murmu, alleges ‘complete disregard’ for merit and inclusivity in judicial appointments](https://www.thehindu.com/news/national/ex-cji-gavai-writes-to-president-murmu-alleges-complete-disregard-for-merit-and-inclusivity-in-judicial-appointments/article71750043.ece) - The Hindu (National) - 21:30, Fri 27 Nov Melbourne
+- [Shiv Sena issues whip, directing its MPs to be present for Parliament’s special sitting from November 30](https://www.thehindu.com/news/national/maharashtra/shiv-sena-issues-whip-directing-its-mps-to-be-present-for-parliaments-special-sitting-from-november-30/article71750267.ece) - The Hindu (National) - 21:29, Fri 27 Nov Melbourne
+- [Monsoon may remain subdued after vigorous onset in Kerala](https://www.thehindu.com/news/national/kerala/monsoon-may-remain-subdued-after-vigorous-onset-in-kerala/article71053336.ece) - The Hindu (National) - 21:22, Fri 27 Nov Melbourne
+- [Kerala has witnessed only 5 deficient monsoon of 15 El Niño years](https://www.thehindu.com/news/national/kerala/kerala-has-witnessed-only-6-deficient-monsoon-of-15-el-nino-years/article66862145.ece) - The Hindu (National) - 21:21, Fri 27 Nov Melbourne
 
 ## Middle East
 
+- [UN rapporteur Albanese condemns Costa Rica’s decision to deny her entry](https://www.middleeastmonitor.com/20261127-un-rapporteur-albanese-condemns-costa-ricas-decision-to-deny-her-entry/) - Middle East Monitor - 21:29, Fri 27 Nov Melbourne
+- [Spain’s election candidates clash over Gaza, migration and housing in televised debate](https://www.middleeastmonitor.com/20261127-spains-election-candidates-clash-over-gaza-migration-and-housing-in-televised-debate/) - Middle East Monitor - 21:22, Fri 27 Nov Melbourne
+- [‘I cannot go to work’: Iranians contend with pollution as well as US war](https://www.aljazeera.com/economy/2026/11/27/i-cannot-go-to-work-iranians-contend-with-pollution-as-well-as-us-war?traffic_source=rss) - Al Jazeera - 21:15, Fri 27 Nov Melbourne
+- [Trump says ‘victory at hand’ in Iran, urges Tehran to reach deal](https://www.middleeastmonitor.com/20261127-trump-says-victory-at-hand-in-iran-urges-tehran-to-reach-deal/) - Middle East Monitor - 21:15, Fri 27 Nov Melbourne
 - [Israel tortures Palestinian detainees with government approval: Israeli rights group](https://www.middleeastmonitor.com/20261127-israel-tortures-palestinian-detainees-with-government-approval-israeli-rights-group/) - Middle East Monitor - 21:00, Fri 27 Nov Melbourne
-- [India upbeat about first Olympics after ‘very good’ 2036 presentation](https://www.aljazeera.com/sports/2026/11/27/india-upbeat-about-first-olympics-after-very-good-2036-presentation?traffic_source=rss) - Al Jazeera - 19:57, Fri 27 Nov Melbourne
-- [‘Will I get taller?’: Gaza’s children suffer stunting amid war, blockade](https://www.aljazeera.com/features/2026/11/27/will-i-get-taller-gazas-children-suffer-stunting-amid-war-blockade?traffic_source=rss) - Al Jazeera - 19:37, Fri 27 Nov Melbourne
-- [Oil prices rise after tankers hit mines in Strait of Hormuz](https://www.middleeastmonitor.com/20261127-oil-prices-rise-after-tankers-hit-mines-in-strait-of-hormuz/) - Middle East Monitor - 19:15, Fri 27 Nov Melbourne
-- [Abbas makes United Arab List support for Eisenkot government conditional on demands being met](https://www.middleeastmonitor.com/20261127-abbas-makes-united-arab-list-support-for-eisenkot-government-conditional-on-demands-being-met/) - Middle East Monitor - 19:10, Fri 27 Nov Melbourne
 
 ## Europe
 
+- [New ECB chief should prioritise inflation, economist says](https://www.euronews.com/video/2026/11/27/new-ecb-chief-should-prioritise-inflation-economist-says) - Euronews - 21:31, Fri 27 Nov Melbourne
+- [Iran denies responsibility for Kuwait drone strike that killed two Italians](https://www.euronews.com/2026/11/27/iran-denies-responsibility-for-kuwait-drone-strike-that-killed-two-italians) - Euronews - 21:20, Fri 27 Nov Melbourne
 - [Video shows Levski fan caught giving Nazi salute before Marseille match](https://www.euronews.com/video/2026/11/27/video-shows-levski-fan-caught-giving-nazi-salute-before-marseille-match) - Euronews - 21:04, Fri 27 Nov Melbourne
+- [Trump’s latest tariffs attempt to revive old policy, trade expert says](https://www.euronews.com/video/2026/11/27/trumps-latest-tariffs-attempt-to-revive-old-policy-trade-expert-says) - Euronews - 20:55, Fri 27 Nov Melbourne
 - [Dépendance aux Big Tech américaines : où en est la France par rapport à ses voisins européens ?](https://www.politico.eu/article/ue-tech-americaine-dependance-souverainete-ia-cloud/?utm_source=RSS_Feed&utm_medium=RSS&utm_campaign=RSS_Syndication) - Politico Europe - 20:41, Fri 27 Nov Melbourne
-- [Footage shows skidding truck end up hanging between highway ramps](https://www.euronews.com/video/2026/11/27/footage-shows-skidding-truck-end-up-hanging-between-highway-ramps) - Euronews - 20:40, Fri 27 Nov Melbourne
-- [France's inflation slows to 2.9% in November as energy prices fall](https://www.euronews.com/2026/11/27/frances-inflation-slows-to-29-in-november-as-energy-prices-fall) - Euronews - 20:24, Fri 27 Nov Melbourne
-- [What the ECB’s new leadership could mean for interest rates](https://www.euronews.com/2026/11/27/what-the-ecbs-new-leadership-could-mean-for-interest-rates) - Euronews - 20:18, Fri 27 Nov Melbourne
 
 ## Africa
 
-- [OLD ROADS AGAIN: A Karoo hotel caught in time, moustachioed bikers and black pan breakfasts (Part Two)](https://www.dailymaverick.co.za/article/2026-11-27-a-karoo-hotel-caught-in-time-moustachioed-bikers-and-black-pan-breakfasts/) - Daily Maverick - 21:00, Fri 27 Nov Melbourne
-- [Makinde says he challenged Tinubu over economic justification for Sokoto–Badagry highway](https://www.premiumtimesng.com/news/headlines/928373-makinde-says-he-challenged-tinubu-over-economic-justification-for-sokoto-badagry-highway.html) - Premium Times Nigeria - 20:29, Fri 27 Nov Melbourne
-- [UN says Ebola outbreak driving spike in gender-based violence in DR Congo](http://www.africanews.com/2026/11/26/ebola-un-says-outbreak-driving-spike-in-gender-based-violence-in-congo/) - Africanews - 20:22, Fri 27 Nov Melbourne
-- [South Sudan's president lifts state of emergency in four regions ahead of polls](http://www.africanews.com/2026/11/27/south-sudans-president-lifts-state-of-emergency-in-four-regions-ahead-of-polls/) - Africanews - 20:21, Fri 27 Nov Melbourne
-- [Jigawa hisbah settles 4,413 marital, other disputes in 10 months](https://www.premiumtimesng.com/regional/nwest/928368-jigawa-hisbah-settles-4413-marital-other-disputes-in-10-months.html) - Premium Times Nigeria - 20:21, Fri 27 Nov Melbourne
+- [Reno Omokri presents Letter of Credence to Mexico, formally assumes duty as ambassador](https://www.premiumtimesng.com/foreign/928388-reno-omokri-presents-letter-of-credence-to-mexico-formally-assumes-duty-as-ambassador.html) - Premium Times Nigeria - 21:28, Fri 27 Nov Melbourne
+- [In defence of Jankara diplomacy: When quiet diplomacy has not worked, By Olabisi Dare](https://www.premiumtimesng.com/opinion/928384-in-defence-of-jankara-diplomacy-when-quiet-diplomacy-has-not-worked-by-olabisi-dare.html) - Premium Times Nigeria - 21:21, Fri 27 Nov Melbourne
+- [Mali top Group G as Côte d’Ivoire join them in U-17 World Cup knockouts](http://www.africanews.com/2026/11/26/mali-top-group-g-as-cote-divoire-join-them-in-u-17-world-cup-knockouts/) - Africanews - 21:05, Fri 27 Nov Melbourne
+- [Video shows Levski fan caught giving Nazi salute before Marseille match](http://www.africanews.com/2026/11/27/video-shows-levski-fan-caught-giving-nazi-salute-before-marseille-match/) - Africanews - 21:04, Fri 27 Nov Melbourne
+- [Cuba honours Fidel Castro on 10th anniversary of his death](http://www.africanews.com/2026/11/27/cuba-honours-fidel-castro-on-10th-anniversary-of-his-death/) - Africanews - 21:00, Fri 27 Nov Melbourne
 
 ## South America
 
@@ -78,14 +78,14 @@ Generated: 21:05 Melbourne - Coverage window: Thu 26 Nov 20:35 -> Fri 27 Nov 21:
 
 ## North America
 
-- [Morning news brief](https://www.npr.org/2026/11/27/nx-s1-6047116/morning-news-brief) - NPR Top Stories - 20:47, Fri 27 Nov Melbourne
-- [As UN Secretary General's last day approaches, search for his replacement continues](https://www.npr.org/2026/11/27/nx-s1-6050907/as-un-secretary-generals-last-day-approaches-search-for-his-replacement-continues) - NPR World - 20:46, Fri 27 Nov Melbourne
-- [Eagles rally to stun Cowboys coming back from 21 points behind](https://www.npr.org/2026/11/27/nx-s1-6055519/eagles-stun-cowboys) - NPR Top Stories - 19:23, Fri 27 Nov Melbourne
-- [Heavy rain, wind and flooding hit much of US on Thanksgiving](https://www.theguardian.com/us-news/2026/nov/27/heavy-rain-wind-flooding-us-thanksgiving) - Guardian US - 19:10, Fri 27 Nov Melbourne
-- [Major Thanksgiving storm brings flooding, flight delays across US](https://www.bbc.co.uk/news/articles/ckm2mz3prq77o?at_medium=RSS&at_campaign=rss) - BBC US & Canada - 16:15, Fri 27 Nov Melbourne
+- [Hundreds of thousands still without power after storms hit US on Thanksgiving](https://www.bbc.co.uk/news/articles/cre3dj5n7dpwo?at_medium=RSS&at_campaign=rss) - BBC US & Canada - 21:26, Fri 27 Nov Melbourne
+- [Can luxury save Macy's?](https://www.npr.org/2026/11/27/nx-s1-6026486/macys-tries-to-reinvent-with-luxury) - NPR Top Stories - 21:01, Fri 27 Nov Melbourne
+- [‘It’s not helping’: calls for guardrails and regulations as AI use rises at US retailers](https://www.theguardian.com/us-news/2026/nov/27/ai-retailer-consumer-guardrails) - Guardian US - 21:00, Fri 27 Nov Melbourne
+- [Can Borussia Dortmund finally end their title wait? Three big questions for Bundesliga leaders](https://www.theguardian.com/football/2026/nov/27/borussia-dortmund-bundesliga) - Guardian US - 21:00, Fri 27 Nov Melbourne
+- [Screen free tweens try their hand at Dungeons & Dragons](https://www.npr.org/2026/11/27/nx-s1-6042445/screen-free-tweens-try-their-hand-at-dungeons-dragons) - NPR Top Stories - 21:00, Fri 27 Nov Melbourne
 
 **East Asia & Australia**
-- S&P/ASX 200: 8,840.00 (+0.87%) - closed
+- S&P/ASX 200: 8,845.20 (+0.93%) - closed
 - S&P/NZX 50: 13,911.36 (-0.54%) - closed
 
 **Southeast Asia**
@@ -94,19 +94,19 @@ Generated: 21:05 Melbourne - Coverage window: Thu 26 Nov 20:35 -> Fri 27 Nov 21:
 - JCI: 5,338.46 (+1.84%) - closed
 
 **India**
-- Nifty 50: 25,593.85 (-1.12%) - closed
-- Sensex: 83,313.14 (-1.20%) - closed
+- Nifty 50: 25,607.20 (-1.07%) - closed
+- Sensex: 83,339.26 (-1.17%) - closed
 
 **Middle East**
 - Tadawul TASI: 9,923.65 (+0.10%) - closed
 
 **Europe**
-- FTSE 100: 10,687.53 (+0.74%) - still trading
-- DAX: 25,427.24 (+0.84%) - still trading
-- EURO STOXX 50: 6,084.81 (+1.16%) - still trading
+- FTSE 100: 10,686.47 (+0.73%) - still trading
+- DAX: 25,419.46 (+0.81%) - still trading
+- EURO STOXX 50: 6,091.70 (+1.28%) - still trading
 
 **Africa**
-- JSE Top 40 (Satrix 40 proxy): 10,208.00 (+2.80%) - still trading
+- JSE Top 40 (Satrix 40 proxy): 10,189.00 (+2.61%) - still trading
 - EGX 30: 50,311.80 (-0.45%) - closed
 
 **South America**
