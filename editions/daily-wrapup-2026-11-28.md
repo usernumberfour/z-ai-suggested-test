@@ -2,20 +2,20 @@
 
 V2 pipeline (GitHub Actions) - RSS feeds + market endpoints + AI editorial layer (Gemini, when configured).
 
-Generated: 21:05 Melbourne - Coverage window: Fri 27 Nov 20:35 -> Sat 28 Nov 21:05 Melbourne
+Generated: 21:35 Melbourne - Coverage window: Fri 27 Nov 21:05 -> Sat 28 Nov 21:35 Melbourne
 
 ## Melbourne & Victoria
 
+- [Police investigate allegations a school camp staffer inappropriately touched students](https://www.theage.com.au/national/nsw/police-investigate-allegations-a-school-camp-staffer-inappropriately-touched-students-20261128-p61i2x.html?ref=rss&utm_medium=rss&utm_source=rss_feed) - The Age - 21:08, Sat 28 Nov Melbourne
+- [This daggy Millennial has always wanted to be in charge. She even arrested her sister](https://www.theage.com.au/national/victoria/this-daggy-millennial-has-always-wanted-to-be-in-charge-she-even-arrested-her-sister-20261113-p61dhi.html?ref=rss&utm_medium=rss&utm_source=rss_feed) - The Age - 21:07, Sat 28 Nov Melbourne
 - [Labor’s faithful tried to tell the party it had lost its way. At this election, they stopped trying](https://www.theage.com.au/politics/victoria/labor-s-faithful-tried-to-tell-the-party-it-had-lost-its-way-at-this-election-they-stopped-trying-20261128-p61hae.html?ref=rss&utm_medium=rss&utm_source=rss_feed) - The Age - 21:04, Sat 28 Nov Melbourne
 - [Ben Carroll concedes defeat in Victoria election](https://www.theage.com.au/national/ben-carroll-concedes-defeat-in-victoria-election-20261128-p61i4q.html?ref=rss&utm_medium=rss&utm_source=rss_feed) - The Age - 20:57, Sat 28 Nov Melbourne
 - [School camp staffer fired after reports of inappropriate touching](https://www.abc.net.au/news/2026-11-28/aussie-bush-camp-police/107438418) - ABC News Melbourne - 20:52, Sat 28 Nov Melbourne
-- [Kennedy scores for the Matildas with classy finish](https://www.theage.com.au/sport/soccer/kennedy-scores-for-the-matildas-with-classy-finish-20261128-p61i4p.html?ref=rss&utm_medium=rss&utm_source=rss_feed) - The Age - 20:44, Sat 28 Nov Melbourne
-- [Election day rescue of hikers trapped in floodwaters at Lerderderg Gorge](https://www.abc.net.au/news/2026-11-28/hikers-rescued-lerderderg-gorge-bacchus-marsh/107438542) - ABC News Melbourne - 20:35, Sat 28 Nov Melbourne
 
 ## Australia (national)
 
-- [Victorian election 2026 live results: Ben Carroll projected to lose seat as Coalition wipes out Labor](https://www.theguardian.com/australia-news/live/2026/nov/28/victorian-election-live-results-updates-premier-ben-carroll-jess-wilson-warren-pickering-2026-victoria-polls-votes-latest-news-ntwnfb) - Guardian Australia - 20:48, Sat 28 Nov Melbourne
-- [Victorian election 2026: Coalition projected to win state poll, ending 12 years of Labor government](https://www.theguardian.com/australia-news/2026/nov/28/victoria-election-2026-winner-announced-who-won-poll-win-coalition-labor-victorian-state-results) - Guardian Australia - 20:37, Sat 28 Nov Melbourne
+- [Victorian election 2026 live results: Ben Carroll projected to lose seat as Coalition wipes out Labor](https://www.theguardian.com/australia-news/live/2026/nov/28/victorian-election-live-results-updates-premier-ben-carroll-jess-wilson-warren-pickering-2026-victoria-polls-votes-latest-news-ntwnfb) - Guardian Australia - 21:25, Sat 28 Nov Melbourne
+- [Victorian election 2026: Ben Carroll concedes to Jess Wilson, ending 12 years of Labor government](https://www.theguardian.com/australia-news/2026/nov/28/victoria-election-2026-winner-announced-who-won-poll-win-coalition-labor-victorian-state-results) - Guardian Australia - 21:11, Sat 28 Nov Melbourne
 - [Live Victorian election results 2026: latest VEC seat count, state electorate map, swing seats, tracker](https://www.theguardian.com/australia-news/ng-interactive/2026/nov/28/victorian-election-results-2026-live-tracker-victoria-state-poll-who-won-is-winning-votes-count-map-seats-latest-update) - Guardian Australia - 17:48, Sat 28 Nov Melbourne
 - [Umbrellas, snags and Santa Claus on Victoria’s election day – in pictures](https://www.theguardian.com/australia-news/gallery/2026/nov/28/victoria-state-election-day-in-pictures) - Guardian Australia - 17:26, Sat 28 Nov Melbourne
 - [Australia’s east coast deluged by storms as roads flood and damaging winds forecast for NSW and Victoria](https://www.theguardian.com/australia-news/2026/nov/28/australias-east-coast-deluged-by-storms-as-roads-flood-and-damaging-winds-forecast-for-nsw-and-victoria) - Guardian Australia - 13:39, Sat 28 Nov Melbourne
@@ -30,19 +30,19 @@ Generated: 21:05 Melbourne - Coverage window: Fri 27 Nov 20:35 -> Sat 28 Nov 21:
 
 ## Southeast Asia
 
+- [De Villiers drafted into Springbok starting side](https://www.channelnewsasia.com/sport/de-villiers-drafted-springbok-starting-side-6589331) - CNA - 21:05, Sat 28 Nov Melbourne
 - [Buklod: Songs of an unfinished struggle](https://www.rappler.com/people/artists/buklod-songs-unfinished-struggle/) - Rappler - 21:00, Sat 28 Nov Melbourne
 - [5 community healthcare bodies launch SG Health Alliance to tackle chronic disease risks](https://www.channelnewsasia.com/singapore/sg-health-alliance-healthcare-diabetes-stroke-heart-cancer-kidney-disease-chronic-6589296) - CNA - 20:44, Sat 28 Nov Melbourne
 - [Israeli strike kills two Doctors Without Borders staff in Gaza](https://www.channelnewsasia.com/world/israel-gaza-strike-doctors-without-borders-6589316) - CNA - 20:41, Sat 28 Nov Melbourne
 - [LIVE UPDATES: Rodrigo Duterte on trial at the ICC](https://www.rappler.com/philippines/rodrigo-duterte-trial-international-criminal-court-hague-updates-videos/) - Rappler - 20:30, Sat 28 Nov Melbourne
-- [After decades of flooding, southern Ho Chi Minh City streets stay dry as new gates hold back high tides](https://e.vnexpress.net/news/news/environment/after-decades-of-flooding-southern-ho-chi-minh-city-streets-stay-dry-as-new-gates-hold-back-high-tides-5149977.html) - VnExpress International - 20:23, Sat 28 Nov Melbourne
 
 ## India
 
-- [Thirupparankundram row: 'Deepathoon' lamp lighting likely at 5:00 p.m.; hill access capped at 50 devotees amid confusion over entry](https://www.thehindu.com/news/national/tamil-nadu/thiruparankundram-deepam-issue-supreme-court-contempt-tamil-nadu-karthigai-deepam-deepathoon-row-live-updates-november-28-2026/article71753437.ece) - The Hindu (National) - 21:01, Sat 28 Nov Melbourne
-- [Delimitation is about gerrymandering, nothing to do with women’s reservation: Arundhati Roy](https://www.thehindu.com/news/national/delimitation-is-about-gerrymandering-nothing-to-do-with-womens-reservation-arundhati-roy/article71754110.ece) - The Hindu (National) - 20:59, Sat 28 Nov Melbourne
-- [Delimitation Bill a bid to reduce political representation of south Indian States: Chennithala](https://www.thehindu.com/news/national/kerala/delimitation-bill-a-bid-to-reduce-political-representation-of-south-indian-states-chennithala/article71754017.ece) - The Hindu (National) - 20:59, Sat 28 Nov Melbourne
-- [Rahul, Akhilesh, Mamata to participate in ‘Constitution Protection March’ in Bhopal](https://www.thehindu.com/news/national/rahul-akhilesh-mamata-to-participate-in-constitution-protection-march-in-bhopal/article71754029.ece) - The Hindu (National) - 20:59, Sat 28 Nov Melbourne
-- [Former High Court judges review arrangements at Thirupparankundram ahead of ‘deepathoon’ lamp lighting](https://www.thehindu.com/news/national/tamil-nadu/former-high-court-judges-review-arrangements-at-thirupparankundram-ahead-of-deepathoon-lamp-lighting-crpf-takes-over-security/article71753979.ece) - The Hindu (National) - 20:56, Sat 28 Nov Melbourne
+- [Delhi HC bars Old Monk makers from bottling 'iQ' gin in similar packaging](https://www.business-standard.com/companies/news/delhi-hc-bars-old-monk-makers-from-bottling-iq-gin-in-similar-packaging-126112800476_1.html) - Business Standard - 21:18, Sat 28 Nov Melbourne
+- [Supreme Court clears way for Hockey India elections, restores Odisha’s membership](https://www.thehindu.com/news/national/supreme-court-clears-way-for-hockey-india-election-on-december-5-sets-aside-orissa-hc-orders/article71754025.ece) - The Hindu (National) - 21:12, Sat 28 Nov Melbourne
+- [Delimitation Bill LIVE: This Bill is dangerous to democracy, says Kharge; DMK announces support for Centre's proposal](https://www.thehindu.com/news/national/delimitation-bill-special-parliament-session-india-bloc-meeting-opposition-bjp-live-updates-november-28-2026/article71753535.ece) - The Hindu (National) - 21:11, Sat 28 Nov Melbourne
+- [Keralam govt sanctions ₹2,029.15 crore as second installment of development funds for local bodies](https://www.thehindu.com/news/national/kerala/keralam-govt-sanctions-202915-crore-as-second-installment-of-development-funds-for-local-bodies/article71753972.ece) - The Hindu (National) - 21:08, Sat 28 Nov Melbourne
+- [Thirupparankundram row: 'Deepathoon' lamp lighting likely at 5:00 p.m.; SC-appointed receivers climb hill](https://www.thehindu.com/news/national/tamil-nadu/thiruparankundram-deepam-issue-supreme-court-contempt-tamil-nadu-karthigai-deepam-deepathoon-row-live-updates-november-28-2026/article71753437.ece) - The Hindu (National) - 21:05, Sat 28 Nov Melbourne
 
 ## Middle East
 
@@ -54,11 +54,11 @@ Generated: 21:05 Melbourne - Coverage window: Fri 27 Nov 20:35 -> Sat 28 Nov 21:
 
 ## Europe
 
+- [Australia's conservatives hope for victory in trendsetting state](https://www.euronews.com/2026/11/28/australias-conservatives-hope-for-victory-in-trendsetting-state) - Euronews - 21:05, Sat 28 Nov Melbourne
 - [Putin unveils Russia's newest nuclear-powered submarine](https://www.euronews.com/video/2026/11/28/putin-unveils-russias-newest-nuclear-powered-submarine) - Euronews - 19:40, Sat 28 Nov Melbourne
 - [US hotline to report cartel activities slammed as foreign interference by Mexico](https://www.euronews.com/2026/11/28/us-hotline-to-report-cartel-activities-slammed-as-foreign-interference-by-mexico) - Euronews - 19:39, Sat 28 Nov Melbourne
-- [France to build strategic rare earths and critical metal reserves to boost resilience](https://www.euronews.com/2026/11/28/france-to-build-strategic-rare-earths-and-critical-metal-reserves-to-boost-resilience) - Euronews - 19:03, Sat 28 Nov Melbourne
+- [France to create strategic rare earth reserves, with resilience coming at a cost](https://www.euronews.com/2026/11/28/france-to-create-strategic-rare-earth-reserves-with-resilience-coming-at-a-cost) - Euronews - 19:03, Sat 28 Nov Melbourne
 - [Russia says it downed hundreds of drones as Ukraine reports first laser interception of a jet drone](https://www.euronews.com/2026/11/28/russia-says-it-downed-hundreds-of-drones-as-ukraine-reports-first-laser-interception-of-a-) - Euronews - 18:35, Sat 28 Nov Melbourne
-- [Ping pongonomics: Can table-tennis bring strangers together to talk about the art of play?](https://www.euronews.com/2026/11/28/ping-pongonomics-can-table-tennis-bring-strangers-together-to-talk-about-the-art-of-play) - Euronews - 18:10, Sat 28 Nov Melbourne
 
 ## Africa
 
@@ -121,6 +121,6 @@ Generated: 21:05 Melbourne - Coverage window: Fri 27 Nov 20:35 -> Sat 28 Nov 21:
 Feeds: 29/29 fetched OK
 Markets: 17 sources OK
 Pipeline: Path C V2 - deterministic fetch + market endpoints + AI editorial, AI sees only fetched items, markets stay deterministic. Sources: config/feeds.yaml.
-AI editorial: FAILED this run (ValueError: regen call failed: HTTPError) - deterministic edition served, cadence unaffected
+AI editorial: FAILED this run (RuntimeError: HTTP HTTP 503 - retries exhausted) - deterministic edition served, cadence unaffected
 Delivery: Telegram 200
 Saved to: editions/daily-wrapup-2026-11-28.md
